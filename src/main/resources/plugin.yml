@@ -1,0 +1,10 @@
+name: DiabloLike_Final
+version: 1.0-SNAPSHOT
+author: Doomshade
+main: cz.helheim.rpg.DiabloLike
+commands:
+  CoderDojo:
+    description: Execute example command
+    usage: /<command>
+    permission: <plugin name>.basic
+    permission-message: You don't have <permission>
