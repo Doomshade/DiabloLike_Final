@@ -5,23 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8b18b52-3b6a-4ba4-8f37-374ba3914df9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/DiabloLike.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/Foo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/IHelheimPlugin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/command/ICommandHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/command/SubCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/impls/AbstractCommandHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/impls/AbstractSubCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/impls/HelheimPlugin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/command/DiabloLikeCommandHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/qaplug_profiles.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/exception/SerializationException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/impls/ReloadCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/io/IOManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/io/PluginLogHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/serialize/HelheimSerializable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/serialize/Serialize.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/serialize/SerializeManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/util/SerializationUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/command/AddCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/DiabloLike.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/DiabloLike.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/Foo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/command/ICommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/command/ICommandHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/command/SubCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/command/SubCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/impls/AbstractCommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/impls/AbstractCommandHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/impls/AbstractSubCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/impls/AbstractSubCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/impls/HelheimPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/impls/HelheimPlugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/command/DiabloLikeCommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/command/DiabloLikeCommandHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +36,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
+        <option value="AnnotationType" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -41,6 +47,20 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -68,6 +88,11 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveMembersDialog.RECENTS_KEY">
+      <recent name="cz.helheim.rpg.api.io.PluginLogHandler" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -79,6 +104,7 @@
       <workItem from="1655978107205" duration="161000" />
       <workItem from="1655978284511" duration="4818000" />
       <workItem from="1655988134008" duration="1067000" />
+      <workItem from="1656064217906" duration="9046000" />
     </task>
     <servers />
   </component>
