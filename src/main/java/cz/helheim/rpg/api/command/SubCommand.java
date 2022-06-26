@@ -2,12 +2,10 @@ package cz.helheim.rpg.api.command;
 
 import com.sun.istack.internal.NotNull;
 import com.sun.istack.internal.Nullable;
-import cz.helheim.rpg.api.exception.SerializationException;
-import cz.helheim.rpg.api.serialize.HelheimSerializable;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.serialization.ConfigurationSerializable;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * <p>A subcommand implementation.</p>
@@ -15,20 +13,42 @@ import java.util.Map;
  *
  * @see ICommandHandler
  */
-public interface SubCommand extends HelheimSerializable {
-	void onCommand(CommandSender sender, String... args);
+public interface SubCommand extends ConfigurationSerializable {
+    int PLAYER = 1;
+    int CONSOLE = 1 << 1;
 
-	@Nullable
-	List<String> onTabComplete(CommandSender sender, String... args);
+    /**
+     * @param sender the sender of this subcommand
+     * @param args   the arguments of this subcommand
+     */
+    void onCommand(CommandSender sender, String... args);
 
-	@NotNull
-	Iterable<String> getRequiredPermissions();
+    /**
+     * @param sender the sender of the tab-complete
+     * @param args   the args of the tab-complete
+     *
+     * @return {@code null} for the current online player list or a list of tab-completions
+     */
+    @Nullable
+    List<String> onTabComplete(CommandSender sender, String... args);
 
-	@NotNull
-	String getDescription();
+    /**
+     * @return the required permissions to perform this subcommand
+     */
+    @NotNull
+    String getRequiredPermission();
 
-	@Override
-	Map<String, Object> serialize();
+    /**
+     * @return the description of this command
+     */
+    @NotNull
+    String getDescription();
 
-	void deserialize(Map<String, Object> map) throws SerializationException;
+    /**
+     * @return the bitset of senders who can use this subcommand
+     *
+     * @see SubCommand#PLAYER
+     * @see SubCommand#CONSOLE
+     */
+    int usedBy();
 }

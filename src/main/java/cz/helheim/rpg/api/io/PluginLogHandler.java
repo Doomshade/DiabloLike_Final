@@ -9,7 +9,7 @@ import java.util.logging.LogRecord;
 /**
  * Handler to write log messages to a custom file in {@code logs/} folder.
  *
- * @author Jakub Šmrha
+ * @author Doomshade
  * @version 1.0
  * @since 24.06.2022
  */

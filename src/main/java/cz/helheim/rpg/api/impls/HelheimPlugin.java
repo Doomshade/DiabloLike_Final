@@ -7,98 +7,106 @@ import cz.helheim.rpg.api.io.IOManager;
 import cz.helheim.rpg.api.io.PluginLogHandler;
 import cz.helheim.rpg.api.serialize.SerializeManager;
 import cz.helheim.rpg.command.DiabloLikeCommandHandler;
+import org.bukkit.Bukkit;
+import org.bukkit.configuration.InvalidConfigurationException;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.IOException;
-import java.io.UncheckedIOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public abstract class HelheimPlugin extends JavaPlugin implements IHelheimPlugin {
 
-	private IOManager io;
-	private SerializeManager serializeManager;
+    private IOManager io;
+    private SerializeManager serializeManager;
 
-	private ICommandHandler commandHandler;
-	private boolean initialized = false;
+    private ICommandHandler commandHandler;
 
-	@Override
-	public void onDisable() {
-		save();
-		initialized = false;
-	}
+    @Override
+    public void onDisable() {
+        save();
+    }
 
-	@Override
-	public void onEnable() {
-		register();
-		load();
-		initialized = true;
-	}
+    @Override
+    public void onEnable() {
+        register();
+        load();
+    }
 
-	private void save() {
-		saveCommands();
-	}
+    private void register() {
+        this.io = new IOManager();
+        this.commandHandler = new DiabloLikeCommandHandler(this);
+        this.commandHandler.register();
+        this.commandHandler.registerSubCommands();
 
-	public void reload() {
-		save();
-		load();
-	}
+        this.serializeManager = new SerializeManager(this);
+    }
 
-	private void saveCommands() {
-		this.commandHandler.serialize(io.getCommandsFileConfiguration());
-	}
+    private void load() {
+        loadIO();
+        loadLogger();
+        loadCommands();
+    }
 
-	private void register() {
-		io = new IOManager();
-		this.commandHandler = new DiabloLikeCommandHandler(this);
-		this.commandHandler.register();
-		this.commandHandler.registerSubCommands();
+    private void loadCommands() {
+        try {
+            this.serializeManager.deserialize(this.commandHandler, io.getCommandsFileConfiguration());
+        } catch (SerializationException e) {
+            getLogger().log(Level.SEVERE, "Failed to load commands!", e);
+        }
+    }
 
-		this.serializeManager = new SerializeManager(this);
-	}
+    private void loadIO() {
+        try {
+            io.init(this);
+        } catch (IOException | InvalidConfigurationException e) {
+            getLogger().log(Level.SEVERE, "An IO exception occurred, stopping plugin...", e);
+            Bukkit.getPluginManager()
+                  .disablePlugin(this);
+        }
+    }
 
-	public void load() {
-		loadIO();
-		loadLogger();
-		loadCommands();
-	}
+    private void loadLogger() {
+        final Logger logger = getLogger();
+        try {
+            logger.addHandler(new PluginLogHandler(io));
+        } catch (IOException e) {
+            logger.log(Level.SEVERE,
+                    "Failed to initialize the log handler for " + io.getLogFile()
+                                                                    .getAbsolutePath(), e);
+        }
+    }
 
-	private void loadCommands() {
-		try {
-			this.serializeManager.deserialize(this.commandHandler, io.getCommandsFileConfiguration());
-		} catch (SerializationException e) {
-			getLogger().log(Level.SEVERE, "Failed to load commands!", e);
-		}
-	}
+    private void save() {
+        saveCommands();
+    }
 
-	private void loadIO() {
-		try {
-			io.init(this);
-		} catch (IOException e) {
-			throw new UncheckedIOException(e);
-		}
-	}
+    private void saveCommands() {
+        try {
+            final FileConfiguration commandsFileConfiguration = this.io.getCommandsFileConfiguration();
+            commandsFileConfiguration.addDefaults(this.serializeManager.serialize(this.commandHandler));
+            commandsFileConfiguration.save(this.io.getCommandsFile());
+        } catch (IOException e) {
+            getLogger().log(Level.WARNING, "Failed to save commands!", e);
+        }
+    }
 
-	private void loadLogger() {
-		final Logger logger = getLogger();
-		try {
-			logger.addHandler(new PluginLogHandler(io));
-		} catch (IOException e) {
-			logger.log(Level.SEVERE,
-			           "Failed to initialize the log handler to " + io.getLogFile()
-			                                                          .getAbsolutePath(),
-			           e);
-		}
-	}
+    @Override
+    public IOManager getIOManager() {
+        ensureEnabled();
+        return io;
+    }
 
-	public IOManager getIOManager() {
-		ensureInitialized();
-		return io;
-	}
+    private void ensureEnabled() {
+        if (!isEnabled()) {
+            throw new IllegalStateException("Plugin is not yet enabled!");
+        }
+    }
 
-	private void ensureInitialized() {
-		if (!initialized) {
-			throw new IllegalStateException("Plugin is not yet initialized!");
-		}
-	}
+    @Override
+    public void reload() {
+        save();
+        load();
+    }
 }

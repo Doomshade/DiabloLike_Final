@@ -1,6 +1,7 @@
 package cz.helheim.rpg.api.io;
 
 import cz.helheim.rpg.api.impls.HelheimPlugin;
+import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
@@ -9,70 +10,96 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 
 /**
- * @author Jakub Šmrha
+ * @author Doomshade
  * @version 1.0
  * @since 24.06.2022
  */
 public class IOManager {
 
-	private File logFile;
-	private FileConfiguration commandsFileConfiguration;
+    private File logFile;
+    private File commandsFile;
+    private FileConfiguration commandsFileConfiguration;
 
-	private boolean initialized = false;
+    private boolean initialized = false;
+    private boolean firstEverInitialization = false;
 
-	public void init(HelheimPlugin plugin) throws IOException {
-		File logFolder = folder(plugin.getDataFolder(), "logs");
-		this.logFile = file(logFolder,
-		                    String.format("log-%s.log",
-		                                  LocalDateTime.now()
-		                                               .format(PluginLogHandler.DATE_TIME_PATTERN)));
+    public boolean isFirstEverInitialization() {
+        return firstEverInitialization;
+    }
 
-		this.commandsFileConfiguration = YamlConfiguration.loadConfiguration(file(plugin.getDataFolder(), "commands.yml"));
+    public void init(HelheimPlugin plugin) throws IOException, InvalidConfigurationException {
+        if (initialized) {
+            return;
+        }
+        final File dataFolder = plugin.getDataFolder();
+        if (!dataFolder.isDirectory()) {
+            if (!dataFolder.mkdirs()) {
+                throw new IOException("Failed to create the data folder for plugin " + plugin.getName());
+            }
+            firstEverInitialization = true;
+        }
+        File logFolder = folder(dataFolder, "logs");
+        this.logFile = file(logFolder,
+                String.format("log-%s.log",
+                        LocalDateTime.now()
+                                     .format(PluginLogHandler.DATE_TIME_PATTERN)));
 
-		this.initialized = true;
-	}
+        this.commandsFile = file(dataFolder, "commands.yml");
+        this.commandsFileConfiguration = new YamlConfiguration();
+        this.commandsFileConfiguration.load(commandsFile);
+        this.commandsFileConfiguration.options()
+                                      .copyDefaults(true)
+                                      .header("You may edit any values (not keys!). If there's an error an appropriate message will be shown in the" +
+                                              " exception.")
+                                      .copyHeader(true);
+        this.initialized = true;
+    }
 
-	public boolean isInitialized() {
-		return initialized;
-	}
+    private File folder(File parent, String name) throws IOException {
+        File folder = new File(parent, name);
+        if (!folder.isDirectory() && !folder.mkdirs()) {
+            throw new IOException("Failed to create " + folder.getAbsolutePath());
+        }
+        return folder;
+    }
 
-	private File folder(File parent, String name) throws IOException {
-		File folder = new File(parent, name);
-		if (!folder.isDirectory() && !folder.mkdirs()) {
-			throw new IOException("Failed to create " + folder.getAbsolutePath());
-		}
-		return folder;
-	}
+    private File file(File folder, String name) throws IOException {
+        final File file = new File(folder, name);
+        if (!file.exists() && !file.createNewFile()) {
+            throw new IOException("Failed to create " + file.getAbsolutePath());
+        }
+        return file;
+    }
 
-	private File folder(String name) throws IOException {
-		final File folder = new File(name);
-		if (!folder.isDirectory() && !folder.mkdirs()) {
-			throw new IOException("Failed to create " + folder.getAbsolutePath());
-		}
-		return folder;
-	}
+    public boolean isInitialized() {
+        return initialized;
+    }
 
-	private File file(File folder, String name) throws IOException {
-		final File file = new File(folder, name);
-		if (!file.exists() && !file.createNewFile()) {
-			throw new IOException("Failed to create " + file.getAbsolutePath());
-		}
-		return file;
-	}
+    private File folder(String name) throws IOException {
+        final File folder = new File(name);
+        if (!folder.isDirectory() && !folder.mkdirs()) {
+            throw new IOException("Failed to create " + folder.getAbsolutePath());
+        }
+        return folder;
+    }
 
-	public File getLogFile() {
-		ensureInitialized();
-		return logFile;
-	}
+    public File getLogFile() {
+        ensureInitialized();
+        return logFile;
+    }
 
-	public FileConfiguration getCommandsFileConfiguration() {
-		ensureInitialized();
-		return commandsFileConfiguration;
-	}
+    private void ensureInitialized() {
+        if (!initialized) {
+            throw new IllegalStateException("IO manager is not yet initialized");
+        }
+    }
 
-	private void ensureInitialized() {
-		if (!initialized) {
-			throw new IllegalStateException("IO manager is not yet initialized");
-		}
-	}
+    public FileConfiguration getCommandsFileConfiguration() {
+        ensureInitialized();
+        return commandsFileConfiguration;
+    }
+
+    public File getCommandsFile() {
+        return commandsFile;
+    }
 }

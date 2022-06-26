@@ -1,10 +1,26 @@
 name: DiabloLike_Final
-version: 1.0-SNAPSHOT
+version: 1.0
 author: Doomshade
 main: cz.helheim.rpg.DiabloLike
+description: Plugin for Diablo-like drops from monsters
+website: www.helheim.cz
 commands:
-  CoderDojo:
-    description: Execute example command
+  dl:
+    description: The main DiabloLike command
     usage: /<command>
-    permission: <plugin name>.basic
-    permission-message: You don't have <permission>
+    permission: dl.player
+
+permissions:
+  dl.player:
+    description: The permission to use basic commands
+    default: true
+  dl.helper:
+    description: The permission for helpers
+    default: false
+    children:
+      dl.player: true
+  dl.*:
+    description: The permission for admins
+    default: op
+    children:
+      dl.helper: true

@@ -12,6 +12,6 @@ public class DiabloLikeCommandHandler extends AbstractCommandHandler {
 
 	@Override
 	public void registerSubCommands() {
-		registerSubCommand("add", new AddCommand(getPlugin()));
+		registerSubCommand("add", new AddCommand());
 	}
 }
