@@ -5,6 +5,7 @@ import cz.helheim.rpg.api.command.ICommandHandler;
 import cz.helheim.rpg.api.event.ReloadEvent;
 import cz.helheim.rpg.api.io.IOManager;
 import cz.helheim.rpg.api.io.PluginLogHandler;
+import cz.helheim.rpg.api.io.Settings;
 import cz.helheim.rpg.command.DiabloLikeCommandHandler;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.InvalidConfigurationException;
@@ -19,6 +20,8 @@ public abstract class HelheimPlugin extends JavaPlugin implements IHelheimPlugin
 
 	private IOManager io;
 	private ICommandHandler commandHandler;
+
+	private Settings settings;
 
 	@Override
 	public void onDisable() {
@@ -95,6 +98,16 @@ public abstract class HelheimPlugin extends JavaPlugin implements IHelheimPlugin
 	public IOManager getIOManager() {
 		ensureEnabled();
 		return io;
+	}
+
+	@Override
+	public <T extends Settings> T getSettings() {
+		return (T) settings;
+	}
+
+	@Override
+	public void setSettings(final Settings settings) {
+		this.settings = settings;
 	}
 
 	@Override

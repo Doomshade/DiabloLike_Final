@@ -1,6 +1,7 @@
 package cz.helheim.rpg.item.impl;
 
 import com.rit.sucy.CustomEnchantment;
+import cz.helheim.rpg.data.DiabloLikeSettings;
 import cz.helheim.rpg.item.DiabloItem;
 import cz.helheim.rpg.util.Pair;
 import org.bukkit.enchantments.Enchantment;
@@ -9,6 +10,7 @@ import org.bukkit.inventory.ItemStack;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * @author Doomshade
@@ -23,9 +25,13 @@ public class DefaultDiabloItem implements DiabloItem {
 	private final ItemStack itemStack;
 	private final int level;
 
-	public DefaultDiabloItem(final ItemStack itemStack, final int level) {
+	private final List<String> originalLore = new ArrayList<>();
+
+	private Tier tier = Tier.COMMON;
+
+	public DefaultDiabloItem(final ItemStack itemStack, final int level, final List<String> originalLore) {
 		if (itemStack == null) {
-			throw new IllegalArgumentException("item cannot be null");
+			throw new IllegalArgumentException("Item cannot be null");
 		}
 		if (!itemStack.hasItemMeta() || itemStack.getItemMeta()
 		                                         .hasEnchants()) {
@@ -39,6 +45,7 @@ public class DefaultDiabloItem implements DiabloItem {
 		}
 		this.itemStack = itemStack;
 		this.level = level;
+		this.originalLore.addAll(originalLore);
 	}
 
 	@Override
@@ -67,7 +74,32 @@ public class DefaultDiabloItem implements DiabloItem {
 	}
 
 	@Override
+	public List<String> getOriginalLore() {
+		return Collections.unmodifiableList(originalLore);
+	}
+
+	@Override
+	public List<String> getAttributesInLore(final DiabloLikeSettings settings) {
+		return null;
+	}
+
+	@Override
+	public List<String> getRequirementsInLore(final DiabloLikeSettings settings) {
+		return null;
+	}
+
+	@Override
 	public int getLevel() {
 		return level;
+	}
+
+	@Override
+	public Tier getTier() {
+		return tier;
+	}
+
+	@Override
+	public void setTier(final Tier tier) {
+		this.tier = tier;
 	}
 }

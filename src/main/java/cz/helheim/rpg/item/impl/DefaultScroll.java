@@ -7,7 +7,12 @@ import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 import java.util.Optional;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static java.util.Optional.empty;
 
@@ -17,6 +22,7 @@ import static java.util.Optional.empty;
  * @since 27.06.2022
  */
 public class DefaultScroll implements Scroll {
+	private static final Pattern IDENTIFY_PATTERN = Pattern.compile("Neidentifikovaný předmět");
 
 	private final Range range;
 
@@ -43,7 +49,22 @@ public class DefaultScroll implements Scroll {
 			// TODO add from config
 
 		}
-		return null;
+		return empty();
+	}
+
+	private static int getIdentifyPatternIndex(final DiabloItem diabloItem) {
+		final List<String> lore = diabloItem.getItemStack()
+		                                    .getItemMeta()
+		                                    .getLore();
+		int i = 0;
+		for (Iterator<String> it = lore.iterator(); it.hasNext(); i++) {
+			String s = it.next();
+			Matcher m = IDENTIFY_PATTERN.matcher(s);
+			if (m.find()) {
+				return i;
+			}
+		}
+		return -1;
 	}
 
 	@Override
@@ -51,18 +72,27 @@ public class DefaultScroll implements Scroll {
 		if (diabloItem == null) {
 			return Result.FAILURE_INVALID_ITEM;
 		}
-		if (isIdentified(diabloItem)) {
+		final int identifyIndex = getIdentifyPatternIndex(diabloItem);
+		if (identifyIndex < 0) {
 			return Result.FAILURE_ITEM_IDENTIFIED;
 		}
-		return null;
+		if (!range.isInRange(diabloItem.getLevel(), true, true)) {
+			return Result.FAILURE_SCROLL_LEVEL_LOW;
+		}
+		final ItemMeta meta = diabloItem.getItemStack()
+		                                .getItemMeta();
+		final List<String> lore = meta.getLore();
+		lore.remove(identifyIndex);
+		final List<String> originalLore = diabloItem.getOriginalLore();
+		for (ListIterator<String> it = lore.listIterator(identifyIndex); it.hasNext(); ) {
+
+		}
+
+		return Result.SUCCESS_IDENTIFY;
 	}
 
 	@Override
-	public Range getLevelRange() {
+	public Range getIdentifyRange() {
 		return range;
-	}
-
-	private boolean isIdentified(final DiabloItem diabloItem) {
-		return false;
 	}
 }

@@ -14,9 +14,11 @@ public interface ItemManager {
 
 	Optional<Scroll> getScroll(ItemStack item);
 
-	Optional<Scroll> getScroll(ConfigurationSection item);
+	Optional<Scroll> getScroll(String id, ConfigurationSection item);
 
 	Optional<DiabloItem> getDiabloItem(ItemStack item);
 
-	Optional<DiabloItem> getDiabloItem(ConfigurationSection section);
+	Optional<DiabloItem> getDiabloItem(String id, ConfigurationSection section);
+
+	void setTier(DiabloItem.Tier tier, DiabloItem diabloItem);
 }

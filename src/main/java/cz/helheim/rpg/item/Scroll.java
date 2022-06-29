@@ -10,7 +10,7 @@ import cz.helheim.rpg.util.Range;
 public interface Scroll {
 	Scroll.Result identify(DiabloItem diabloItem);
 
-	Range getLevelRange();
+	Range getIdentifyRange();
 
 	enum Result {
 		SUCCESS_IDENTIFY,
