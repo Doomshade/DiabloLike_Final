@@ -1,35 +1,36 @@
 package cz.helheim.rpg.item;
 
 import com.rit.sucy.CustomEnchantment;
-import cz.helheim.rpg.data.DiabloLikeSettings;
 import cz.helheim.rpg.util.Pair;
 import org.bukkit.enchantments.Enchantment;
-import org.bukkit.inventory.ItemStack;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author Doomshade
  * @version 1.0
  * @since 27.06.2022
  */
-public interface DiabloItem {
+public interface DiabloItem extends Item {
 	void addCustomEnchantment(CustomEnchantment enchantment, int level);
 
 	void addEnchantment(Enchantment enchantment, int level);
 
 	Collection<Pair<CustomEnchantment, Integer>> getCustomEnchantments();
 
-	Collection<Pair<Enchantment, Integer>> getEnchantments();
+	Map<Tier, Double> getRarityChances();
 
-	ItemStack getItemStack();
+	Collection<Pair<Enchantment, Integer>> getEnchantments();
 
 	List<String> getOriginalLore();
 
-	List<String> getAttributesInLore(DiabloLikeSettings settings);
+	double getDropChance();
 
-	List<String> getRequirementsInLore(DiabloLikeSettings settings);
+	List<String> getAttributes();
+
+	List<String> getRequirements();
 
 	int getLevel();
 

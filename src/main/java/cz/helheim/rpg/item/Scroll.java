@@ -7,7 +7,7 @@ import cz.helheim.rpg.util.Range;
  * @version 1.0
  * @since 27.06.2022
  */
-public interface Scroll {
+public interface Scroll extends Item {
 	Scroll.Result identify(DiabloItem diabloItem);
 
 	Range getIdentifyRange();

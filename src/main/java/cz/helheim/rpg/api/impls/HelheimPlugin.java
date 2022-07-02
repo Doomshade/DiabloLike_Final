@@ -10,6 +10,7 @@ import cz.helheim.rpg.command.DiabloLikeCommandHandler;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.IOException;
@@ -92,6 +93,11 @@ public abstract class HelheimPlugin extends JavaPlugin implements IHelheimPlugin
 		} catch (IOException e) {
 			getLogger().log(Level.WARNING, "Failed to save commands!", e);
 		}
+	}
+
+	protected void registerListener(Listener listener) {
+		Bukkit.getPluginManager()
+		      .registerEvents(listener, this);
 	}
 
 	@Override

@@ -4,6 +4,9 @@ import com.rit.sucy.EnchantmentAPI;
 import cz.helheim.rpg.api.impls.HelheimPlugin;
 import cz.helheim.rpg.data.DiabloLikeSettings;
 import cz.helheim.rpg.enchantment.Rychlostrelba;
+import cz.helheim.rpg.listener.MobListener;
+import cz.helheim.rpg.listener.MythicMobListener;
+import org.bukkit.Bukkit;
 
 public class DiabloLike extends HelheimPlugin {
 
@@ -25,5 +28,11 @@ public class DiabloLike extends HelheimPlugin {
 		super.onEnable();
 		EnchantmentAPI.registerCustomEnchantment(new Rychlostrelba());
 		setSettings(new DiabloLikeSettings(this));
+		if (Bukkit.getPluginManager()
+		          .isPluginEnabled("MythicMobs")) {
+			registerListener(new MythicMobListener());
+		} else {
+			registerListener(new MobListener());
+		}
 	}
 }

@@ -38,7 +38,7 @@ public class DiabloLikeSettings extends Settings {
 	private final Map<DiabloItem.Tier, List<String>> customRarities = new HashMap<>(6);
 	//</editor-fold>
 	//<editor-fold desc="Rarity Chances">
-	private final Map<DiabloItem.Tier, Integer> rarityChances = new HashMap<>(6);
+	private final Map<DiabloItem.Tier, Double> rarityChances = new HashMap<>(6);
 	//</editor-fold>
 	//<editor-fold desc="Root entries">
 	private String requiredLevelFormat;
@@ -56,7 +56,6 @@ public class DiabloLikeSettings extends Settings {
 	//</editor-fold>
 
 	private int priceCap;
-	private Map<>
 	//</editor-fold>
 
 	private ConfigurationSection currentSection;
@@ -204,11 +203,11 @@ public class DiabloLikeSettings extends Settings {
 		for (DiabloItem.Tier tier : DiabloItem.Tier.values()) {
 			final String tierName = tier.name()
 			                            .toLowerCase();
-			rarityChances.put(tier, _int(tierName));
+			rarityChances.put(tier, _double(tierName));
 		}
 	}
 
-	public int getRarityChance(DiabloItem.Tier tier) {
+	public double getRarityChance(DiabloItem.Tier tier) {
 		return rarityChances.get(tier);
 	}
 	//</editor-fold>

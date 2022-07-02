@@ -2,13 +2,10 @@ package cz.helheim.rpg.item.impl;
 
 import com.rit.sucy.CustomEnchantment;
 import com.rit.sucy.EnchantmentAPI;
-import com.sun.istack.internal.Nullable;
 import cz.helheim.rpg.api.impls.HelheimPlugin;
 import cz.helheim.rpg.data.DiabloLikeSettings;
-import cz.helheim.rpg.item.DiabloItem;
-import cz.helheim.rpg.item.ItemManager;
-import cz.helheim.rpg.item.ItemUtils;
-import cz.helheim.rpg.item.Scroll;
+import cz.helheim.rpg.item.*;
+import cz.helheim.rpg.util.Range;
 import de.tr7zw.nbtapi.NBTItem;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.ConfigurationSection;
@@ -16,6 +13,7 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -23,71 +21,51 @@ import java.util.logging.Level;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static java.util.Optional.empty;
-import static java.util.Optional.of;
-
 /**
  * @author Doomshade
  * @version 1.0
  * @since 27.06.2022
  */
-public class DefaultItemManager implements ItemManager {
+public class DefaultItemLoader implements ItemLoader {
 	private static final String NBT_KEY_DIABLO_ITEM = "diabloitem";
 	private static final String NBT_KEY_TIER = "tier";
 	private final HelheimPlugin plugin;
 
-	public DefaultItemManager(final HelheimPlugin plugin) {
+	public DefaultItemLoader(final HelheimPlugin plugin) {
 		this.plugin = plugin;
 	}
 
 	@Override
-	@Nullable
-	public Optional<Scroll> getScroll(final ItemStack item) {
-		return DefaultScroll.getScroll(item);
-	}
-
-	@Override
-	public Optional<Scroll> getScroll(final String id, final ConfigurationSection section) {
-		return DefaultScroll.getScroll(section);
-	}
-
-	@Override
-	@Nullable
-	public Optional<DiabloItem> getDiabloItem(final ItemStack item) {
-		return empty();
-	}
-
-	@Override
-	public Optional<DiabloItem> getDiabloItem(final String id, final ConfigurationSection section) {
-		ItemStack rawItem = ItemUtils.readItemStack(section);
-		if (rawItem == null) {
-			return empty();
+	public void registerItem(final String id, final ConfigurationSection section, final ItemRepository repository) {
+		final Optional<ItemStack> opt = ItemUtils.readItemStack(section);
+		if (!opt.isPresent()) {
+			return;
 		}
-		int itemLevel = -1;
+		final Item item;
+		final ItemStack rawItem = opt.get();
 		final List<String> lore = rawItem.getItemMeta()
 		                                 .getLore();
 		final DiabloLikeSettings settings = plugin.getSettings();
-		Pattern lvlPattern = Pattern.compile(settings
-				                                     .getRequiredLevelFormat()
-				                                     .replaceAll("<lvl>", "(?<lvl>\\d+)"));
-		for (String s : lore) {
-			Matcher m = lvlPattern.matcher(s);
-			if (m.find()) {
-				itemLevel = Integer.parseInt(m.group("lvl"));
-				break;
-			}
-		}
-		if (itemLevel < 0) {
-			return Optional.empty();
-		}
-		// the item is a diablo item, parse the section and add some metadata
-		addNBT(id, rawItem);
 
-		final DiabloItem diabloItem = new DefaultDiabloItem(rawItem, itemLevel, lore);
-		if (section.isConfigurationSection("enchantments")) {
-			addEnchantments(section, rawItem, diabloItem);
+		// look for the "level" item in the lore
+		// if the level is not present the method returns <0
+		// the level MUST be present in order for the item to be treated
+		// as a valid diablo item
+		final int itemLevel = findItemLevel(lore, settings);
+		if (itemLevel >= 0) {
+			item = getDiabloItem(id, section, rawItem, lore, settings, itemLevel);
 		}
-		return of(diabloItem);
+		// TODO
+		else if (true) {
+			item = new DefaultScroll(rawItem, new Range(1, 0));
+		} else {
+			return;
+		}
+
+		if (item instanceof DiabloItem && section.isConfigurationSection("enchantments")) {
+			addEnchantments(section, rawItem, (DiabloItem) item);
+		}
+		repository.addItem(item, id);
 	}
 
 	@Override
@@ -101,7 +79,6 @@ public class DefaultItemManager implements ItemManager {
 		DiabloLikeSettings settings = plugin.getSettings();
 		String tierColour = settings.getTierColour(tier);
 		if (tierColour.isEmpty()) {
-			// TODO log
 			plugin.getLogger()
 			      .log(Level.INFO, "Missing tier colour for " + tier.name());
 			return;
@@ -114,6 +91,36 @@ public class DefaultItemManager implements ItemManager {
 			displayName = tierColour.concat(displayName);
 		}
 		meta.setDisplayName(displayName);
+	}
+
+	private DiabloItem getDiabloItem(final String id, final ConfigurationSection section, final ItemStack rawItem, final List<String> lore,
+	                                 final DiabloLikeSettings settings, final int itemLevel) {
+		final double dropChance = section.getDouble("chance", settings.getDropChance());
+		final Map<DiabloItem.Tier, Double> customRarities = new HashMap<>();
+		for (DiabloItem.Tier tier : DiabloItem.Tier.values()) {
+			final String tierName = tier.name()
+			                            .toLowerCase();
+			customRarities.put(tier, section.getDouble(tierName, settings.getRarityChance(tier)));
+		}
+
+		// the item is a diablo item, parse the section and add some metadata
+		addNBT(id, rawItem);
+
+		return new DefaultDiabloItem(rawItem, itemLevel, lore, dropChance, customRarities);
+	}
+
+	private int findItemLevel(final List<String> lore, final DiabloLikeSettings settings) {
+		final Pattern lvlPattern = Pattern.compile(settings.getRequiredLevelFormat()
+		                                                   .replaceAll("<lvl>", "(?<lvl>\\d+)"));
+		int itemLevel = -1;
+		for (String s : lore) {
+			Matcher m = lvlPattern.matcher(s);
+			if (m.find()) {
+				itemLevel = Integer.parseInt(m.group("lvl"));
+				break;
+			}
+		}
+		return itemLevel;
 	}
 
 	private void addNBT(final String id, final ItemStack rawItem) {
@@ -136,9 +143,11 @@ public class DefaultItemManager implements ItemManager {
 			final CustomEnchantment customEnchantment = EnchantmentAPI.getEnchantment(enchantmentName);
 			if (customEnchantment == null) {
 				// TODO log sth
+				plugin.getLogger()
+				      .log(Level.WARNING,
+				           String.format("Invalid enchantment '%s' found at '%s'", enchantmentName, enchantments.getCurrentPath()));
 			} else {
 				diabloItem.addCustomEnchantment(customEnchantment, enchLevel);
-				customEnchantment.addToItem(rawItem, enchLevel);
 			}
 		}
 	}

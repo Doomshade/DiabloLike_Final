@@ -7,6 +7,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 /**
@@ -14,10 +15,10 @@ import java.util.stream.Collectors;
  * @version 1.0
  * @since 28.06.2022
  */
-public class ItemUtils {
-	public static ItemStack readItemStack(ConfigurationSection section) {
+public final class ItemUtils {
+	public static Optional<ItemStack> readItemStack(ConfigurationSection section) {
 		if (!section.isString("displayName") || !section.isString("materialName") || !section.isList("lore")) {
-			return null;
+			return Optional.empty();
 		}
 		String displayName = section.getString("displayName");
 		Material material = Material.matchMaterial(section.getString("materialName"));
@@ -31,6 +32,11 @@ public class ItemUtils {
 		meta.setDisplayName(displayName);
 		meta.setLore(lore);
 		item.setItemMeta(meta);
-		return item;
+		return Optional.of(item);
+	}
+
+	public static boolean isValid(final ItemStack item) {
+		return item != null && item.hasItemMeta() && item.getItemMeta()
+		                                                 .hasLore();
 	}
 }
