@@ -1,7 +1,7 @@
 package cz.helheim.rpg.item.impl;
 
 import cz.helheim.rpg.item.DiabloItem;
-import cz.helheim.rpg.item.DungeonSpecificItemDrop;
+import cz.helheim.rpg.item.DungeonItemDrop;
 import cz.helheim.rpg.util.Range;
 
 import java.util.Collections;
@@ -13,12 +13,12 @@ import java.util.Map;
  * @version 1.0
  * @since 03.07.2022
  */
-public class DefaultDungeonSpecificItemDrop implements DungeonSpecificItemDrop {
+public class DefaultDungeonItemDrop implements DungeonItemDrop {
 	private final Range dropAmount;
 	private final double chance;
 	private final Map<DiabloItem.Tier, Double> rarityChances = new HashMap<>();
 
-	public DefaultDungeonSpecificItemDrop(final Range dropAmount, final double chance, final Map<DiabloItem.Tier, Double> rarityChances) {
+	public DefaultDungeonItemDrop(final Range dropAmount, final double chance, final Map<DiabloItem.Tier, Double> rarityChances) {
 		this.dropAmount = dropAmount;
 		this.chance = chance;
 		this.rarityChances.putAll(rarityChances);

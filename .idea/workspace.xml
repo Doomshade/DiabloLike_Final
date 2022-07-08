@@ -4,30 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8b18b52-3b6a-4ba4-8f37-374ba3914df9" name="Changes" comment="settings etc">
-      <change afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/Dungeon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/DungeonSpecificItemDrop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/Item.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/ItemDropManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/Sellable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/impl/DefaultDungeonSpecificItemDrop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/impl/DefaultItemDropManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/listener/MobListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/listener/MythicMobListener.java" afterDir="false" />
+    <list default="true" id="b8b18b52-3b6a-4ba4-8f37-374ba3914df9" name="Changes" comment="mani changes :((">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/DiabloLike.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/DiabloLike.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/impls/HelheimPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/impls/HelheimPlugin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/data/DiabloLikeSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/data/DiabloLikeSettings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/DiabloItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/DiabloItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/ItemManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/ItemLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/Dungeon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/Dungeon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/DungeonSpecificItemDrop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/DungeonItemDrop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/BaseItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/ItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/ItemRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/ItemUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/ItemUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/Scroll.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/Scroll.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/impl/DefaultDiabloItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/impl/DefaultDiabloItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/impl/DefaultItemManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/impl/DefaultItemLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/impl/DefaultScroll.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/impl/DefaultScroll.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/impl/DefaultDungeonSpecificItemDrop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/impl/DefaultDungeonItemDrop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/impl/DefaultItemLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/impl/DefaultItemLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/util/Range.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/util/Range.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,22 +66,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "K:/MC/MC192/plugins/MythicMobs-2.5.0.jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.41034484",
-    "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "preferences.sourceCode.Java"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;K:/MC/MC192/plugins/MythicMobs-2.5.0.jar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.41034484&quot;,
+    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveMembersDialog.RECENTS_KEY">
       <recent name="cz.helheim.rpg.api.io.PluginLogHandler" />
@@ -113,7 +102,9 @@
       <workItem from="1656353980010" duration="16845000" />
       <workItem from="1656419919412" duration="11716000" />
       <workItem from="1656502375405" duration="22000" />
-      <workItem from="1656794444674" duration="7046000" />
+      <workItem from="1656794444674" duration="7205000" />
+      <workItem from="1657217857550" duration="6765000" />
+      <workItem from="1657268451102" duration="595000" />
     </task>
     <task id="LOCAL-00001" summary="many changes">
       <created>1656073470893</created>
@@ -136,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656502389174</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="mani changes :((">
+      <created>1656803400383</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1656803400384</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,6 +155,7 @@
     <MESSAGE value="many changes" />
     <MESSAGE value="lotsa changes again" />
     <MESSAGE value="settings etc" />
-    <option name="LAST_COMMIT_MESSAGE" value="settings etc" />
+    <MESSAGE value="mani changes :((" />
+    <option name="LAST_COMMIT_MESSAGE" value="mani changes :((" />
   </component>
 </project>

@@ -13,9 +13,9 @@ import java.util.Optional;
 public interface ItemRepository {
 	Collection<DiabloItem> getAvailableDrops();
 
-	<T extends Item> Optional<T> getItem(String id) throws ClassCastException;
+	<T extends BaseItem> Optional<T> getItem(String id) throws ClassCastException;
 
-	<T extends Item> Optional<T> getItem(ItemStack item) throws ClassCastException;
+	<T extends BaseItem> Optional<T> getItem(ItemStack item) throws ClassCastException;
 
-	void addItem(Item diabloItem, String id);
+	void addItem(BaseItem diabloItem, String id);
 }

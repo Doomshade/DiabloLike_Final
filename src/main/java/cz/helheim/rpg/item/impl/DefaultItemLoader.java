@@ -41,7 +41,6 @@ public class DefaultItemLoader implements ItemLoader {
 		if (!opt.isPresent()) {
 			return;
 		}
-		final Item item;
 		final ItemStack rawItem = opt.get();
 		final List<String> lore = rawItem.getItemMeta()
 		                                 .getLore();
@@ -52,39 +51,58 @@ public class DefaultItemLoader implements ItemLoader {
 		// the level MUST be present in order for the item to be treated
 		// as a valid diablo item
 		final int itemLevel = findItemLevel(lore, settings);
+
+		// look for the required lore for the scroll
+		// put it in the else-if statement so the computation is only done
+		// if the else-if branch is reached
+		final Matcher requiredScrollLore;
+
+		final BaseItem baseItem;
 		if (itemLevel >= 0) {
-			item = getDiabloItem(id, section, rawItem, lore, settings, itemLevel);
-		}
-		// TODO
-		else if (true) {
-			item = new DefaultScroll(rawItem, new Range(1, 0));
+			baseItem = getDiabloItem(id, section, rawItem, lore, settings, itemLevel);
+		} else if ((requiredScrollLore = findRequiredScrollLore(lore, settings)) != null) {
+			final int lvlMin = Integer.parseInt(requiredScrollLore.group("lvl_min"));
+			final String lvlMaxGroup = requiredScrollLore.group("lvl_max");
+			baseItem = new DefaultScroll(rawItem, new Range(lvlMin, lvlMaxGroup == null ? lvlMin : Integer.parseInt(lvlMaxGroup)));
 		} else {
+			plugin.getLogger()
+			      .log(Level.INFO,
+			           "Failed to register item with ID " + id + ". Item is neither a DiabloItem or Scroll (does " +
+			           "not have level or required scroll lore)");
 			return;
 		}
 
-		if (item instanceof DiabloItem && section.isConfigurationSection("enchantments")) {
-			addEnchantments(section, rawItem, (DiabloItem) item);
+		if (baseItem instanceof DiabloItem && section.isConfigurationSection("enchantments")) {
+			addEnchantments(section, rawItem, (DiabloItem) baseItem);
 		}
-		repository.addItem(item, id);
+		repository.addItem(baseItem, id);
 	}
 
 	@Override
 	public void setTier(final DiabloItem.Tier tier, final DiabloItem diabloItem) {
 		final ItemStack itemStack = diabloItem.getItemStack();
-		final NBTItem nbtItem = new NBTItem(itemStack, true);
-		nbtItem.setInteger(NBT_KEY_TIER, tier.ordinal());
 
-		final ItemMeta meta = itemStack.getItemMeta();
-		String displayName = meta.getDisplayName();
-		DiabloLikeSettings settings = plugin.getSettings();
+		// get the tier colour
+		final DiabloLikeSettings settings = plugin.getSettings();
 		String tierColour = settings.getTierColour(tier);
+
+		// validate the tier colour in settings
 		if (tierColour.isEmpty()) {
 			plugin.getLogger()
 			      .log(Level.INFO, "Missing tier colour for " + tier.name());
 			return;
 		}
-
 		tierColour = ChatColor.translateAlternateColorCodes('&', tierColour);
+
+		// add a NBT tag for the tier
+		final NBTItem nbtItem = new NBTItem(itemStack, true);
+		nbtItem.setInteger(NBT_KEY_TIER, tier.ordinal());
+
+		// prefix it with the colour
+		final ItemMeta meta = itemStack.getItemMeta();
+		String displayName = meta.getDisplayName();
+
+		// if the name starts with a colour replace it, otherwise just add the prefix
 		if (displayName.startsWith(String.valueOf(ChatColor.COLOR_CHAR))) {
 			displayName = tierColour.concat(displayName.substring(2));
 		} else {
@@ -93,25 +111,34 @@ public class DefaultItemLoader implements ItemLoader {
 		meta.setDisplayName(displayName);
 	}
 
+	private Matcher findRequiredScrollLore(final List<String> lore, final DiabloLikeSettings settings) {
+		final Pattern pattern = Pattern.compile(settings.getIdentifierLorePattern("(?<lvl_min>\\d+)", "(?<lvl_max>\\d+)"));
+		for (final String s : lore) {
+			final Matcher m = pattern.matcher(s);
+			if (m.find()) {
+				return m;
+			}
+		}
+		return null;
+	}
+
 	private DiabloItem getDiabloItem(final String id, final ConfigurationSection section, final ItemStack rawItem, final List<String> lore,
 	                                 final DiabloLikeSettings settings, final int itemLevel) {
 		final double dropChance = section.getDouble("chance", settings.getDropChance());
 		final Map<DiabloItem.Tier, Double> customRarities = new HashMap<>();
-		for (DiabloItem.Tier tier : DiabloItem.Tier.values()) {
+		for (final DiabloItem.Tier tier : DiabloItem.Tier.values()) {
 			final String tierName = tier.name()
 			                            .toLowerCase();
 			customRarities.put(tier, section.getDouble(tierName, settings.getRarityChance(tier)));
 		}
 
 		// the item is a diablo item, parse the section and add some metadata
-		addNBT(id, rawItem);
-
+		addNBTString(id, rawItem);
 		return new DefaultDiabloItem(rawItem, itemLevel, lore, dropChance, customRarities);
 	}
 
 	private int findItemLevel(final List<String> lore, final DiabloLikeSettings settings) {
-		final Pattern lvlPattern = Pattern.compile(settings.getRequiredLevelFormat()
-		                                                   .replaceAll("<lvl>", "(?<lvl>\\d+)"));
+		final Pattern lvlPattern = Pattern.compile(settings.getRequiredLevelFormat("(?<lvl>\\d+)"));
 		int itemLevel = -1;
 		for (String s : lore) {
 			Matcher m = lvlPattern.matcher(s);
@@ -123,7 +150,7 @@ public class DefaultItemLoader implements ItemLoader {
 		return itemLevel;
 	}
 
-	private void addNBT(final String id, final ItemStack rawItem) {
+	private void addNBTString(final String id, final ItemStack rawItem) {
 		final NBTItem nbtItem = new NBTItem(rawItem, true);
 		nbtItem.setString(NBT_KEY_DIABLO_ITEM, id);
 	}

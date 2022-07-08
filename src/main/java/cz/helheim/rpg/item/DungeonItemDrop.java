@@ -9,7 +9,7 @@ import java.util.Map;
  * @version 1.0
  * @since 03.07.2022
  */
-public interface DungeonSpecificItemDrop {
+public interface DungeonItemDrop {
 	Range getDropAmount();
 
 	double getChance();

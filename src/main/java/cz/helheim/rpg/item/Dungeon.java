@@ -8,5 +8,5 @@ import java.util.Collection;
  * @since 03.07.2022
  */
 public interface Dungeon {
-	Collection<DungeonSpecificItemDrop> getDungeonDrops();
+	Collection<DungeonItemDrop> getDungeonDrops();
 }

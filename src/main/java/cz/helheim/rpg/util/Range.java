@@ -22,15 +22,15 @@ public class Range {
 		return upper;
 	}
 
-	public Range add(final int from, final int to) {
-		return new Range(this.lower + from, this.upper + to);
+	public Range add(final int lower, final int upper) {
+		return new Range(this.lower + lower, this.upper + upper);
 	}
 
-	public Range surrounded(final int num) {
-		return new Range(num - lower, num + lower);
+	public Range surround(final int num) {
+		return new Range(num - lower, num + upper);
 	}
 
-	public boolean isInRange(int num, boolean inclusiveLeft, boolean inclusiveRight) {
+	public boolean isInRange(final int num, final boolean inclusiveLeft, final boolean inclusiveRight) {
 		return (num > lower && num < upper) || (inclusiveLeft && num == lower) || (inclusiveRight && num == upper);
 	}
 }

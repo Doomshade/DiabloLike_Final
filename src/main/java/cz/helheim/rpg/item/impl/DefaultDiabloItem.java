@@ -87,11 +87,6 @@ public class DefaultDiabloItem implements DiabloItem {
 	}
 
 	@Override
-	public ItemStack getItemStack() {
-		return itemStack;
-	}
-
-	@Override
 	public List<String> getOriginalLore() {
 		return Collections.unmodifiableList(originalLore);
 	}
@@ -117,16 +112,6 @@ public class DefaultDiabloItem implements DiabloItem {
 	}
 
 	@Override
-	public int getPrice() {
-		return price;
-	}
-
-	@Override
-	public void setPrice(final int price) {
-		this.price = price;
-	}
-
-	@Override
 	public Tier getTier() {
 		return tier;
 	}
@@ -134,5 +119,20 @@ public class DefaultDiabloItem implements DiabloItem {
 	@Override
 	public void setTier(final Tier tier) {
 		this.tier = tier;
+	}
+
+	@Override
+	public ItemStack getItemStack() {
+		return itemStack;
+	}
+
+	@Override
+	public int getPrice() {
+		return price;
+	}
+
+	@Override
+	public void setPrice(final int price) {
+		this.price = price;
 	}
 }

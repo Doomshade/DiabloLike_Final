@@ -13,7 +13,7 @@ import java.util.Map;
  * @version 1.0
  * @since 27.06.2022
  */
-public interface DiabloItem extends Item {
+public interface DiabloItem extends BaseItem {
 	void addCustomEnchantment(CustomEnchantment enchantment, int level);
 
 	void addEnchantment(Enchantment enchantment, int level);

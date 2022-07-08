@@ -126,8 +126,8 @@ public class DiabloLikeSettings extends Settings {
 		return requirementSeparator;
 	}
 
-	public String getRequiredLevelFormat() {
-		return requiredLevelFormat;
+	public <T> String getRequiredLevelFormat(T level) {
+		return requiredLevelFormat.replace("<lvl>", level.toString());
 	}
 
 	public String getUnidentifiedItemLore() {
@@ -223,8 +223,9 @@ public class DiabloLikeSettings extends Settings {
 		return identifierNamePattern;
 	}
 
-	public String getIdentifierLorePattern() {
-		return identifierLorePattern;
+	public <T> String getIdentifierLorePattern(T levelMin, T levelMax) {
+		return identifierLorePattern.replace("<lvl_max>", levelMax.toString())
+		                            .replace("<lvl_min>", levelMin.toString());
 	}
 	//</editor-fold>
 
