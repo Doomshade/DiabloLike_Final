@@ -10,5 +10,8 @@ import java.util.Collection;
  * @since 28.06.2022
  */
 public interface DiabloCollection {
+	/**
+	 * @return the collection of {@link DiabloItem}s
+	 */
 	Collection<DiabloItem> getDiabloItems();
 }

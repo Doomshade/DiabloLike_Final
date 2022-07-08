@@ -1,6 +1,10 @@
 package cz.helheim.rpg.item;
 
+import cz.helheim.rpg.api.impls.HelheimPlugin;
+import cz.helheim.rpg.item.impl.DefaultItemLoader;
 import org.bukkit.configuration.ConfigurationSection;
+
+import java.util.Optional;
 
 /**
  * @author Jakub Šmrha
@@ -9,7 +13,11 @@ import org.bukkit.configuration.ConfigurationSection;
  */
 public interface ItemLoader {
 
-	void registerItem(String id, ConfigurationSection section, ItemRepository repository);
+	static ItemLoader createInstance(HelheimPlugin plugin) {
+		return new DefaultItemLoader(plugin);
+	}
+
+	Optional<? extends BaseItem> getBaseItem(String id, ConfigurationSection section);
 
 	void setTier(DiabloItem.Tier tier, DiabloItem diabloItem);
 }

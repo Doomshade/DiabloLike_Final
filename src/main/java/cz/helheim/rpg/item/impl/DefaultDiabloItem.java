@@ -8,6 +8,9 @@ import org.bukkit.inventory.ItemStack;
 
 import java.util.*;
 
+import static org.apache.commons.lang.Validate.noNullElements;
+import static org.apache.commons.lang.Validate.notNull;
+
 /**
  * @author Doomshade
  * @version 1.0
@@ -25,13 +28,18 @@ public class DefaultDiabloItem implements DiabloItem {
 
 	private final Map<Tier, Double> rarityChances = new HashMap<>();
 
-	private final double dropChance;
+	private double dropChance;
 	private int price = 0;
 
 	private Tier tier = Tier.COMMON;
 
 	public DefaultDiabloItem(final ItemStack itemStack, final int level, final List<String> originalLore, final double dropChance,
 	                         final Map<Tier, Double> rarityChances) {
+		notNull(itemStack);
+		notNull(originalLore);
+		notNull(rarityChances);
+
+		noNullElements(originalLore);
 		if (rarityChances.size() != Tier.values().length) {
 			throw new IllegalArgumentException(String.format("Rarity chances size must cover all tiers (covering %d / %d rarities)",
 			                                                 rarityChances.size(),
@@ -39,9 +47,6 @@ public class DefaultDiabloItem implements DiabloItem {
 		}
 		if (dropChance < 0 || dropChance > 100) {
 			throw new IllegalArgumentException("Invalid drop chance: " + dropChance);
-		}
-		if (itemStack == null) {
-			throw new IllegalArgumentException("Item cannot be null");
 		}
 		if (!itemStack.hasItemMeta() || itemStack.getItemMeta()
 		                                         .hasEnchants()) {
@@ -82,6 +87,12 @@ public class DefaultDiabloItem implements DiabloItem {
 	}
 
 	@Override
+	public void setRarityChances(final Map<Tier, Double> rarityChances) {
+		this.rarityChances.clear();
+		this.rarityChances.putAll(rarityChances);
+	}
+
+	@Override
 	public Collection<Pair<Enchantment, Integer>> getEnchantments() {
 		return Collections.unmodifiableCollection(enchantments);
 	}
@@ -97,13 +108,18 @@ public class DefaultDiabloItem implements DiabloItem {
 	}
 
 	@Override
+	public void setDropChance(final double dropChance) {
+		this.dropChance = dropChance;
+	}
+
+	@Override
 	public List<String> getAttributes() {
-		return null;
+		throw new UnsupportedOperationException();
 	}
 
 	@Override
 	public List<String> getRequirements() {
-		return null;
+		throw new UnsupportedOperationException();
 	}
 
 	@Override

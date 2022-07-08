@@ -7,12 +7,14 @@ import java.util.Map;
 /**
  * @author Jakub Šmrha
  * @version 1.0
- * @since 03.07.2022
+ * @since 09.07.2022
  */
-public interface DungeonItemDrop {
-	Range getDropAmount();
+public interface Drop {
+	BaseItem getDrop();
 
-	double getChance();
+	Range getAmount();
+
+	double getDropChance();
 
 	Map<DiabloItem.Tier, Double> getRarityChances();
 }

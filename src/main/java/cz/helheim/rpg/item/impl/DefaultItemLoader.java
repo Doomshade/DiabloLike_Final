@@ -5,10 +5,11 @@ import com.rit.sucy.EnchantmentAPI;
 import cz.helheim.rpg.api.impls.HelheimPlugin;
 import cz.helheim.rpg.data.DiabloLikeSettings;
 import cz.helheim.rpg.item.*;
+import cz.helheim.rpg.util.ItemUtils;
 import cz.helheim.rpg.util.Range;
-import de.tr7zw.nbtapi.NBTItem;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.ConfigurationSection;
+import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -21,14 +22,14 @@ import java.util.logging.Level;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static java.util.Optional.empty;
+
 /**
  * @author Doomshade
  * @version 1.0
  * @since 27.06.2022
  */
 public class DefaultItemLoader implements ItemLoader {
-	private static final String NBT_KEY_DIABLO_ITEM = "diabloitem";
-	private static final String NBT_KEY_TIER = "tier";
 	private final HelheimPlugin plugin;
 
 	public DefaultItemLoader(final HelheimPlugin plugin) {
@@ -36,12 +37,15 @@ public class DefaultItemLoader implements ItemLoader {
 	}
 
 	@Override
-	public void registerItem(final String id, final ConfigurationSection section, final ItemRepository repository) {
-		final Optional<ItemStack> opt = ItemUtils.readItemStack(section);
-		if (!opt.isPresent()) {
-			return;
+	public Optional<? extends BaseItem> getBaseItem(final String id, final ConfigurationSection section) {
+		final ItemStack rawItem;
+		try {
+			rawItem = ItemUtils.readItemStack(section);
+		} catch (InvalidConfigurationException e) {
+			plugin.getLogger()
+			      .log(Level.WARNING, String.format("Failed to read an item with key '%s'", id), e);
+			return empty();
 		}
-		final ItemStack rawItem = opt.get();
 		final List<String> lore = rawItem.getItemMeta()
 		                                 .getLore();
 		final DiabloLikeSettings settings = plugin.getSettings();
@@ -69,13 +73,14 @@ public class DefaultItemLoader implements ItemLoader {
 			      .log(Level.INFO,
 			           "Failed to register item with ID " + id + ". Item is neither a DiabloItem or Scroll (does " +
 			           "not have level or required scroll lore)");
-			return;
+			return empty();
 		}
 
+		// add enchantments to a diabloitem
 		if (baseItem instanceof DiabloItem && section.isConfigurationSection("enchantments")) {
 			addEnchantments(section, rawItem, (DiabloItem) baseItem);
 		}
-		repository.addItem(baseItem, id);
+		return Optional.of(baseItem);
 	}
 
 	@Override
@@ -95,8 +100,8 @@ public class DefaultItemLoader implements ItemLoader {
 		tierColour = ChatColor.translateAlternateColorCodes('&', tierColour);
 
 		// add a NBT tag for the tier
-		final NBTItem nbtItem = new NBTItem(itemStack, true);
-		nbtItem.setInteger(NBT_KEY_TIER, tier.ordinal());
+		NBTTagManager.getInstance()
+		             .addNBTTag(diabloItem, NBTKey.TIER, (item, key) -> item.setInteger(key, tier.ordinal()));
 
 		// prefix it with the colour
 		final ItemMeta meta = itemStack.getItemMeta();
@@ -127,14 +132,14 @@ public class DefaultItemLoader implements ItemLoader {
 		final double dropChance = section.getDouble("chance", settings.getDropChance());
 		final Map<DiabloItem.Tier, Double> customRarities = new HashMap<>();
 		for (final DiabloItem.Tier tier : DiabloItem.Tier.values()) {
-			final String tierName = tier.name()
-			                            .toLowerCase();
-			customRarities.put(tier, section.getDouble(tierName, settings.getRarityChance(tier)));
+			customRarities.put(tier, section.getDouble(tier.toString(), settings.getRarityChance(tier)));
 		}
 
 		// the item is a diablo item, parse the section and add some metadata
-		addNBTString(id, rawItem);
-		return new DefaultDiabloItem(rawItem, itemLevel, lore, dropChance, customRarities);
+		final DiabloItem diabloItem = new DefaultDiabloItem(rawItem, itemLevel, lore, dropChance, customRarities);
+		NBTTagManager.getInstance()
+		             .addNBTTag(diabloItem, NBTKey.ID, (item, key) -> item.setString(key, id));
+		return diabloItem;
 	}
 
 	private int findItemLevel(final List<String> lore, final DiabloLikeSettings settings) {
@@ -148,11 +153,6 @@ public class DefaultItemLoader implements ItemLoader {
 			}
 		}
 		return itemLevel;
-	}
-
-	private void addNBTString(final String id, final ItemStack rawItem) {
-		final NBTItem nbtItem = new NBTItem(rawItem, true);
-		nbtItem.setString(NBT_KEY_DIABLO_ITEM, id);
 	}
 
 	private void addEnchantments(final ConfigurationSection section, final ItemStack rawItem, final DiabloItem diabloItem) {

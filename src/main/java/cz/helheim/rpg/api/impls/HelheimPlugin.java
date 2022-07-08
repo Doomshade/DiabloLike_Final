@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public abstract class HelheimPlugin extends JavaPlugin implements IHelheimPlugin {
+public abstract class HelheimPlugin extends JavaPlugin implements IHelheimPlugin, Listener {
 
 	private IOManager io;
 	private ICommandHandler commandHandler;
@@ -40,10 +40,10 @@ public abstract class HelheimPlugin extends JavaPlugin implements IHelheimPlugin
 		this.commandHandler = new DiabloLikeCommandHandler(this);
 		this.commandHandler.register();
 		this.commandHandler.registerSubCommands();
-
+		registerListener(this);
 	}
 
-	private void load() {
+	protected void load() {
 		loadIO();
 		loadLogger();
 		loadConfig();
@@ -107,6 +107,7 @@ public abstract class HelheimPlugin extends JavaPlugin implements IHelheimPlugin
 	}
 
 	@Override
+	@SuppressWarnings("unchecked")
 	public <T extends Settings> T getSettings() {
 		return (T) settings;
 	}
@@ -121,7 +122,7 @@ public abstract class HelheimPlugin extends JavaPlugin implements IHelheimPlugin
 		save();
 		load();
 		Bukkit.getPluginManager()
-		      .callEvent(new ReloadEvent());
+		      .callEvent(new ReloadEvent(this));
 	}
 
 

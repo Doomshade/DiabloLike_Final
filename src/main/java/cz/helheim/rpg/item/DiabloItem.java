@@ -22,11 +22,15 @@ public interface DiabloItem extends BaseItem {
 
 	Map<Tier, Double> getRarityChances();
 
+	void setRarityChances(Map<Tier, Double> rarityChances);
+
 	Collection<Pair<Enchantment, Integer>> getEnchantments();
 
 	List<String> getOriginalLore();
 
 	double getDropChance();
+
+	void setDropChance(double dropChance);
 
 	List<String> getAttributes();
 
@@ -43,7 +47,11 @@ public interface DiabloItem extends BaseItem {
 		UNCOMMON,
 		RARE,
 		LEGENDARY,
-		MYTHIC
+		MYTHIC;
+
+		public String toString() {
+			return name().toLowerCase();
+		}
 	}
 
 }
