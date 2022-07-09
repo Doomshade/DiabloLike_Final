@@ -4,30 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8b18b52-3b6a-4ba4-8f37-374ba3914df9" name="Changes" comment="refactor/rename">
-      <change afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/Drop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/DungeonDrop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/NBTKey.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/NBTTagManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/impl/DefaultDrop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/impl/DefaultDungeonDrop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="b8b18b52-3b6a-4ba4-8f37-374ba3914df9" name="Changes" comment="commit before disaster">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/DiabloLike.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/DiabloLike.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/event/ReloadEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/event/ReloadEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/impls/HelheimPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/impls/HelheimPlugin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/collection/DiabloCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/collection/DiabloCollection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/collection/impl/DiabloCollectionImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/collection/impl/DefaultDiabloCollection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/data/DiabloLikeSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/data/DiabloLikeSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/BaseItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/BaseItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/DiabloItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/DiabloItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/Dungeon.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/DungeonItemDrop.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/Drop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/Drop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/DungeonDrop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/DungeonDrop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/ItemDropManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/ItemDropManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/ItemLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/ItemLoader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/ItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/ItemRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/ItemUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/util/ItemUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/NBTTagManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/NBTTagManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/Scroll.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/Scroll.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/impl/DefaultDiabloItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/impl/DefaultDiabloItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/impl/DefaultDungeonItemDrop.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/impl/DefaultDrop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/impl/DefaultDrop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/impl/DefaultDungeonDrop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/impl/DefaultDungeonDrop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/impl/DefaultItemDropManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/impl/DefaultItemDropManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/impl/DefaultItemLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/impl/DefaultItemLoader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/impl/DefaultItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/impl/DefaultItemRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/impl/DefaultScroll.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/impl/DefaultScroll.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/util/Range.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/util/Range.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -118,7 +114,7 @@
       <workItem from="1656794444674" duration="7205000" />
       <workItem from="1657217857550" duration="6765000" />
       <workItem from="1657268451102" duration="7450000" />
-      <workItem from="1657308669617" duration="10177000" />
+      <workItem from="1657308669617" duration="15781000" />
     </task>
     <task id="LOCAL-00001" summary="many changes">
       <created>1656073470893</created>
@@ -155,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657274530742</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="commit before disaster">
+      <created>1657322661063</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1657322661064</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,11 +176,14 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="many changes" />
     <MESSAGE value="lotsa changes again" />
     <MESSAGE value="settings etc" />
     <MESSAGE value="mani changes :((" />
     <MESSAGE value="refactor/rename" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor/rename" />
+    <MESSAGE value="commit before disaster" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit before disaster" />
   </component>
 </project>

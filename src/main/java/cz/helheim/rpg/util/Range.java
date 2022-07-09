@@ -3,6 +3,7 @@ package cz.helheim.rpg.util;
 import org.apache.commons.lang3.Validate;
 
 import java.util.Iterator;
+import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -15,6 +16,7 @@ public class Range implements Iterable<Integer> {
 	private static final Pattern rangePattern = Pattern.compile("(?<lower>\\d+)(-(?<upper>\\d+))?");
 	private final int lower;
 	private final int upper;
+	private final Random random = new Random();
 
 	public Range(final int lower, final int upper) {
 		this.lower = lower;
@@ -37,6 +39,10 @@ public class Range implements Iterable<Integer> {
 
 	public int getUpper() {
 		return upper;
+	}
+
+	public int randomValue() {
+		return random.nextInt(upper - lower + 1) + lower;
 	}
 
 	public Range add(final int lower, final int upper) {

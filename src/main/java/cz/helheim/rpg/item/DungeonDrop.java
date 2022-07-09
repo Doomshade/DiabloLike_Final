@@ -2,11 +2,9 @@ package cz.helheim.rpg.item;
 
 import cz.helheim.rpg.DiabloLike;
 import cz.helheim.rpg.item.impl.DefaultDungeonDrop;
-import cz.helheim.rpg.util.Pair;
-import cz.helheim.rpg.util.Range;
 import org.bukkit.configuration.ConfigurationSection;
 
-import java.util.Collection;
+import java.util.List;
 
 /**
  * @author Doomshade
@@ -18,5 +16,5 @@ public interface DungeonDrop {
 		return new DefaultDungeonDrop(plugin, repositoriesSection);
 	}
 
-	Collection<Pair<DiabloItem, Range>> getAvailableDropsForMob();
+	List<Drop> getAvailableDrops();
 }

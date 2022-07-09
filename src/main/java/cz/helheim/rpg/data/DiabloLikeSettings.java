@@ -207,6 +207,11 @@ public class DiabloLikeSettings extends Settings {
 		}
 	}
 
+
+	public Map<DiabloItem.Tier, Double> getRarityChances() {
+		return rarityChances;
+	}
+
 	public double getRarityChance(DiabloItem.Tier tier) {
 		return rarityChances.get(tier);
 	}

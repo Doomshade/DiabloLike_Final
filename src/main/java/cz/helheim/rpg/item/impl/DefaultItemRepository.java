@@ -1,9 +1,8 @@
 package cz.helheim.rpg.item.impl;
 
-import cz.helheim.rpg.api.impls.HelheimPlugin;
-import cz.helheim.rpg.data.DiabloLikeSettings;
-import cz.helheim.rpg.item.*;
-import cz.helheim.rpg.util.Range;
+import cz.helheim.rpg.item.BaseItem;
+import cz.helheim.rpg.item.ItemLoader;
+import cz.helheim.rpg.item.ItemRepository;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.inventory.ItemStack;
@@ -21,12 +20,12 @@ import static java.util.Objects.requireNonNull;
 public class DefaultItemRepository implements ItemRepository {
 	private final Map<String, BaseItem> items = new LinkedHashMap<>();
 	private final File repository;
-	private final Map<Integer, Collection<DiabloItem>> drops = new HashMap<>();
-	private final HelheimPlugin plugin;
+
+	private final FileConfiguration root;
+
 	private final String id;
 
-	public DefaultItemRepository(final HelheimPlugin plugin, final File repository, final ItemLoader itemLoader) {
-		requireNonNull(plugin);
+	public DefaultItemRepository(final File repository, final ItemLoader itemLoader) {
 		requireNonNull(repository);
 		if (!repository.exists()) {
 			throw new IllegalArgumentException(String.format("Repository '%s' does not exist.", repository.getAbsolutePath()));
@@ -34,10 +33,10 @@ public class DefaultItemRepository implements ItemRepository {
 		if (!repository.isFile()) {
 			throw new IllegalArgumentException(String.format("Repository '%s' is not a file.", repository.getAbsolutePath()));
 		}
-		this.plugin = plugin;
 		this.repository = repository;
 		final String fileName = repository.getName();
 		this.id = fileName.substring(0, fileName.lastIndexOf('.'));
+		this.root = YamlConfiguration.loadConfiguration(repository);
 		initializeRepository(itemLoader);
 	}
 
@@ -45,7 +44,7 @@ public class DefaultItemRepository implements ItemRepository {
 		final FileConfiguration loader = YamlConfiguration.loadConfiguration(repository);
 		for (final String key : loader.getKeys(false)) {
 			// load the base item
-			itemLoader.getBaseItem(key, loader.getConfigurationSection(key))
+			itemLoader.getBaseItem(key)
 			          .ifPresent(baseItem -> addItem(baseItem, key));
 		}
 	}
@@ -53,6 +52,11 @@ public class DefaultItemRepository implements ItemRepository {
 	@Override
 	public File getRepository() {
 		return repository;
+	}
+
+	@Override
+	public FileConfiguration getRoot() {
+		return root;
 	}
 
 	@Override
@@ -77,28 +81,8 @@ public class DefaultItemRepository implements ItemRepository {
 	}
 
 	@Override
-	public Drop getDropForLevel(final int level) {
-		final Collection<DiabloItem> drops = new LinkedHashSet<>();
-		final DiabloLikeSettings settings = plugin.getSettings();
-		final Range levelRange = settings.getDropRange()
-		                                 .surround(level);
-		for (int num : levelRange) {
-			final Collection<? extends DiabloItem> diabloItems = this.drops.get(num);
-			if (diabloItems != null) {
-				drops.addAll(diabloItems);
-			}
-		}
-		return Drop.newDrop(Drop.toRangedDrop(drops));
-	}
-
-	@Override
 	public void addItem(final BaseItem baseItem, final String id) {
 		items.put(id, baseItem);
-		if (baseItem instanceof DiabloItem) {
-			final DiabloItem diabloItem = (DiabloItem) baseItem;
-			drops.computeIfAbsent(diabloItem.getLevel(), k -> new HashSet<>())
-			     .add(diabloItem);
-		}
 	}
 
 	@Override

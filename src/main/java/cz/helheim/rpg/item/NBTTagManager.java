@@ -29,30 +29,51 @@ public class NBTTagManager {
 	}
 
 	public String getString(BaseItem item, NBTKey key) {
-		return getNbtItem(item).getString(key.getKey());
+		final NBTItem nbtItem = getNbtItem(item);
+		if (!nbtItem.hasKey(key.getKey())) {
+			return "";
+		}
+		return nbtItem.getString(key.getKey());
 	}
 
 
 	public int getInteger(BaseItem item, NBTKey key) {
-		return getNbtItem(item).getInteger(key.getKey());
+		final NBTItem nbtItem = getNbtItem(item);
+		if (!nbtItem.hasKey(key.getKey())) {
+			return Integer.MAX_VALUE;
+		}
+		return nbtItem.getInteger(key.getKey());
 	}
 
 
 	public boolean getBoolean(BaseItem item, NBTKey key) {
-		return getNbtItem(item).getBoolean(key.getKey());
+		final NBTItem nbtItem = getNbtItem(item);
+		return nbtItem.hasKey(key.getKey()) && nbtItem.getBoolean(key.getKey());
 	}
 
 
 	public double getDouble(BaseItem item, NBTKey key) {
-		return getNbtItem(item).getDouble(key.getKey());
+		final NBTItem nbtItem = getNbtItem(item);
+		if (!nbtItem.hasKey(key.getKey())) {
+			return Double.MAX_VALUE;
+		}
+		return nbtItem.getDouble(key.getKey());
 	}
 
 
 	public NBTList<String> getStringList(BaseItem item, NBTKey key) {
-		return getNbtItem(item).getStringList(key.getKey());
+		final NBTItem nbtItem = getNbtItem(item);
+		if (!nbtItem.hasKey(key.getKey())) {
+			return null;
+		}
+		return nbtItem.getStringList(key.getKey());
 	}
 
 	public NBTList<Integer> getIntegerList(BaseItem item, NBTKey key) {
-		return getNbtItem(item).getIntegerList(key.getKey());
+		final NBTItem nbtItem = getNbtItem(item);
+		if (!nbtItem.hasKey(key.getKey())) {
+			return null;
+		}
+		return nbtItem.getIntegerList(key.getKey());
 	}
 }

@@ -15,6 +15,9 @@ import java.util.ListIterator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static org.apache.commons.lang.Validate.notEmpty;
+import static org.apache.commons.lang.Validate.notNull;
+
 /**
  * @author Doomshade
  * @version 1.0
@@ -25,9 +28,16 @@ public class DefaultScroll implements Scroll {
 
 	private final ItemStack item;
 	private final Range range;
+	private final String id;
 	private int price = 0;
 
-	public DefaultScroll(final ItemStack item, final Range range) {
+	public DefaultScroll(final String id, final ItemStack item, final Range range) {
+		notNull(id);
+		notNull(item);
+		notNull(range);
+		notEmpty(id);
+
+		this.id = id;
 		this.range = range;
 		this.item = item;
 	}
@@ -102,6 +112,11 @@ public class DefaultScroll implements Scroll {
 	@Override
 	public ItemStack getItemStack() {
 		return item;
+	}
+
+	@Override
+	public String getId() {
+		return id;
 	}
 
 	@Override

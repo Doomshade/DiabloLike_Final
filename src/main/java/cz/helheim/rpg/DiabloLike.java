@@ -5,11 +5,8 @@ import cz.helheim.rpg.api.impls.HelheimPlugin;
 import cz.helheim.rpg.data.DiabloLikeSettings;
 import cz.helheim.rpg.enchantment.Rychlostrelba;
 import cz.helheim.rpg.item.*;
-import cz.helheim.rpg.item.impl.DefaultDrop;
 import cz.helheim.rpg.listener.MobListener;
 import cz.helheim.rpg.listener.MythicMobListener;
-import cz.helheim.rpg.util.Pair;
-import cz.helheim.rpg.util.Range;
 import net.elseland.xikage.MythicMobs.API.IMobsAPI;
 import net.elseland.xikage.MythicMobs.MythicMobs;
 import org.bukkit.Bukkit;
@@ -24,16 +21,14 @@ import java.io.UncheckedIOException;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 
 public class DiabloLike extends HelheimPlugin {
 
-	private static final Pattern levelPattern = Pattern.compile("\\[Lv\\. (?<lvl>\\d+)]");
 	private static DiabloLike instance = null;
+	private final Pattern levelPattern = Pattern.compile("\\[Lv\\. (?<lvl>\\d+)]");
 	private final Map<String, ItemRepository> repositories = new LinkedHashMap<>();
 	private final Map<String, DungeonDrop> dungeonSpecificDrops = new HashMap<>();
-	private ItemLoader itemLoader;
-
+	private final Map<String, ItemDropManager> dropManagers = new HashMap<>();
 	private boolean usesMythicMob = false;
 
 	public static DiabloLike getInstance() {
@@ -59,7 +54,6 @@ public class DiabloLike extends HelheimPlugin {
 		} else {
 			registerListener(new MobListener());
 		}
-		this.itemLoader = ItemLoader.createInstance(this);
 	}
 
 	@Override
@@ -107,7 +101,8 @@ public class DiabloLike extends HelheimPlugin {
 				throw new UncheckedIOException(e);
 			}
 		}
-		final ItemRepository repo = ItemRepository.newItemRepository(this, itemsFile, itemLoader);
+		final ItemRepository repo =
+				ItemRepository.newItemRepository(itemsFile, ItemLoader.newInstance(this, YamlConfiguration.loadConfiguration(itemsFile)));
 		repositories.put(repo.getId(), repo);
 	}
 
@@ -119,35 +114,35 @@ public class DiabloLike extends HelheimPlugin {
 		final File[] collections = collectionsFolder.listFiles((x, y) -> x.exists() && x.isFile() && y.endsWith(".yml"));
 		if (collections != null) {
 			for (final File collection : collections) {
-				final ItemRepository repo = ItemRepository.newItemRepository(this, collection, itemLoader);
+				final ItemRepository repo = ItemRepository.newItemRepository(collection,
+				                                                             ItemLoader.newInstance(this,
+				                                                                                    YamlConfiguration.loadConfiguration(
+						                                                                                    collection)));
 				repositories.put(repo.getId(), repo);
 			}
 		}
 	}
 
-	public Drop getAvailableDropsForLevel(int level) {
-		final Collection<DiabloItem> drops = new LinkedHashSet<>();
-		for (final ItemRepository repository : repositories.values()) {
-			drops.addAll(repository.getDropForLevel(level));
-		}
-		return Drop.newDrop(drops.stream()
-		                         .map(x -> new Pair<>(x, new Range(1, 1)))
-		                         .collect(Collectors.toSet()));
+	public List<Drop> getAvailableDropsForLevel(int level) {
+		final ItemDropManager manager = dropManagers.computeIfAbsent("items", x -> ItemDropManager.newInstance(this, repositories.get(x)));
+		return manager.getDropForLevel(level);
 	}
 
-	public Drop getAvailableDrop(Entity entity) {
+	public List<Drop> getAvailableDrop(Entity entity) {
+		// the entity must be a mythic mob if possible
 		if (usesMythicMob) {
 			final IMobsAPI api = MythicMobs.inst()
 			                               .getAPI()
 			                               .getMobAPI();
 			if (!api.isMythicMob(entity)) {
-				return Drop.newDrop();
+				return Collections.emptyList();
 			}
 		}
 
+		// the mob doesn't have a custom name, abort
 		String mobName = entity.getCustomName();
 		if (mobName == null) {
-			return new DefaultDrop();
+			return Collections.emptyList();
 		}
 		mobName = ChatColor.stripColor(mobName);
 		final Matcher m = levelPattern.matcher(mobName);
@@ -164,10 +159,10 @@ public class DiabloLike extends HelheimPlugin {
 			                               .getInternalName();
 			final DungeonDrop dungeonDrop = this.dungeonSpecificDrops.get(mobId);
 			if (dungeonDrop != null) {
-				dungeonDrop.getAvailableDropsForMob();
+				return dungeonDrop.getAvailableDrops();
 			}
 		}
-		return Drop.newDrop();
+		return Collections.emptyList();
 	}
 
 	public ItemRepository getRepository(String id) {

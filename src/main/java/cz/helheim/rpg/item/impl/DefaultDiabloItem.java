@@ -6,10 +6,12 @@ import cz.helheim.rpg.util.Pair;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
-import static org.apache.commons.lang.Validate.noNullElements;
-import static org.apache.commons.lang.Validate.notNull;
+import static org.apache.commons.lang.Validate.*;
 
 /**
  * @author Doomshade
@@ -25,29 +27,17 @@ public class DefaultDiabloItem implements DiabloItem {
 	private final int level;
 
 	private final List<String> originalLore = new ArrayList<>();
-
-	private final Map<Tier, Double> rarityChances = new HashMap<>();
-
-	private double dropChance;
+	private final String id;
 	private int price = 0;
-
 	private Tier tier = Tier.COMMON;
 
-	public DefaultDiabloItem(final ItemStack itemStack, final int level, final List<String> originalLore, final double dropChance,
-	                         final Map<Tier, Double> rarityChances) {
+	public DefaultDiabloItem(final String id, final ItemStack itemStack, final int level, final List<String> originalLore) {
 		notNull(itemStack);
 		notNull(originalLore);
-		notNull(rarityChances);
+		notNull(id);
+		notEmpty(id);
 
 		noNullElements(originalLore);
-		if (rarityChances.size() != Tier.values().length) {
-			throw new IllegalArgumentException(String.format("Rarity chances size must cover all tiers (covering %d / %d rarities)",
-			                                                 rarityChances.size(),
-			                                                 Tier.values().length));
-		}
-		if (dropChance < 0 || dropChance > 100) {
-			throw new IllegalArgumentException("Invalid drop chance: " + dropChance);
-		}
 		if (!itemStack.hasItemMeta() || itemStack.getItemMeta()
 		                                         .hasEnchants()) {
 			throw new IllegalArgumentException(String.format("The item '%s' must have a meta and no enchants!", itemStack));
@@ -59,9 +49,8 @@ public class DefaultDiabloItem implements DiabloItem {
 			                                                          .getDisplayName()));
 		}
 
-		this.dropChance = dropChance;
+		this.id = id;
 		this.itemStack = itemStack;
-		this.rarityChances.putAll(rarityChances);
 		this.level = level;
 		this.originalLore.addAll(originalLore);
 	}
@@ -82,17 +71,6 @@ public class DefaultDiabloItem implements DiabloItem {
 	}
 
 	@Override
-	public Map<Tier, Double> getRarityChances() {
-		return Collections.unmodifiableMap(rarityChances);
-	}
-
-	@Override
-	public void setRarityChances(final Map<Tier, Double> rarityChances) {
-		this.rarityChances.clear();
-		this.rarityChances.putAll(rarityChances);
-	}
-
-	@Override
 	public Collection<Pair<Enchantment, Integer>> getEnchantments() {
 		return Collections.unmodifiableCollection(enchantments);
 	}
@@ -100,16 +78,6 @@ public class DefaultDiabloItem implements DiabloItem {
 	@Override
 	public List<String> getOriginalLore() {
 		return Collections.unmodifiableList(originalLore);
-	}
-
-	@Override
-	public double getDropChance() {
-		return dropChance;
-	}
-
-	@Override
-	public void setDropChance(final double dropChance) {
-		this.dropChance = dropChance;
 	}
 
 	@Override
@@ -128,18 +96,13 @@ public class DefaultDiabloItem implements DiabloItem {
 	}
 
 	@Override
-	public Tier getTier() {
-		return tier;
-	}
-
-	@Override
-	public void setTier(final Tier tier) {
-		this.tier = tier;
-	}
-
-	@Override
 	public ItemStack getItemStack() {
 		return itemStack;
+	}
+
+	@Override
+	public String getId() {
+		return id;
 	}
 
 	@Override

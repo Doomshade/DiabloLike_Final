@@ -1,7 +1,7 @@
 package cz.helheim.rpg.item;
 
-import cz.helheim.rpg.api.impls.HelheimPlugin;
 import cz.helheim.rpg.item.impl.DefaultItemRepository;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.inventory.ItemStack;
 
 import java.io.File;
@@ -15,14 +15,16 @@ import java.util.Optional;
  */
 public interface ItemRepository extends Iterable<BaseItem> {
 
-	static ItemRepository newItemRepository(final HelheimPlugin plugin, final File repository, final ItemLoader itemLoader) {
-		return new DefaultItemRepository(plugin, repository, itemLoader);
+	static ItemRepository newItemRepository(final File repository, final ItemLoader itemLoader) {
+		return new DefaultItemRepository(repository, itemLoader);
 	}
 
 	/**
 	 * @return the file containing the items
 	 */
 	File getRepository();
+
+	FileConfiguration getRoot();
 
 	String getId();
 
@@ -50,8 +52,6 @@ public interface ItemRepository extends Iterable<BaseItem> {
 	 * @throws ClassCastException
 	 */
 	<T extends BaseItem> Optional<T> getItem(ItemStack item) throws ClassCastException;
-
-	Drop getDropForLevel(int level);
 
 	void addItem(BaseItem diabloItem, String id);
 }

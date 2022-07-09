@@ -10,4 +10,6 @@ import org.bukkit.inventory.ItemStack;
 public interface BaseItem extends Sellable {
 	ItemStack getItemStack();
 
+	String getId();
+
 }

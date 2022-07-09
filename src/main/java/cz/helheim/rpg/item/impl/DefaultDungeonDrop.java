@@ -1,19 +1,11 @@
 package cz.helheim.rpg.item.impl;
 
 import cz.helheim.rpg.DiabloLike;
-import cz.helheim.rpg.data.DiabloLikeSettings;
-import cz.helheim.rpg.item.BaseItem;
-import cz.helheim.rpg.item.DiabloItem;
-import cz.helheim.rpg.item.DungeonDrop;
-import cz.helheim.rpg.item.ItemRepository;
-import cz.helheim.rpg.util.Pair;
-import cz.helheim.rpg.util.Range;
+import cz.helheim.rpg.item.*;
 import org.bukkit.configuration.ConfigurationSection;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.LinkedHashSet;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 
 /**
@@ -23,7 +15,7 @@ import java.util.logging.Level;
  */
 public class DefaultDungeonDrop implements DungeonDrop {
 
-	private final Collection<Pair<DiabloItem, Range>> drops = new LinkedHashSet<>();
+	private final List<Drop> drops = new ArrayList<>();
 
 	public DefaultDungeonDrop(final DiabloLike plugin, ConfigurationSection repositoriesSection) {
 		for (final String repoId : repositoriesSection.getKeys(false)) {
@@ -38,44 +30,18 @@ public class DefaultDungeonDrop implements DungeonDrop {
 	}
 
 	private void addDrop(DiabloLike plugin, ItemRepository repo, ConfigurationSection dungeonSection) {
-		if (!isSet(plugin, repo, dungeonSection, "amount")) {
-			return;
-		}
-		if (!isSet(plugin, repo, dungeonSection, "chance")) {
-			return;
-		}
-
-		final Range amount = new Range(dungeonSection.getString("amount"));
-		final double chance = dungeonSection.getDouble("chance");
-		final Map<DiabloItem.Tier, Double> rarityChances = new HashMap<>();
-		final DiabloLikeSettings settings = plugin.getSettings();
-		for (final DiabloItem.Tier tier : DiabloItem.Tier.values()) {
-			rarityChances.put(tier, dungeonSection.getDouble(tier.toString(), settings.getRarityChance(tier)));
-		}
+		final ItemLoader loader = ItemLoader.newInstance(plugin, dungeonSection);
 		for (final BaseItem item : repo) {
 			if (!(item instanceof DiabloItem)) {
 				continue;
 			}
 			final DiabloItem diabloItem = (DiabloItem) item;
-			diabloItem.setDropChance(chance);
-			diabloItem.setRarityChances(rarityChances);
-			drops.add(new Pair<>(diabloItem, amount));
+			drops.add(Drop.newDrop(diabloItem, loader.getAmount(), loader.getDropChance(), loader.getRarityChances()));
 		}
-	}
-
-	private boolean isSet(final DiabloLike plugin, final ItemRepository repo, final ConfigurationSection dungeonSection,
-	                      final String sectionName) {
-		if (!dungeonSection.isSet(sectionName)) {
-			plugin.getLogger()
-			      .log(Level.WARNING, String.format("Missing '%s' for '%s' in file '%s'", sectionName, repo.getId(),
-			                                        repo.getRepository()));
-			return false;
-		}
-		return true;
 	}
 
 	@Override
-	public Collection<Pair<DiabloItem, Range>> getAvailableDropsForMob() {
+	public List<Drop> getAvailableDrops() {
 		return drops;
 	}
 }
