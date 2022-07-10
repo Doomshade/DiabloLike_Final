@@ -1,6 +1,5 @@
 package cz.helheim.rpg.item;
 
-import cz.helheim.rpg.item.impl.DefaultDrop;
 import cz.helheim.rpg.util.Range;
 
 import java.util.Map;
@@ -10,13 +9,17 @@ import java.util.Map;
  * @version 1.0
  * @since 09.07.2022
  */
-public interface Drop {
-	static Drop newDrop(final BaseItem drop, final Range amount, final double dropChance,
+public interface Drop extends Comparable<Drop>, Iterable<BaseItem> {
+	static Drop newDrop(final Iterable<BaseItem> drop, final Range amount, final double dropChance,
 	                    final Map<DiabloItem.Tier, Double> rarityChances) {
 		return new DefaultDrop(drop, amount, dropChance, rarityChances);
 	}
 
-	BaseItem getDrop();
+	static Drop emptyDrop() {
+		return new DefaultDrop();
+	}
+
+	void addItem(BaseItem item) throws IllegalStateException;
 
 	Range getAmount();
 

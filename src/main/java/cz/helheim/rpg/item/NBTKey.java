@@ -6,9 +6,8 @@ package cz.helheim.rpg.item;
  * @since 08.07.2022
  */
 public enum NBTKey {
-	DIABLO_ITEM("dl-diabloitem"),
 	TIER("dl-tier"),
-	SCROLL("dl-scroll"),
+	DL_TYPE("dl-type"),
 	ID("dl-id");
 
 	private final String key;

@@ -1,5 +1,6 @@
 package cz.helheim.rpg.listener;
 
+import cz.helheim.rpg.DiabloLike;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -12,6 +13,12 @@ import org.bukkit.event.entity.EntityDeathEvent;
  * @since 02.07.2022
  */
 public class MobListener implements Listener {
+
+	private final DiabloLike plugin;
+
+	public MobListener(final DiabloLike plugin) {
+		this.plugin = plugin;
+	}
 
 	@EventHandler
 	public void onMobDeath(final EntityDeathEvent e) {

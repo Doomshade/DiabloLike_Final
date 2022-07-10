@@ -1,15 +1,11 @@
-package cz.helheim.rpg.item.impl;
+package cz.helheim.rpg.item;
 
 import com.rit.sucy.CustomEnchantment;
-import cz.helheim.rpg.item.DiabloItem;
 import cz.helheim.rpg.util.Pair;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 import static org.apache.commons.lang.Validate.*;
 
@@ -18,7 +14,7 @@ import static org.apache.commons.lang.Validate.*;
  * @version 1.0
  * @since 27.06.2022
  */
-public class DefaultDiabloItem implements DiabloItem {
+class DefaultDiabloItem implements DiabloItem {
 
 	private final Collection<Pair<CustomEnchantment, Integer>> customEnchantments = new ArrayList<>();
 	private final Collection<Pair<Enchantment, Integer>> enchantments = new ArrayList<>();
@@ -28,10 +24,13 @@ public class DefaultDiabloItem implements DiabloItem {
 
 	private final List<String> originalLore = new ArrayList<>();
 	private final String id;
+	private final Map<Tier, Double> customRarities = new LinkedHashMap<>();
+	private boolean hasDefaultProperties;
 	private int price = 0;
-	private Tier tier = Tier.COMMON;
+	private double dropChance;
 
-	public DefaultDiabloItem(final String id, final ItemStack itemStack, final int level, final List<String> originalLore) {
+	public DefaultDiabloItem(final String id, final ItemStack itemStack, final int level, final List<String> originalLore,
+	                         final double dropChance, final Map<Tier, Double> customRarities, final boolean hasDefaultProperties) {
 		notNull(itemStack);
 		notNull(originalLore);
 		notNull(id);
@@ -49,10 +48,15 @@ public class DefaultDiabloItem implements DiabloItem {
 			                                                          .getDisplayName()));
 		}
 
+		ItemRepositoryLoader loader;
+
 		this.id = id;
 		this.itemStack = itemStack;
 		this.level = level;
 		this.originalLore.addAll(originalLore);
+		this.dropChance = dropChance;
+		this.customRarities.putAll(customRarities);
+		this.hasDefaultProperties = hasDefaultProperties;
 	}
 
 	@Override
@@ -91,18 +95,48 @@ public class DefaultDiabloItem implements DiabloItem {
 	}
 
 	@Override
+	public Map<Tier, Double> getRarities() {
+		return Collections.unmodifiableMap(customRarities);
+	}
+
+	@Override
+	public void setRarities(final Map<Tier, Double> rarities) {
+		if (rarities.size() != Tier.values().length) {
+			throw new IllegalArgumentException("Invalid rarities length");
+		}
+		hasDefaultProperties = false;
+		this.customRarities.putAll(rarities);
+	}
+
+	@Override
 	public int getLevel() {
 		return level;
 	}
 
 	@Override
 	public ItemStack getItemStack() {
-		return itemStack;
+		return itemStack.clone();
 	}
 
 	@Override
 	public String getId() {
 		return id;
+	}
+
+	@Override
+	public double getDropChance() {
+		return dropChance;
+	}
+
+	@Override
+	public void setDropChance(final double dropChance) {
+		this.hasDefaultProperties = false;
+		this.dropChance = dropChance;
+	}
+
+	@Override
+	public boolean hasDefaultProperties() {
+		return hasDefaultProperties;
 	}
 
 	@Override

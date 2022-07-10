@@ -1,6 +1,5 @@
 package cz.helheim.rpg.item;
 
-import cz.helheim.rpg.item.impl.DefaultItemRepository;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.inventory.ItemStack;
 
@@ -15,8 +14,8 @@ import java.util.Optional;
  */
 public interface ItemRepository extends Iterable<BaseItem> {
 
-	static ItemRepository newItemRepository(final File repository, final ItemLoader itemLoader) {
-		return new DefaultItemRepository(repository, itemLoader);
+	static ItemRepository newItemRepository(final File repository, final ItemRepositoryLoader itemRepositoryLoader) {
+		return new DefaultItemRepository(repository, itemRepositoryLoader);
 	}
 
 	/**

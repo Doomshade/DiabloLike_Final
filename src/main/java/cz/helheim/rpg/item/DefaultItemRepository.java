@@ -1,8 +1,5 @@
-package cz.helheim.rpg.item.impl;
+package cz.helheim.rpg.item;
 
-import cz.helheim.rpg.item.BaseItem;
-import cz.helheim.rpg.item.ItemLoader;
-import cz.helheim.rpg.item.ItemRepository;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.inventory.ItemStack;
@@ -17,7 +14,7 @@ import static java.util.Objects.requireNonNull;
  * @version 1.0
  * @since 28.06.2022
  */
-public class DefaultItemRepository implements ItemRepository {
+class DefaultItemRepository implements ItemRepository {
 	private final Map<String, BaseItem> items = new LinkedHashMap<>();
 	private final File repository;
 
@@ -25,7 +22,7 @@ public class DefaultItemRepository implements ItemRepository {
 
 	private final String id;
 
-	public DefaultItemRepository(final File repository, final ItemLoader itemLoader) {
+	public DefaultItemRepository(final File repository, final ItemRepositoryLoader itemRepositoryLoader) {
 		requireNonNull(repository);
 		if (!repository.exists()) {
 			throw new IllegalArgumentException(String.format("Repository '%s' does not exist.", repository.getAbsolutePath()));
@@ -37,15 +34,15 @@ public class DefaultItemRepository implements ItemRepository {
 		final String fileName = repository.getName();
 		this.id = fileName.substring(0, fileName.lastIndexOf('.'));
 		this.root = YamlConfiguration.loadConfiguration(repository);
-		initializeRepository(itemLoader);
+		initializeRepository(itemRepositoryLoader);
 	}
 
-	private void initializeRepository(final ItemLoader itemLoader) {
+	private void initializeRepository(final ItemRepositoryLoader itemRepositoryLoader) {
 		final FileConfiguration loader = YamlConfiguration.loadConfiguration(repository);
 		for (final String key : loader.getKeys(false)) {
 			// load the base item
-			itemLoader.getBaseItem(key)
-			          .ifPresent(baseItem -> addItem(baseItem, key));
+			itemRepositoryLoader.getBaseItem(key)
+			                    .ifPresent(baseItem -> addItem(baseItem, key));
 		}
 	}
 

@@ -1,8 +1,6 @@
-package cz.helheim.rpg.item.impl;
+package cz.helheim.rpg.item;
 
 import com.rit.sucy.CustomEnchantment;
-import cz.helheim.rpg.item.DiabloItem;
-import cz.helheim.rpg.item.Scroll;
 import cz.helheim.rpg.util.Pair;
 import cz.helheim.rpg.util.Range;
 import org.bukkit.enchantments.Enchantment;
@@ -23,7 +21,7 @@ import static org.apache.commons.lang.Validate.notNull;
  * @version 1.0
  * @since 27.06.2022
  */
-public class DefaultScroll implements Scroll {
+class DefaultScroll implements Scroll {
 	private static final Pattern IDENTIFY_PATTERN = Pattern.compile("Neidentifikovaný předmět");
 
 	private final ItemStack item;
@@ -31,7 +29,11 @@ public class DefaultScroll implements Scroll {
 	private final String id;
 	private int price = 0;
 
-	public DefaultScroll(final String id, final ItemStack item, final Range range) {
+	private double dropChance;
+	private boolean hasDefaultProperties;
+
+	public DefaultScroll(final String id, final ItemStack item, final Range range, final double dropChance,
+	                     final boolean hasDefaultProperties) {
 		notNull(id);
 		notNull(item);
 		notNull(range);
@@ -40,6 +42,8 @@ public class DefaultScroll implements Scroll {
 		this.id = id;
 		this.range = range;
 		this.item = item;
+		this.dropChance = dropChance;
+		this.hasDefaultProperties = hasDefaultProperties;
 	}
 
 	private static int getIdentifyPatternIndex(final DiabloItem diabloItem) {
@@ -117,6 +121,22 @@ public class DefaultScroll implements Scroll {
 	@Override
 	public String getId() {
 		return id;
+	}
+
+	@Override
+	public double getDropChance() {
+		return dropChance;
+	}
+
+	@Override
+	public void setDropChance(final double dropChance) {
+		this.hasDefaultProperties = false;
+		this.dropChance = dropChance;
+	}
+
+	@Override
+	public boolean hasDefaultProperties() {
+		return hasDefaultProperties;
 	}
 
 	@Override

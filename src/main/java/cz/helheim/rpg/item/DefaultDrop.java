@@ -1,14 +1,9 @@
-package cz.helheim.rpg.item.impl;
+package cz.helheim.rpg.item;
 
-import cz.helheim.rpg.item.BaseItem;
-import cz.helheim.rpg.item.DiabloItem;
-import cz.helheim.rpg.item.Drop;
 import cz.helheim.rpg.util.Range;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
-import static org.apache.commons.lang3.Validate.notEmpty;
 import static org.apache.commons.lang3.Validate.notNull;
 
 /**
@@ -16,28 +11,34 @@ import static org.apache.commons.lang3.Validate.notNull;
  * @version 1.0
  * @since 09.07.2022
  */
-public class DefaultDrop implements Drop {
+class DefaultDrop implements Drop {
 
-	private final BaseItem drop;
+	private final Iterable<BaseItem> drop;
 	private final Range amount;
 	private final double dropChance;
 	private final Map<DiabloItem.Tier, Double> rarityChances = new HashMap<>();
 
-	public DefaultDrop(final BaseItem drop, final Range amount, final double dropChance,
+	public DefaultDrop(final Iterable<BaseItem> drop, final Range amount, final double dropChance,
 	                   final Map<DiabloItem.Tier, Double> rarityChances) {
 		notNull(drop);
 		notNull(amount);
 		notNull(rarityChances);
-		notEmpty(rarityChances);
 		this.drop = drop;
 		this.amount = amount;
 		this.dropChance = dropChance;
 		this.rarityChances.putAll(rarityChances);
 	}
 
+	public DefaultDrop() {
+		this(new ArrayList<>(), new Range(0), 0d, new HashMap<>());
+	}
+
 	@Override
-	public BaseItem getDrop() {
-		return drop;
+	public void addItem(final BaseItem item) throws IllegalStateException {
+		if (!(drop instanceof Collection)) {
+			throw new IllegalStateException();
+		}
+		((Collection<BaseItem>) drop).add(item);
 	}
 
 	@Override
@@ -53,5 +54,15 @@ public class DefaultDrop implements Drop {
 	@Override
 	public Map<DiabloItem.Tier, Double> getRarityChances() {
 		return rarityChances;
+	}
+
+	@Override
+	public int compareTo(final Drop o) {
+		return Double.compare(getDropChance(), o.getDropChance());
+	}
+
+	@Override
+	public Iterator<BaseItem> iterator() {
+		return drop.iterator();
 	}
 }

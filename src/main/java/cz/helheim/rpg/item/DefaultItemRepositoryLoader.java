@@ -1,10 +1,9 @@
-package cz.helheim.rpg.item.impl;
+package cz.helheim.rpg.item;
 
 import com.rit.sucy.CustomEnchantment;
 import com.rit.sucy.EnchantmentAPI;
 import cz.helheim.rpg.api.impls.HelheimPlugin;
 import cz.helheim.rpg.data.DiabloLikeSettings;
-import cz.helheim.rpg.item.*;
 import cz.helheim.rpg.util.ItemUtils;
 import cz.helheim.rpg.util.Range;
 import org.bukkit.configuration.ConfigurationSection;
@@ -12,10 +11,7 @@ import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.logging.Level;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -27,11 +23,11 @@ import static java.util.Optional.empty;
  * @version 1.0
  * @since 27.06.2022
  */
-public class DefaultItemLoader implements ItemLoader {
+class DefaultItemRepositoryLoader implements ItemRepositoryLoader {
 	private final HelheimPlugin plugin;
 	private final ConfigurationSection section;
 
-	public DefaultItemLoader(final HelheimPlugin plugin, final ConfigurationSection section) {
+	public DefaultItemRepositoryLoader(final HelheimPlugin plugin, final ConfigurationSection section) {
 		this.plugin = plugin;
 		this.section = section;
 	}
@@ -61,20 +57,34 @@ public class DefaultItemLoader implements ItemLoader {
 		// if the else-if branch is reached
 		final Matcher requiredScrollLore;
 
+		// get the drop chance for the base item
+		double dropChance = settings.getDropChance();
+		boolean hasDefaultProperties = true;
+		if (section.isDouble("chance")) {
+			hasDefaultProperties = false;
+			dropChance = section.getDouble("chance");
+		}
+
+		// instantiate the base item
+		// it's either a DiabloItem or a Scroll
 		final BaseItem baseItem;
 		if (itemLevel >= 0) {
-			baseItem = getDiabloItem(id, rawItem, lore, itemLevel);
+			final Map<DiabloItem.Tier, Double> customRarities = new LinkedHashMap<>(settings.getRarityChances());
+			for (DiabloItem.Tier tier : DiabloItem.Tier.values()) {
+				if (section.isDouble(tier.toString())) {
+					hasDefaultProperties = false;
+					customRarities.put(tier, section.getDouble(tier.toString()));
+				}
+			}
+			baseItem = getDiabloItem(id, rawItem, lore, itemLevel, dropChance, customRarities, hasDefaultProperties);
 		} else if ((requiredScrollLore = findRequiredScrollLore(lore, settings)) != null) {
-			final int lvlMin = Integer.parseInt(requiredScrollLore.group("lvl_min"));
-			final String lvlMaxGroup = requiredScrollLore.group("lvl_max");
-			baseItem = Scroll.newInstance(id, rawItem, new Range(lvlMin, lvlMaxGroup == null ? lvlMin : Integer.parseInt(lvlMaxGroup)));
+			baseItem = Scroll.newInstance(id, rawItem, new Range(requiredScrollLore.group()), 0d, true);
 		} else {
-			plugin.getLogger()
-			      .log(Level.INFO,
-			           "Failed to register item with ID " + id + ". Item is neither a DiabloItem or Scroll (does " +
-			           "not have level or required scroll lore)");
 			return empty();
 		}
+
+		NBTTagManager.getInstance()
+		             .addNBTTag(baseItem, NBTKey.DL_TYPE, (x, y) -> x.setString(y, baseItem.getType()));
 
 		// add enchantments to a diabloitem
 		if (baseItem instanceof DiabloItem && section.isConfigurationSection("enchantments")) {
@@ -115,10 +125,12 @@ public class DefaultItemLoader implements ItemLoader {
 		return null;
 	}
 
-	private DiabloItem getDiabloItem(final String id, final ItemStack rawItem, final List<String> lore, final int itemLevel) {
-
+	private DiabloItem getDiabloItem(final String id, final ItemStack rawItem, final List<String> lore, final int itemLevel,
+	                                 final double dropChance, final Map<DiabloItem.Tier, Double> customRarities,
+	                                 final boolean hasDefaultProperties) {
 		// the item is a diablo item, parse the section and add some metadata
-		final DiabloItem diabloItem = DiabloItem.newInstance(id, rawItem, itemLevel, lore);
+		final DiabloItem diabloItem =
+				DiabloItem.newInstance(id, rawItem, itemLevel, lore, dropChance, customRarities, hasDefaultProperties);
 		NBTTagManager.getInstance()
 		             .addNBTTag(diabloItem, NBTKey.ID, (item, key) -> item.setString(key, id));
 		return diabloItem;

@@ -21,16 +21,12 @@ public class IOManager {
 	private FileConfiguration commandsFileConfiguration;
 
 	private boolean initialized = false;
-	private boolean firstEverInitialization = false;
-
-	public boolean isFirstEverInitialization() {
-		return firstEverInitialization;
-	}
 
 	public void load(HelheimPlugin plugin) throws IOException, InvalidConfigurationException {
 		initDataFolder(plugin);
 		initLogFile(plugin.getDataFolder());
 		initCommandsFileConfiguration(plugin.getDataFolder());
+		initialized = true;
 	}
 
 	private void initDataFolder(final HelheimPlugin plugin) throws IOException {
@@ -39,7 +35,6 @@ public class IOManager {
 			if (!dataFolder.mkdirs()) {
 				throw new IOException("Failed to create the data folder for plugin " + plugin.getName());
 			}
-			firstEverInitialization = true;
 		}
 	}
 

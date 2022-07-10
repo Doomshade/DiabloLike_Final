@@ -3,7 +3,7 @@ version: 1.0
 author: Doomshade
 main: cz.helheim.rpg.DiabloLike
 description: Plugin for Diablo-like drops from monsters
-softdepend: [ EnchantmentAPI, MythicMobs ]
+softdepend: [ EnchantmentAPI, MythicMobs, MythicLib ]
 website: www.helheim.cz
 database: true
 commands:

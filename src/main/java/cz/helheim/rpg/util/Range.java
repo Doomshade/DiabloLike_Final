@@ -23,6 +23,10 @@ public class Range implements Iterable<Integer> {
 		this.upper = upper;
 	}
 
+	public Range(final int num) {
+		this(num, num);
+	}
+
 	public Range(String range) {
 		Validate.notNull(range, "Range cannot be null!");
 		final Matcher m = rangePattern.matcher(range);
@@ -47,6 +51,10 @@ public class Range implements Iterable<Integer> {
 
 	public Range add(final int lower, final int upper) {
 		return new Range(this.lower + lower, this.upper + upper);
+	}
+
+	public Range add(final int num) {
+		return add(num, num);
 	}
 
 	public Range surround(final int num) {

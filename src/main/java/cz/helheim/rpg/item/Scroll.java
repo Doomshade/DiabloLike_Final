@@ -1,6 +1,5 @@
 package cz.helheim.rpg.item;
 
-import cz.helheim.rpg.item.impl.DefaultScroll;
 import cz.helheim.rpg.util.Range;
 import org.bukkit.inventory.ItemStack;
 
@@ -11,13 +10,19 @@ import org.bukkit.inventory.ItemStack;
  */
 public interface Scroll extends BaseItem {
 
-	static Scroll newInstance(final String id, final ItemStack item, final Range range) {
-		return new DefaultScroll(id, item, range);
+	static Scroll newInstance(final String id, final ItemStack item, final Range range, final double dropChance,
+	                          final boolean hasDefaultProperties) {
+		return new DefaultScroll(id, item, range, dropChance, hasDefaultProperties);
 	}
 
 	Scroll.Result identify(DiabloItem diabloItem);
 
 	Range getIdentifyRange();
+
+	@Override
+	default String getType() {
+		return "scroll";
+	}
 
 	enum Result {
 		SUCCESS_IDENTIFY,
