@@ -23,22 +23,22 @@ public class DiabloLikeSettings extends Settings {
 
 	//<editor-fold desc="Private variables">
 	//<editor-fold desc="Tier colours">
-	private final Map<DiabloItem.Tier, String> tierColours = new HashMap<>(6);
+	private final Map<DiabloItem.Tier, String> tierColours = new HashMap<>(DiabloItem.Tier.values().length);
 	//</editor-fold>
 	//<editor-fold desc="Gem chances">
-	private final Map<DiabloItem.Tier, Integer> gemChances = new HashMap<>(6);
+	private final Map<DiabloItem.Tier, Integer> gemChances = new HashMap<>(DiabloItem.Tier.values().length);
 	//</editor-fold>
 	//<editor-fold desc="Attribute tiers">
-	private final Map<DiabloItem.Tier, Double> attributeTiers = new HashMap<>(6);
+	private final Map<DiabloItem.Tier, Double> attributeTiers = new HashMap<>(DiabloItem.Tier.values().length);
 	//</editor-fold>
 	//<editor-fold desc="Obrana multipliers">
 	private final Map<String, Double> obranaMultipliers = new HashMap<>(6);
 	//</editor-fold>
 	//<editor-fold desc="Custom rarities">
-	private final Map<DiabloItem.Tier, List<String>> customRarities = new HashMap<>(6);
+	private final Map<DiabloItem.Tier, List<String>> customRarities = new HashMap<>(DiabloItem.Tier.values().length);
 	//</editor-fold>
 	//<editor-fold desc="Rarity Chances">
-	private final Map<DiabloItem.Tier, Double> rarityChances = new HashMap<>(6);
+	private final Map<DiabloItem.Tier, Double> rarityChances = new HashMap<>(DiabloItem.Tier.values().length);
 	//</editor-fold>
 	//<editor-fold desc="Root entries">
 	private String requiredLevelFormat;

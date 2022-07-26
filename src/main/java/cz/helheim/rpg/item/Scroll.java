@@ -1,7 +1,7 @@
 package cz.helheim.rpg.item;
 
 import cz.helheim.rpg.util.Range;
-import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.InventoryHolder;
 
 /**
  * @author Doomshade
@@ -9,14 +9,20 @@ import org.bukkit.inventory.ItemStack;
  * @since 27.06.2022
  */
 public interface Scroll extends BaseItem {
+	/**
+	 * Identifies a diablo item
+	 *
+	 * @param diabloItem      the diablo item to identify
+	 * @param inventoryHolder the holder of the scroll
+	 * @param consumeScroll   whether to consume the item
+	 *
+	 * @return the result of the identification
+	 */
+	Scroll.Result identify(DiabloItem diabloItem, final InventoryHolder inventoryHolder, final boolean consumeScroll);
 
-	static Scroll newInstance(final String id, final ItemStack item, final Range range, final double dropChance,
-	                          final boolean hasDefaultProperties) {
-		return new DefaultScroll(id, item, range, dropChance, hasDefaultProperties);
-	}
-
-	Scroll.Result identify(DiabloItem diabloItem);
-
+	/**
+	 * @return the level range this scroll is able to identify
+	 */
 	Range getIdentifyRange();
 
 	@Override
@@ -25,9 +31,21 @@ public interface Scroll extends BaseItem {
 	}
 
 	enum Result {
+		/**
+		 * When the item is successfully identified
+		 */
 		SUCCESS_IDENTIFY,
+		/**
+		 * When the scroll identify level is too low
+		 */
 		FAILURE_SCROLL_LEVEL_LOW,
+		/**
+		 * When the target item is already identified
+		 */
 		FAILURE_ITEM_IDENTIFIED,
+		/**
+		 * When the target item is not a valid item
+		 */
 		FAILURE_INVALID_ITEM
 	}
 }

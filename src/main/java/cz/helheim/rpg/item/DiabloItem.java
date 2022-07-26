@@ -10,6 +10,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
+ * The interface for all items regarding DiabloLike items that have attributes (such as armour, weapons, necklaces, ...)
+ *
  * @author Doomshade
  * @version 1.0
  * @since 27.06.2022
@@ -18,7 +20,7 @@ public interface DiabloItem extends BaseItem {
 
 	static DiabloItem newInstance(final String id, final ItemStack itemStack, final int level, final List<String> originalLore,
 	                              final double dropChance, final Map<Tier, Double> customRarities, final boolean hasDefaultProperties) {
-		return new DefaultDiabloItem(id, itemStack, level, originalLore, dropChance, customRarities, hasDefaultProperties);
+		return new DefaultDiabloItem(id, itemStack, level, originalLore, dropChance, customRarities, hasDefaultProperties, false);
 	}
 
 	void addCustomEnchantment(CustomEnchantment enchantment, int level);
@@ -52,6 +54,8 @@ public interface DiabloItem extends BaseItem {
 		RARE,
 		LEGENDARY,
 		MYTHIC;
+
+		static int UNKNOWN_TIER = Integer.MAX_VALUE;
 
 		public String toString() {
 			return name().toLowerCase();

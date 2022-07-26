@@ -16,6 +16,8 @@ import java.util.logging.Level;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static cz.helheim.rpg.item.ItemInstantiationHelper.diabloItem;
+import static cz.helheim.rpg.item.ItemInstantiationHelper.scroll;
 import static java.util.Optional.empty;
 
 /**
@@ -27,7 +29,7 @@ class DefaultItemRepositoryLoader implements ItemRepositoryLoader {
 	private final HelheimPlugin plugin;
 	private final ConfigurationSection section;
 
-	public DefaultItemRepositoryLoader(final HelheimPlugin plugin, final ConfigurationSection section) {
+	DefaultItemRepositoryLoader(final HelheimPlugin plugin, final ConfigurationSection section) {
 		this.plugin = plugin;
 		this.section = section;
 	}
@@ -36,6 +38,9 @@ class DefaultItemRepositoryLoader implements ItemRepositoryLoader {
 	public Optional<? extends BaseItem> getBaseItem(final String id) {
 		final ItemStack rawItem;
 		try {
+			if (!section.isConfigurationSection(id)) {
+				throw new InvalidConfigurationException(String.format("Section with ID '%s' does not exist!", id));
+			}
 			rawItem = ItemUtils.readItemStack(section);
 		} catch (InvalidConfigurationException e) {
 			plugin.getLogger()
@@ -76,9 +81,9 @@ class DefaultItemRepositoryLoader implements ItemRepositoryLoader {
 					customRarities.put(tier, section.getDouble(tier.toString()));
 				}
 			}
-			baseItem = getDiabloItem(id, rawItem, lore, itemLevel, dropChance, customRarities, hasDefaultProperties);
+			baseItem = diabloItem(id, rawItem, itemLevel, lore, dropChance, customRarities, hasDefaultProperties, false);
 		} else if ((requiredScrollLore = findRequiredScrollLore(lore, settings)) != null) {
-			baseItem = Scroll.newInstance(id, rawItem, new Range(requiredScrollLore.group()), 0d, true);
+			baseItem = scroll(id, rawItem, new Range(requiredScrollLore.group()), 0d, true, false);
 		} else {
 			return empty();
 		}

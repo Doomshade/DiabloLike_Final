@@ -11,6 +11,9 @@ import org.bukkit.inventory.meta.ItemMeta;
 import java.util.*;
 import java.util.logging.Level;
 
+import static cz.helheim.rpg.item.ItemInstantiationHelper.drop;
+import static cz.helheim.rpg.item.ItemInstantiationHelper.emptyDrop;
+
 /**
  * @author Doomshade
  * @version 1.0
@@ -18,13 +21,13 @@ import java.util.logging.Level;
  */
 class DefaultDropManager implements DropManager {
 
-	public static final double EPSILON = 0.001;
+	private static final double EPSILON = 0.001;
 	private final DiabloLike plugin;
 
-	private final Map<Integer, Iterable<BaseItem>> dropCache = new WeakHashMap<>();
+	private final Map<Integer, Iterable<BaseItem>> dropCache = new HashMap<>();
 
 
-	public DefaultDropManager(final DiabloLike plugin) {
+	DefaultDropManager(final DiabloLike plugin) {
 		this.plugin = plugin;
 	}
 
@@ -36,7 +39,8 @@ class DefaultDropManager implements DropManager {
 
 		// sort the tiers in reverse order so the highest tiers go first
 		final DiabloItem.Tier[] values = DiabloItem.Tier.values();
-		Arrays.sort(values, (x, y) -> -Integer.compare(x.ordinal(), y.ordinal()));
+		Arrays.sort(values, Comparator.reverseOrder());
+		assert values[values.length - 1] == DiabloItem.Tier.COMMON : "Common tier should be last, something wrong happened!";
 
 		for (final BaseItem baseItem : drop) {
 			final double roll = random.nextDouble() * 100;
@@ -45,6 +49,8 @@ class DefaultDropManager implements DropManager {
 			// the drop is either put to the loot, aka the drop is (nearly) 100%,
 			// or it's put to the drop pool for further actions
 			if (Math.abs(itemDropChance - 100d) < EPSILON) {
+				// if the item has default properties assign it the drop properties
+				// otherwise don't update it as those are custom attributes
 				if (baseItem.hasDefaultProperties()) {
 					baseItem.setDropChance(drop.getDropChance());
 					if (baseItem instanceof DiabloItem) {
@@ -60,13 +66,13 @@ class DefaultDropManager implements DropManager {
 
 		// sort it in reverse order, aka the rarest items will be first
 		dropPool.sort(Comparator.reverseOrder());
-		Range amount = drop.getAmount();
+		int dropAmount = drop.getAmount()
+		                     .randomValue();
 		for (final BaseItem baseItem : dropPool) {
-			if (amount.getLower() <= 0) {
+			addLoot(loot, random, values, baseItem);
+			if (--dropAmount <= 0) {
 				return loot;
 			}
-			addLoot(loot, random, values, baseItem);
-			amount = amount.add(-1);
 		}
 
 		return loot;
@@ -74,12 +80,19 @@ class DefaultDropManager implements DropManager {
 
 	@Override
 	public List<String> selectAttributes(final DiabloItem diabloItem) {
+		if (!hasTier(diabloItem)) {
+			return new ArrayList<>();
+		}
 		final DiabloLikeSettings settings = plugin.getSettings();
-
+		final DiabloItem.Tier tier = getTier(diabloItem);
+		final double dividedBy = settings.getPocetDiv(tier);
+		if (dividedBy <= 0.0) {
+			plugin.getLogger()
+			      .log(Level.INFO, String.format("Invalid division for %s tier!", tier));
+			return new ArrayList<>();
+		}
 		// use LinkedList to remove items in O(1) as opposed to ArrayList in O(n)
 		final List<String> attributes = new LinkedList<>(diabloItem.getAttributes());
-		final double dividedBy = settings.getPocetDiv(getTier(diabloItem));
-
 		int count = (int) Math.ceil(attributes.size() / dividedBy);
 		final Random random = new Random();
 
@@ -93,10 +106,16 @@ class DefaultDropManager implements DropManager {
 	}
 
 	@Override
-	public Drop getAvailableDropsForLevel(final ItemRepository repository, final int level) {
+	public Drop getAvailableDropForLevel(final int level) {
 		if (dropCache.isEmpty()) {
-			initializeDrops(repository);
+			initializeDrops(plugin.getMainItemRepository());
+			if (dropCache.isEmpty()) {
+				plugin.getLogger()
+				      .log(Level.CONFIG, "No available drops for level " + level);
+				return emptyDrop();
+			}
 		}
+
 
 		final List<BaseItem> drops = new ArrayList<>();
 		final DiabloLikeSettings settings = plugin.getSettings();
@@ -110,16 +129,18 @@ class DefaultDropManager implements DropManager {
 				}
 			}
 		}
-		// the default drops
-		return Drop.newDrop(drops, new Range(1), settings.getDropChance(), settings.getRarityChances());
+		return drop(drops, 1, settings.getDropChance(), settings.getRarityChances());
 	}
 
-	public DiabloItem.Tier getTier(final DiabloItem diabloItem) throws IllegalArgumentException {
+	private boolean hasTier(final DiabloItem diabloItem) {
+		return NBTTagManager.getInstance()
+		                    .getInteger(diabloItem, NBTKey.TIER) != DiabloItem.Tier.UNKNOWN_TIER;
+	}
+
+	private DiabloItem.Tier getTier(final DiabloItem diabloItem) throws IllegalArgumentException {
 		final int ordinal = NBTTagManager.getInstance()
 		                                 .getInteger(diabloItem, NBTKey.TIER);
-		if (ordinal == Integer.MAX_VALUE) {
-			throw new IllegalArgumentException("This diablo item has not yet been instantiated!");
-		}
+		assert ordinal != DiabloItem.Tier.UNKNOWN_TIER : "Item does not have a tier, forgot to check with hasTier()";
 		return DiabloItem.Tier.values()[ordinal];
 	}
 
@@ -153,7 +174,7 @@ class DefaultDropManager implements DropManager {
 	private void initializeDrops(final ItemRepository repository) {
 		final FileConfiguration root = repository.getRoot();
 		final ItemRepositoryLoader loader = plugin.getRepositoryLoader(repository);
-		final Drop drop = Drop.newDrop(new ArrayList<>(), loader.getAmount(), loader.getDropChance(), loader.getRarityChances());
+		final Drop drop = drop(new ArrayList<>(), loader.getAmount(), loader.getDropChance(), loader.getRarityChances());
 
 		// yes we are iterating through the items twice, but this shouldn't really matter
 		for (final BaseItem baseItem : repository) {
@@ -178,7 +199,7 @@ class DefaultDropManager implements DropManager {
 		if (tierColour.isEmpty()) {
 			plugin.getLogger()
 			      .log(Level.INFO, "Missing tier colour for " + tier.name());
-			return;
+			tierColour = "&f";
 		}
 		tierColour = ChatColor.translateAlternateColorCodes('&', tierColour);
 

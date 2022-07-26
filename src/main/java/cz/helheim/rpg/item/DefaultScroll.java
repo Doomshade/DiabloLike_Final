@@ -4,6 +4,7 @@ import com.rit.sucy.CustomEnchantment;
 import cz.helheim.rpg.util.Pair;
 import cz.helheim.rpg.util.Range;
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -13,7 +14,6 @@ import java.util.ListIterator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static org.apache.commons.lang.Validate.notEmpty;
 import static org.apache.commons.lang.Validate.notNull;
 
 /**
@@ -21,29 +21,25 @@ import static org.apache.commons.lang.Validate.notNull;
  * @version 1.0
  * @since 27.06.2022
  */
-class DefaultScroll implements Scroll {
+class DefaultScroll extends AbstractBaseItem implements Scroll {
+	// TODO config
 	private static final Pattern IDENTIFY_PATTERN = Pattern.compile("Neidentifikovaný předmět");
 
-	private final ItemStack item;
 	private final Range range;
-	private final String id;
-	private int price = 0;
 
-	private double dropChance;
-	private boolean hasDefaultProperties;
 
-	public DefaultScroll(final String id, final ItemStack item, final Range range, final double dropChance,
-	                     final boolean hasDefaultProperties) {
-		notNull(id);
-		notNull(item);
-		notNull(range);
-		notEmpty(id);
-
-		this.id = id;
+	DefaultScroll(final String id, final ItemStack item, final Range range, final double dropChance, final boolean hasDefaultProperties,
+	              final boolean dropsRepeatedly, boolean validateParams) {
+		super(item, id, dropChance, hasDefaultProperties, dropsRepeatedly, validateParams);
+		if (validateParams) {
+			notNull(range);
+		}
 		this.range = range;
-		this.item = item;
-		this.dropChance = dropChance;
-		this.hasDefaultProperties = hasDefaultProperties;
+	}
+
+	DefaultScroll(final String id, final ItemStack item, final Range range, final double dropChance, final boolean hasDefaultProperties,
+	              final boolean dropsRepeatedly) {
+		this(id, item, range, dropChance, hasDefaultProperties, dropsRepeatedly, true);
 	}
 
 	private static int getIdentifyPatternIndex(final DiabloItem diabloItem) {
@@ -62,8 +58,9 @@ class DefaultScroll implements Scroll {
 	}
 
 	@Override
-	public Result identify(final DiabloItem diabloItem) {
-		if (diabloItem == null) {
+	public Result identify(final DiabloItem diabloItem, final InventoryHolder inventoryHolder, final boolean consumeScroll) {
+		final ItemStack item;
+		if (diabloItem == null || (item = diabloItem.getItemStack()) == null || !item.hasItemMeta()) {
 			return Result.FAILURE_INVALID_ITEM;
 		}
 
@@ -74,13 +71,12 @@ class DefaultScroll implements Scroll {
 		}
 
 		// the scroll is not in a valid range
-		if (!range.isInRange(diabloItem.getLevel(), true, true)) {
+		if (range != null && !range.isInRange(diabloItem.getLevel(), true, true)) {
 			return Result.FAILURE_SCROLL_LEVEL_LOW;
 		}
 
 		// everything is ok, we should identify
-		final ItemMeta meta = diabloItem.getItemStack()
-		                                .getItemMeta();
+		final ItemMeta meta = item.getItemMeta();
 		final List<String> lore = meta.getLore();
 
 		// remove the "unidentified" item in lore
@@ -89,7 +85,7 @@ class DefaultScroll implements Scroll {
 		// add random properties
 		// TODO
 		final List<String> originalLore = diabloItem.getOriginalLore();
-		for (ListIterator<String> it = lore.listIterator(identifyIndex); it.hasNext(); ) {
+		for (final ListIterator<String> it = lore.listIterator(identifyIndex); it.hasNext(); ) {
 			final String s = it.next();
 		}
 
@@ -104,7 +100,9 @@ class DefaultScroll implements Scroll {
 			pair.getA()
 			    .addToItem(diabloItem.getItemStack(), pair.getB());
 		}
-
+		if (consumeScroll) {
+			consumeItem(inventoryHolder);
+		}
 		return Result.SUCCESS_IDENTIFY;
 	}
 
@@ -113,39 +111,12 @@ class DefaultScroll implements Scroll {
 		return range;
 	}
 
-	@Override
-	public ItemStack getItemStack() {
-		return item;
+	private void consumeItem(final InventoryHolder inventoryHolder) {
+		final ItemStack item = getItemStack();
+		if (item != null) {
+			inventoryHolder.getInventory()
+			               .remove(item);
+		}
 	}
 
-	@Override
-	public String getId() {
-		return id;
-	}
-
-	@Override
-	public double getDropChance() {
-		return dropChance;
-	}
-
-	@Override
-	public void setDropChance(final double dropChance) {
-		this.hasDefaultProperties = false;
-		this.dropChance = dropChance;
-	}
-
-	@Override
-	public boolean hasDefaultProperties() {
-		return hasDefaultProperties;
-	}
-
-	@Override
-	public int getPrice() {
-		return price;
-	}
-
-	@Override
-	public void setPrice(final int price) {
-		this.price = price;
-	}
 }

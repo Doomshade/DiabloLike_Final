@@ -1,15 +1,13 @@
 package cz.helheim.rpg.listener;
 
 import cz.helheim.rpg.DiabloLike;
-import cz.helheim.rpg.item.Drop;
-import cz.helheim.rpg.item.DropManager;
 import net.elseland.xikage.MythicMobs.API.Bukkit.Events.MythicMobDeathEvent;
-import org.bukkit.entity.Player;
+import org.bukkit.entity.Entity;
+import org.bukkit.entity.LivingEntity;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.inventory.ItemStack;
 
-import java.util.Collection;
+import static cz.helheim.rpg.listener.MobListener.dropItems;
 
 /**
  * @author Doomshade
@@ -24,14 +22,13 @@ public class MythicMobListener implements Listener {
 		this.plugin = plugin;
 	}
 
+
 	@EventHandler
 	public void onMythicMobDeath(final MythicMobDeathEvent e) {
-		if (!(e.getKiller() instanceof Player)) {
-			return;
-		}
-		final Drop availableDrop = plugin.getAvailableDrop(e.getEntity());
-		final DropManager dropManager = plugin.getItemDropManager();
-		final Collection<ItemStack> randomLoot = dropManager.getRandomLoot(availableDrop);
-		// first check if the mob is present in some custom dungeon drop
+		final Entity mob = e.getEntity();
+		final LivingEntity killer = e.getKiller();
+
+		dropItems(plugin, mob, killer);
 	}
+
 }

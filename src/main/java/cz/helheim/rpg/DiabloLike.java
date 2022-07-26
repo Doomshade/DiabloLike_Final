@@ -26,16 +26,36 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static cz.helheim.rpg.item.ItemInstantiationHelper.*;
+import static cz.helheim.rpg.util.ExceptionUtils.internalError;
+
 public class DiabloLike extends HelheimPlugin {
 
+	private static final String MAIN_REPOSITORY_ID = "items";
 	private static DiabloLike instance = null;
+
+	/**
+	 * The level pattern used in mobs
+	 * TODO: add it to config
+	 */
 	private final Pattern levelPattern = Pattern.compile("\\[Lv\\. (?<lvl>\\d+)]");
+	/**
+	 * An item repository mapped to an ID
+	 */
 	private final Map<String, ItemRepository> repositories = new HashMap<>();
 
+	/**
+	 * An item repository loader mapped to a repo ID
+	 */
 	private final Map<String, ItemRepositoryLoader> repositoryLoaders = new HashMap<>();
+	/**
+	 * Collection of drops mapped to a repo ID
+	 */
 	private final Map<String, Collection<Drop>> dungeonSpecificDrops = new HashMap<>();
 	private DropManager dropManager = null;
 	private boolean usesMythicMob = false;
@@ -88,19 +108,46 @@ public class DiabloLike extends HelheimPlugin {
 
 		final File[] dungeons = dungeonsFolder.listFiles((x, y) -> x.exists() && x.isFile() && y.endsWith(".yml"));
 		if (dungeons != null) {
-			for (final File dungeon : dungeons) {
-				final FileConfiguration loader = YamlConfiguration.loadConfiguration(dungeon);
-				for (final String mobId : loader.getKeys(false)) {
-					final ConfigurationSection mobSection = loader.getConfigurationSection(mobId);
-					for (final String repoId : mobSection.getKeys(false)) {
-						final ItemRepositoryLoader repoLoader =
-								ItemRepositoryLoader.newInstance(this, mobSection.getConfigurationSection(repoId));
-						dungeonSpecificDrops.computeIfAbsent(mobId, k -> new ArrayList<>())
-						                    .add(Drop.newDrop(getRepository(repoId),
-						                                      repoLoader.getAmount(),
-						                                      repoLoader.getDropChance(),
-						                                      repoLoader.getRarityChances()));
-					}
+			loadDungeons(dungeons);
+		}
+	}
+
+	private void loadDungeons(final File[] dungeons) {
+
+		for (final File dungeon : dungeons) {
+			final FileConfiguration loader = YamlConfiguration.loadConfiguration(dungeon);
+			for (final String mobId : loader.getKeys(false)) {
+				/*
+				EfritHC:
+				  SinisterKolekceHC:
+				    amount: 1
+				    chance: 25.0
+				  SinisterKolekce:
+				    chance: 0.0
+				    amount: 1-1
+				  Mesmarka:
+				    chance: 25
+				    amount: 1-2
+				*/
+				final ConfigurationSection mobSection = loader.getConfigurationSection(mobId);
+				for (final String repoId : mobSection.getKeys(false)) {
+					/*
+				    SinisterKolekceHC:
+				      amount: 1
+				      chance: 25.0
+					*/
+					final ConfigurationSection repoSection = mobSection.getConfigurationSection(repoId);
+					// the repository loader loads the metadata of the repository such as the global amount, chance, etc.
+					// this can be used for an inner repository of a mob -- the repository ID is provided as a section
+					// and its global modifiers are passed down as properties
+					// from that we are able to construct a new drop
+					final ItemRepositoryLoader repoLoader =
+							itemRepositoryLoader(this, repoSection);
+					dungeonSpecificDrops.computeIfAbsent(mobId, k -> new ArrayList<>())
+					                    .add(drop(getRepository(repoId),
+					                              repoLoader.getAmount(),
+					                              repoLoader.getDropChance(),
+					                              repoLoader.getRarityChances()));
 				}
 			}
 		}
@@ -110,6 +157,7 @@ public class DiabloLike extends HelheimPlugin {
 		repositories.clear();
 		loadItemsRepository();
 		loadCollectionRepositories();
+		dropManager = dropManager(this);
 	}
 
 	private void loadItemsRepository() {
@@ -122,8 +170,8 @@ public class DiabloLike extends HelheimPlugin {
 			}
 		}
 		final ItemRepositoryLoader itemRepositoryLoader =
-				ItemRepositoryLoader.newInstance(this, YamlConfiguration.loadConfiguration(itemsFile));
-		final ItemRepository repo = ItemRepository.newItemRepository(itemsFile, itemRepositoryLoader);
+				itemRepositoryLoader(this, YamlConfiguration.loadConfiguration(itemsFile));
+		final ItemRepository repo = itemRepository(itemsFile, itemRepositoryLoader);
 		repositories.put(repo.getId(), repo);
 		repositoryLoaders.put(repo.getId(), itemRepositoryLoader);
 	}
@@ -137,24 +185,40 @@ public class DiabloLike extends HelheimPlugin {
 		if (collections != null) {
 			for (final File collection : collections) {
 				final ItemRepositoryLoader itemRepositoryLoader =
-						ItemRepositoryLoader.newInstance(this, YamlConfiguration.loadConfiguration(collection));
-				final ItemRepository repo = ItemRepository.newItemRepository(collection, itemRepositoryLoader);
+						itemRepositoryLoader(this, YamlConfiguration.loadConfiguration(collection));
+				final ItemRepository repo = itemRepository(collection, itemRepositoryLoader);
 				repositories.put(repo.getId(), repo);
 				repositoryLoaders.put(repo.getId(), itemRepositoryLoader);
 			}
 		}
 	}
 
-	private Drop getAvailableDropsForLevel(int level) {
-		return getItemDropManager().getAvailableDropsForLevel(repositories.get("items"), level);
+	/**
+	 * @return the main {@link ItemRepository} (items.yml)
+	 */
+	public ItemRepository getMainItemRepository() {
+		return repositories.get(MAIN_REPOSITORY_ID);
 	}
 
 	public ItemRepositoryLoader getRepositoryLoader(ItemRepository repository) {
-		return repositoryLoaders.get(repository.getId());
+		final String repoId = repository.getId();
+		if (!repositoryLoaders.containsKey(repoId)) {
+			final Logger logger = getLogger();
+			logger.log(Level.INFO, "Could not find a repository with ID " + repoId);
+			logger.log(Level.INFO, "Reloading repositories...");
+			loadRepositories();
+			if (!repositoryLoaders.containsKey(repoId)) {
+				logger.log(Level.SEVERE,
+				           internalError(this, "Could not find a repository with ID {} even after reloading it."),
+				           new Object[] {repoId});
+			}
+		}
+		return repositoryLoaders.get(repoId);
 	}
 
 	public DropManager getItemDropManager() {
-		return dropManager == null ? dropManager = DropManager.newInstance(this) : dropManager;
+		assert dropManager != null;
+		return dropManager;
 	}
 
 	public Drop getAvailableDrop(Entity entity) {
@@ -164,14 +228,14 @@ public class DiabloLike extends HelheimPlugin {
 			                               .getAPI()
 			                               .getMobAPI();
 			if (!api.isMythicMob(entity)) {
-				return Drop.emptyDrop();
+				return emptyDrop();
 			}
 		}
 
 		// the mob doesn't have a custom name, abort
 		String mobName = entity.getCustomName();
 		if (mobName == null) {
-			return Drop.emptyDrop();
+			return emptyDrop();
 
 		}
 		mobName = ChatColor.stripColor(mobName);
@@ -179,7 +243,7 @@ public class DiabloLike extends HelheimPlugin {
 
 		// the mob name contains [Lv. XX]
 		if (m.find()) {
-			return getAvailableDropsForLevel(Integer.parseInt(m.group("lvl")));
+			return getItemDropManager().getAvailableDropForLevel(Integer.parseInt(m.group("lvl")));
 		} else if (usesMythicMob) {
 			final String mobId = MythicMobs.inst()
 			                               .getAPI()
@@ -192,7 +256,7 @@ public class DiabloLike extends HelheimPlugin {
 				return dungeonDrop.getAvailableDrops();
 			}*/
 		}
-		return Drop.emptyDrop();
+		return emptyDrop();
 	}
 
 	public ItemRepository getRepository(String id) {

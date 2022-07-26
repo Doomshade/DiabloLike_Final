@@ -8,23 +8,26 @@ import java.util.Collection;
 import java.util.Optional;
 
 /**
+ * An item repository, basically representing a collection of {@link BaseItem}s with additional metadata and helper functions
+ *
  * @author Doomshade
  * @version 1.0
  * @since 28.06.2022
  */
 public interface ItemRepository extends Iterable<BaseItem> {
-
-	static ItemRepository newItemRepository(final File repository, final ItemRepositoryLoader itemRepositoryLoader) {
-		return new DefaultItemRepository(repository, itemRepositoryLoader);
-	}
-
 	/**
 	 * @return the file containing the items
 	 */
 	File getRepository();
 
+	/**
+	 * @return the root file configuration
+	 */
 	FileConfiguration getRoot();
 
+	/**
+	 * @return the ID of this repository, normally it's denoted by the file name
+	 */
 	String getId();
 
 	/**
@@ -52,5 +55,11 @@ public interface ItemRepository extends Iterable<BaseItem> {
 	 */
 	<T extends BaseItem> Optional<T> getItem(ItemStack item) throws ClassCastException;
 
+	/**
+	 * Adds an item to the repository
+	 *
+	 * @param diabloItem the item
+	 * @param id         the ID of the item
+	 */
 	void addItem(BaseItem diabloItem, String id);
 }

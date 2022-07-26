@@ -7,40 +7,32 @@ import org.bukkit.inventory.ItemStack;
 
 import java.util.*;
 
-import static org.apache.commons.lang.Validate.*;
+import static org.apache.commons.lang.Validate.noNullElements;
+import static org.apache.commons.lang.Validate.notNull;
 
 /**
  * @author Doomshade
  * @version 1.0
  * @since 27.06.2022
  */
-class DefaultDiabloItem implements DiabloItem {
+class DefaultDiabloItem extends AbstractBaseItem implements DiabloItem {
 
 	private final Collection<Pair<CustomEnchantment, Integer>> customEnchantments = new ArrayList<>();
 	private final Collection<Pair<Enchantment, Integer>> enchantments = new ArrayList<>();
 
-	private final ItemStack itemStack;
 	private final int level;
 
 	private final List<String> originalLore = new ArrayList<>();
-	private final String id;
 	private final Map<Tier, Double> customRarities = new LinkedHashMap<>();
-	private boolean hasDefaultProperties;
-	private int price = 0;
-	private double dropChance;
 
-	public DefaultDiabloItem(final String id, final ItemStack itemStack, final int level, final List<String> originalLore,
-	                         final double dropChance, final Map<Tier, Double> customRarities, final boolean hasDefaultProperties) {
-		notNull(itemStack);
+	DefaultDiabloItem(final String id, final ItemStack itemStack, final int level, final List<String> originalLore,
+	                  final double dropChance, final Map<Tier, Double> customRarities, final boolean hasDefaultProperties,
+	                  final boolean dropsRepeatedly) {
+		super(itemStack, id, dropChance, hasDefaultProperties, dropsRepeatedly);
 		notNull(originalLore);
-		notNull(id);
-		notEmpty(id);
-
 		noNullElements(originalLore);
-		if (!itemStack.hasItemMeta() || itemStack.getItemMeta()
-		                                         .hasEnchants()) {
-			throw new IllegalArgumentException(String.format("The item '%s' must have a meta and no enchants!", itemStack));
-		}
+
+
 		if (level < 0) {
 			throw new IllegalArgumentException(String.format("Invalid level %d for %s",
 			                                                 level,
@@ -48,15 +40,11 @@ class DefaultDiabloItem implements DiabloItem {
 			                                                          .getDisplayName()));
 		}
 
-		ItemRepositoryLoader loader;
-
-		this.id = id;
-		this.itemStack = itemStack;
 		this.level = level;
 		this.originalLore.addAll(originalLore);
-		this.dropChance = dropChance;
 		this.customRarities.putAll(customRarities);
-		this.hasDefaultProperties = hasDefaultProperties;
+		NBTTagManager.getInstance()
+		             .addNBTTag(this, NBTKey.ID, (item, key) -> item.setString(key, id));
 	}
 
 	@Override
@@ -104,48 +92,12 @@ class DefaultDiabloItem implements DiabloItem {
 		if (rarities.size() != Tier.values().length) {
 			throw new IllegalArgumentException("Invalid rarities length");
 		}
-		hasDefaultProperties = false;
+		setHasDefaultProperties(false);
 		this.customRarities.putAll(rarities);
 	}
 
 	@Override
 	public int getLevel() {
 		return level;
-	}
-
-	@Override
-	public ItemStack getItemStack() {
-		return itemStack.clone();
-	}
-
-	@Override
-	public String getId() {
-		return id;
-	}
-
-	@Override
-	public double getDropChance() {
-		return dropChance;
-	}
-
-	@Override
-	public void setDropChance(final double dropChance) {
-		this.hasDefaultProperties = false;
-		this.dropChance = dropChance;
-	}
-
-	@Override
-	public boolean hasDefaultProperties() {
-		return hasDefaultProperties;
-	}
-
-	@Override
-	public int getPrice() {
-		return price;
-	}
-
-	@Override
-	public void setPrice(final int price) {
-		this.price = price;
 	}
 }

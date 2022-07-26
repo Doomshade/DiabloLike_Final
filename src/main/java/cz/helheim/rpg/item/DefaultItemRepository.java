@@ -22,7 +22,7 @@ class DefaultItemRepository implements ItemRepository {
 
 	private final String id;
 
-	public DefaultItemRepository(final File repository, final ItemRepositoryLoader itemRepositoryLoader) {
+	DefaultItemRepository(final File repository, final ItemRepositoryLoader itemRepositoryLoader) {
 		requireNonNull(repository);
 		if (!repository.exists()) {
 			throw new IllegalArgumentException(String.format("Repository '%s' does not exist.", repository.getAbsolutePath()));
