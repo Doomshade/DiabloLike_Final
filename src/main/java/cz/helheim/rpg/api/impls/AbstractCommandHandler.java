@@ -7,16 +7,13 @@ import cz.helheim.rpg.api.command.SubCommand;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.PluginCommand;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
 import java.util.*;
-import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 public abstract class AbstractCommandHandler implements ICommandHandler {
-
-	private final Logger logger;
-
 	private final PluginCommand command;
 	private final Map<String, SubCommand> subCommands = new TreeMap<>();
 	private final HelheimPlugin plugin;
@@ -24,16 +21,10 @@ public abstract class AbstractCommandHandler implements ICommandHandler {
 	protected AbstractCommandHandler(HelheimPlugin plugin, String command) {
 		this.plugin = plugin;
 		this.command = plugin.getCommand(command);
-		this.logger = plugin.getLogger();
 	}
 
 	protected HelheimPlugin getPlugin() {
 		return plugin;
-	}
-
-	@Override
-	public void register() {
-		command.setExecutor(this);
 	}
 
 	@Override
@@ -79,6 +70,22 @@ public abstract class AbstractCommandHandler implements ICommandHandler {
 			                                 entry.getValue()
 			                                      .getDescription()));
 		}
+	}
+
+	@Override
+	public void register() {
+		command.setExecutor(this);
+	}
+
+	@Override
+	public void saveCommands(final FileConfiguration loader) {
+		subCommands.forEach(loader::set);
+	}
+
+	@Override
+	public void loadCommands(final FileConfiguration loader) {
+		loader.getKeys(false)
+		      .forEach(x -> subCommands.put(x, (SubCommand) loader.get(x)));
 	}
 
 	@Override

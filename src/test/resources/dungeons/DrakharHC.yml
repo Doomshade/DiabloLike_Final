@@ -1,0 +1,90 @@
+EfritHC:
+  SinisterKolekceHC:
+    amount: 1
+    chance: 25.0
+  SinisterKolekce:
+    chance: 0.0
+    amount: 1-1
+  Mesmarka:
+    chance: 25
+    amount: 1-2
+SmrtonosHC:
+  SinisterKolekceHC:
+    amount: 1
+    chance: 25.0
+  SinisterKolekce:
+    chance: 0.0
+    amount: 1-1
+  Mesmarka:
+    chance: 25
+    amount: 1-2
+Temny_strazce:
+  SinisterKolekceHC:
+    amount: 1
+    chance: 70.0
+    uncommon: 100
+  SinisterKolekce:
+    chance: 0.0
+    amount: 1-1
+  Mesmarka:
+    chance: 100
+    amount: 1-3
+PrizrakHC:
+  SinisterKolekceHC:
+    amount: 2-4
+    chance: 100.0
+    legendary: 30
+    rare: 100
+  SinisterKolekce:
+    chance: 0.0
+    amount: 1-1
+  FragmentKolekce:
+    amount: 1
+    chance: 2.0
+  Mesmarka:
+    chance: 100
+    amount: 5-9
+SpektralHC:
+  SinisterKolekceHC:
+    amount: 1-2
+    chance: 100.0
+    legendary: 15
+    rare: 100
+  SinisterKolekce:
+    chance: 0.0
+    amount: 1-1
+  Mesmarka:
+    chance: 100
+    amount: 1-2
+Stiny_zlaHC:
+  SinisterKolekceHC:
+    amount: 1
+    chance: 15.0
+  SinisterKolekce:
+    chance: 0.0
+    amount: 1-1
+  Mesmarka:
+    chance: 20
+    amount: 1-2
+Stiny_zlaHC2:
+  SinisterKolekceHC:
+    amount: 1
+    chance: 15.0
+  SinisterKolekce:
+    chance: 0.0
+    amount: 1-1
+  Mesmarka:
+    chance: 20
+    amount: 1-2
+Stinovy_lord:
+  SinisterKolekceHC:
+    amount: 1-2
+    chance: 100.0
+    legendary: 15
+    rare: 100
+  Mesmarka:
+    chance: 100
+    amount: 1-2
+  SinisterKolekce:
+    chance: 0.0
+    amount: 1-1

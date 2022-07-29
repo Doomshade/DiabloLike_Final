@@ -1,6 +1,5 @@
 package cz.helheim.rpg.command;
 
-import cz.helheim.rpg.DiabloLike;
 import cz.helheim.rpg.api.impls.AbstractSubCommand;
 import org.bukkit.command.CommandSender;
 
@@ -13,17 +12,17 @@ import java.util.Map;
  */
 public class AddCommand extends AbstractSubCommand {
 
-    public AddCommand() {
-        super();
-    }
+	public AddCommand() {
+		super();
+	}
 
-    public AddCommand(final Map<String, Object> map) {
-        super(map);
-    }
+	public AddCommand(final Map<String, Object> map) {
+		super(map);
+	}
 
-    @Override
-    public void onCommand(final CommandSender sender, final String... args) {
-        DiabloLike.getInstance()
-                  .reload();
-    }
+	@Override
+	public void onCommand(final CommandSender sender, final String... args) {
+		// TODO
+		throw new UnsupportedOperationException();
+	}
 }

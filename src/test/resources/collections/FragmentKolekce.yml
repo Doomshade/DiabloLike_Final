@@ -1,0 +1,50 @@
+frag2:
+  materialName: IRON_AXE
+  displayName: '&8&lFragment hole duší'
+  lore:
+  - '&7 &f- Slouží k výrobě &8&lHole duší&f,'
+  - '&7 &7 &7 &fpro sestavení hole je potřeba'
+  - '&7 &7 &7 &fmít &8&lKámen duší &fa předat tyto'
+  - '&7 &7 &7 &fvěci &6magickému kováři&f.'
+frag3:
+  materialName: INK_SACK
+  data: 1
+  displayName: '&8&lFragment kladiva duší'
+  lore:
+  - '&7 &f- Slouží k výrobě &8&lKladiva duší&f,'
+  - '&7 &7 &7 &fpro sestavení kladiva je potřeba'
+  - '&7 &7 &7 &fmít &8&lKámen duší &fa předat tyto'
+  - '&7 &7 &7 &fvěci &6magickému kováři&f.'
+frag4:
+  materialName: BOW
+  displayName: '&8&lFragment luku duší'
+  lore:
+  - '&7 &f- Slouží k výrobě &8&lLuku duší&f,'
+  - '&7 &7 &7 &fpro sestavení luku je potřeba'
+  - '&7 &7 &7 &fmít &8&lKámen duší &fa předat tyto'
+  - '&7 &7 &7 &fvěci &6magickému kováři&f.'
+frag5:
+  data: 10
+  materialName: INK_SACK
+  displayName: '&8&lFragment sekery duší'
+  lore:
+  - '&7 &f- Slouží k výrobě &8&lSekery duší&f,'
+  - '&7 &7 &7 &fpro sestavení sekery je potřeba'
+  - '&7 &7 &7 &fmít &8&lKámen duší &fa předat tyto'
+  - '&7 &7 &7 &fvěci &6magickému kováři&f.'
+frag6:
+  materialName: CARROT_STICK
+  displayName: '&8&lFragment dýky duší'
+  lore:
+  - '&7 &f- Slouží k výrobě &8&lDýky duší&f,'
+  - '&7 &7 &7 &fpro sestavení dýky je potřeba'
+  - '&7 &7 &7 &fmít &8&lKámen duší &fa předat tyto'
+  - '&7 &7 &7 &fvěci &6magickému kováři&f.'
+frag7:
+  materialName: GOLDEN_CARROT
+  displayName: '&8&lFragment meče duší'
+  lore:
+  - ' &f- Slouží k výrobě &8&lMeče duší&f,'
+  - ' &f  pro sestavení meče je potřeba'
+  - ' &f  mít &8&lKámen duší&f a předat tyto'
+  - ' &f  věci &6magickému kováři&f.'

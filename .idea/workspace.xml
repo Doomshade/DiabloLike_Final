@@ -1,34 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="DiabloLike_Final:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8b18b52-3b6a-4ba4-8f37-374ba3914df9" name="Changes" comment="uh. many changes, shit's starting to look good :shrug:">
-      <change afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/event/DropEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/AbstractBaseItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/DefaultBaseItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/ItemInstantiationHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/util/ExceptionUtils.java" afterDir="false" />
+    <list default="true" id="b8b18b52-3b6a-4ba4-8f37-374ba3914df9" name="Changes" comment="k">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/DiabloLike_Final_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/DiabloLikeImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/command/ReloadCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/Identifiable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/LoreParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/messages.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/cz/helheim/rpg/DiabloLikeImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/cz/helheim/rpg/item/DiabloItemTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/collections/FragmentKolekce.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/collections/KolekceDusi.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/collections/Mesmarka.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/collections/SetovkyKolekce.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/collections/SinisterKolekce.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/collections/SinisterKolekceHC.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/collections/TemnaKolekceHC.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/collections/Ulomek.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/config.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/crafting/crafting config.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/crafting/items.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/dungeons/DrakharHC.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/dungeons/ExatramHC.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/dungeons/FlamewakerHC.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/dungeons/FlamewakerN.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/dungeons/KanalyHC.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/dungeons/KanalyN.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/dungeons/Kasadya.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/dungeons/KomnatyHC.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/dungeons/KomnatyN.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/dungeons/Shadowbeast.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/dungeons/Shadowsoul.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/dungeons/Sinister.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/dungeons/SinisterHC.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/dungeons/SinisterN.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/groupsOLD/dungeongroups.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/groupsOLD/itemgroup.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/items.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/messages.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Arthropoda.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Astaroth.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Bash.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/BerserkN.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Bolon.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Bulac.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Demor.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Doomguard.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Drtikloub.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Flamewaker.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Francis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Hellscream.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Hnilak_z_kanalizaceN.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Hrdlorez.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Ik.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Jeskynni_netvor.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Kisin.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Kostolam.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Krvelacna_piranaN.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Kukudrap.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/LeviatanN.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Lich.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Lucifer.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Minotaur.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/MlhavecN.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Mormo.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/MrazivyDemon.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Narrokh.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Nastvany_AstarothN.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Nekromancer.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Nightmare.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Ocelak.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Okultista.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Orochi.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Predator.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Prizrak.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Sabatha.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/SabathaN.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Saman.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Seth.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Shinta.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Sluzebnik_temneho_hlasu.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Spektral.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Strazce_Ledoveho_Orbu.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Summoner.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Temna_krysaN.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/TopivecN.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Treasure_chest_drakhar_ez.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Treasure_chest_exatram_ez.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Treasure_chest_flamewaker_ez.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Treasure_chest_komnaty_ez.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Treasure_chest_sinister_ez.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Treasure_chest_zk.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Velka_zmutovana_krysa.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Viper.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Vlkodlak.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Xibalba.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/Zage.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mobspecific/ZombieKing.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/orbs.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/plugin.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/DiabloLike.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/DiabloLike.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/exception/SerializationException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/exception/SerializationException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/command/ICommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/command/ICommandHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/command/SubCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/command/SubCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/exception/SerializationException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/impls/AbstractCommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/impls/AbstractCommandHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/impls/AbstractSubCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/impls/AbstractSubCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/impls/HelheimPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/impls/HelheimPlugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/serialize/HelheimSerializable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/util/SerializationUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/command/AddCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/command/AddCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/data/DiabloLikeSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/data/DiabloLikeSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/BaseItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/BaseItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/AbstractBaseItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/AbstractBaseItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/DefaultDiabloItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/DefaultDiabloItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/DefaultDrop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/DefaultDrop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/DefaultDropManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/DefaultDropManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/DefaultItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/DefaultItemRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/DefaultItemRepositoryLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/DefaultItemRepositoryLoader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/DefaultScroll.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/DefaultScroll.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/DiabloItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/DiabloItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/Drop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/Drop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/DropManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/DropManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/ItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/ItemRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/ItemRepositoryLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/ItemRepositoryLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/ItemInstantiationHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/ItemInstantiationHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/Scroll.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/Scroll.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/listener/MobListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/listener/MobListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/listener/MythicMobListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/listener/MythicMobListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/util/ExceptionUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/util/ExceptionUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/util/Range.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/util/Range.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,8 +144,9 @@
       <list>
         <option value="AnnotationType" />
         <option value="Enum" />
-        <option value="Interface" />
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -87,9 +191,13 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;K:/MC/MC192/plugins/MythicLib.jar&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last.edited.regexp&quot;: &quot;&amp;3Víra: 8-13&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Doomshade/eclipse-workspace/MockBukkit/src&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.41034484&quot;,
@@ -98,9 +206,89 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Doomshade\eclipse-workspace\DiabloLike_Final\src\main\resources" />
+      <recent name="C:\Users\Doomshade\eclipse-workspace\DiabloLike_Final\src\test\resources" />
+    </key>
     <key name="MoveMembersDialog.RECENTS_KEY">
       <recent name="cz.helheim.rpg.api.io.PluginLogHandler" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="cz.helheim.rpg.item" />
+      <recent name="cz.helheim.rpg" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.DiabloLikeImplTest">
+    <configuration name="DiabloItemTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DiabloLike_Final" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cz.helheim.rpg.item.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cz.helheim.rpg.item" />
+      <option name="MAIN_CLASS_NAME" value="cz.helheim.rpg.item.DiabloItemTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DiabloLikeImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DiabloLike_Final" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cz.helheim.rpg.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cz.helheim.rpg" />
+      <option name="MAIN_CLASS_NAME" value="cz.helheim.rpg.DiabloLikeImplTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DiabloLike_Final [test]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="test" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.DiabloItemTest" />
+      <item itemvalue="JUnit.DiabloLikeImplTest" />
+      <item itemvalue="Maven.DiabloLike_Final [test]" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.DiabloLikeImplTest" />
+        <item itemvalue="JUnit.DiabloItemTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -128,7 +316,8 @@
       <workItem from="1658155310228" duration="8333000" />
       <workItem from="1658777358571" duration="5679000" />
       <workItem from="1658853115215" duration="596000" />
-      <workItem from="1658866081568" duration="2550000" />
+      <workItem from="1658866081568" duration="5663000" />
+      <workItem from="1658940128154" duration="16909000" />
     </task>
     <task id="LOCAL-00001" summary="many changes">
       <created>1656073470893</created>
@@ -186,7 +375,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657453488355</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="k">
+      <created>1658868662912</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1658868662913</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,6 +409,18 @@
     <MESSAGE value="refactor/rename" />
     <MESSAGE value="commit before disaster" />
     <MESSAGE value="uh. many changes, shit's starting to look good :shrug:" />
-    <option name="LAST_COMMIT_MESSAGE" value="uh. many changes, shit's starting to look good :shrug:" />
+    <MESSAGE value="k" />
+    <option name="LAST_COMMIT_MESSAGE" value="k" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/AbstractBaseItem.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -1,0 +1,15 @@
+chance: 100
+amount: 1-2
+level: 32-34
+legendary: 5
+rare: 35
+uncommon: 100
+ulxx1:
+  materialName: QUARTZ
+  displayName: '&7Úlomek duše &6Lv. 0'
+  lore:
+  - '&7Tento Úlomek duše můžeš'
+  - '&7vyměnit za Úlomek duše &6Lv. 1'
+  - '&7u &6obchodníka s dušemi&7.'
+  chance: 0.0
+  amount: 12-15

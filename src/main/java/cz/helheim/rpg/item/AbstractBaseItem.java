@@ -12,7 +12,7 @@ import static org.apache.commons.lang.Validate.notNull;
  */
 abstract class AbstractBaseItem implements BaseItem {
 
-	private final ItemStack item;
+	protected final ItemStack item;
 	private final String id;
 	private final boolean dropsRepeatedly;
 	private double dropChance;

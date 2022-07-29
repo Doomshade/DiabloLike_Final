@@ -4,11 +4,9 @@ import com.rit.sucy.CustomEnchantment;
 import cz.helheim.rpg.util.Pair;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.*;
-
-import static org.apache.commons.lang.Validate.noNullElements;
-import static org.apache.commons.lang.Validate.notNull;
 
 /**
  * @author Doomshade
@@ -24,28 +22,23 @@ class DefaultDiabloItem extends AbstractBaseItem implements DiabloItem {
 
 	private final List<String> originalLore = new ArrayList<>();
 	private final Map<Tier, Double> customRarities = new LinkedHashMap<>();
+	private boolean identified = false;
 
-	DefaultDiabloItem(final String id, final ItemStack itemStack, final int level, final List<String> originalLore,
-	                  final double dropChance, final Map<Tier, Double> customRarities, final boolean hasDefaultProperties,
-	                  final boolean dropsRepeatedly) {
+	DefaultDiabloItem(final String id, final ItemStack itemStack, final int level, final double dropChance,
+	                  final Map<Tier, Double> customRarities, final boolean hasDefaultProperties, final boolean dropsRepeatedly) {
 		super(itemStack, id, dropChance, hasDefaultProperties, dropsRepeatedly);
-		notNull(originalLore);
-		noNullElements(originalLore);
-
-
-		if (level < 0) {
-			throw new IllegalArgumentException(String.format("Invalid level %d for %s",
-			                                                 level,
-			                                                 itemStack.getItemMeta()
-			                                                          .getDisplayName()));
-		}
-
+		assert level > 0 : String.format("Invalid level %d for %s",
+		                                 level,
+		                                 itemStack.getItemMeta()
+		                                          .getDisplayName());
 		this.level = level;
-		this.originalLore.addAll(originalLore);
+		this.originalLore.addAll(itemStack.getItemMeta()
+		                                  .getLore());
 		this.customRarities.putAll(customRarities);
 		NBTTagManager.getInstance()
 		             .addNBTTag(this, NBTKey.ID, (item, key) -> item.setString(key, id));
 	}
+
 
 	@Override
 	public void addCustomEnchantment(CustomEnchantment enchantment, int level) {
@@ -68,21 +61,6 @@ class DefaultDiabloItem extends AbstractBaseItem implements DiabloItem {
 	}
 
 	@Override
-	public List<String> getOriginalLore() {
-		return Collections.unmodifiableList(originalLore);
-	}
-
-	@Override
-	public List<String> getAttributes() {
-		throw new UnsupportedOperationException();
-	}
-
-	@Override
-	public List<String> getRequirements() {
-		throw new UnsupportedOperationException();
-	}
-
-	@Override
 	public Map<Tier, Double> getRarities() {
 		return Collections.unmodifiableMap(customRarities);
 	}
@@ -99,5 +77,23 @@ class DefaultDiabloItem extends AbstractBaseItem implements DiabloItem {
 	@Override
 	public int getLevel() {
 		return level;
+	}
+
+	@Override
+	public List<String> getOriginalLore() {
+		return Collections.unmodifiableList(originalLore);
+	}
+
+	@Override
+	public boolean isIdentified() {
+		return identified;
+	}
+
+	@Override
+	public void setIdentified(final List<String> newLore, final boolean identified) {
+		final ItemMeta meta = super.item.getItemMeta();
+		meta.setLore(newLore);
+		super.item.setItemMeta(meta);
+		this.identified = identified;
 	}
 }

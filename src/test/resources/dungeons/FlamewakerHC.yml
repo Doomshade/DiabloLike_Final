@@ -1,0 +1,32 @@
+FlamewakerHC:
+  SinisterKolekceHC:
+    amount: 2-4
+    chance: 100.0
+    legendary: 30
+    rare: 100
+  SinisterKolekce:
+    amount: 1-1
+    chance: 0.0
+  FragmentKolekce:
+    amount: 1
+    chance: 2.0
+BaalHC:
+  SinisterKolekceHC:
+    amount: 1-2
+    chance: 100.0
+    legendary: 15
+    rare: 100
+AbaddonHC:
+  SinisterKolekceHC:
+    amount: 1
+    chance: 100.0
+    legendary: 15
+    rare: 70
+    uncommon: 100
+LacielHC:
+  SinisterKolekceHC:
+    amount: 1
+    chance: 100.0
+    legendary: 15
+    rare: 70
+    uncommon: 100

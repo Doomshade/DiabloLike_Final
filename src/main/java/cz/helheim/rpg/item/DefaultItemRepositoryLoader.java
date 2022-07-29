@@ -16,8 +16,7 @@ import java.util.logging.Level;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static cz.helheim.rpg.item.ItemInstantiationHelper.diabloItem;
-import static cz.helheim.rpg.item.ItemInstantiationHelper.scroll;
+import static cz.helheim.rpg.item.ItemInstantiationHelper.*;
 import static java.util.Optional.empty;
 
 /**
@@ -55,7 +54,7 @@ class DefaultItemRepositoryLoader implements ItemRepositoryLoader {
 		// if the level is not present the method returns <0
 		// the level MUST be present in order for the item to be treated
 		// as a valid diablo item
-		final int itemLevel = findItemLevel(lore, settings);
+		final int itemLevel = new LoreParser(lore).findItemLevel();
 
 		// look for the required lore for the scroll
 		// put it in the else-if statement so the computation is only done
@@ -71,7 +70,7 @@ class DefaultItemRepositoryLoader implements ItemRepositoryLoader {
 		}
 
 		// instantiate the base item
-		// it's either a DiabloItem or a Scroll
+		// it's either a DiabloItem (has level), a Scroll (has a specific lore), or a BaseItem (else)
 		final BaseItem baseItem;
 		if (itemLevel >= 0) {
 			final Map<DiabloItem.Tier, Double> customRarities = new LinkedHashMap<>(settings.getRarityChances());
@@ -81,11 +80,11 @@ class DefaultItemRepositoryLoader implements ItemRepositoryLoader {
 					customRarities.put(tier, section.getDouble(tier.toString()));
 				}
 			}
-			baseItem = diabloItem(id, rawItem, itemLevel, lore, dropChance, customRarities, hasDefaultProperties, false);
+			baseItem = diabloItem(id, rawItem, itemLevel, dropChance, customRarities, hasDefaultProperties, false);
 		} else if ((requiredScrollLore = findRequiredScrollLore(lore, settings)) != null) {
 			baseItem = scroll(id, rawItem, new Range(requiredScrollLore.group()), 0d, true, false);
 		} else {
-			return empty();
+			baseItem = baseItem(rawItem, id, dropChance, hasDefaultProperties, false);
 		}
 
 		NBTTagManager.getInstance()
@@ -130,26 +129,15 @@ class DefaultItemRepositoryLoader implements ItemRepositoryLoader {
 		return null;
 	}
 
-	private DiabloItem getDiabloItem(final String id, final ItemStack rawItem, final List<String> lore, final int itemLevel,
+	private DiabloItem getDiabloItem(final String id, final ItemStack rawItem, final int itemLevel,
 	                                 final double dropChance, final Map<DiabloItem.Tier, Double> customRarities,
 	                                 final boolean hasDefaultProperties) {
 		// the item is a diablo item, parse the section and add some metadata
 		final DiabloItem diabloItem =
-				DiabloItem.newInstance(id, rawItem, itemLevel, lore, dropChance, customRarities, hasDefaultProperties);
+				diabloItem(id, rawItem, itemLevel, dropChance, customRarities, hasDefaultProperties, false);
 		NBTTagManager.getInstance()
 		             .addNBTTag(diabloItem, NBTKey.ID, (item, key) -> item.setString(key, id));
 		return diabloItem;
-	}
-
-	private int findItemLevel(final List<String> lore, final DiabloLikeSettings settings) {
-		final Pattern lvlPattern = Pattern.compile(settings.getRequiredLevelFormat("(?<lvl>\\d+)"));
-		for (final String s : lore) {
-			final Matcher m = lvlPattern.matcher(s);
-			if (m.find()) {
-				return Integer.parseInt(m.group("lvl"));
-			}
-		}
-		return -1;
 	}
 
 	private void addEnchantments(final DiabloItem diabloItem) {
@@ -167,8 +155,10 @@ class DefaultItemRepositoryLoader implements ItemRepositoryLoader {
 			final CustomEnchantment customEnchantment = EnchantmentAPI.getEnchantment(enchantmentName);
 			if (customEnchantment == null) {
 				plugin.getLogger()
-				      .log(Level.WARNING,
-				           String.format("Invalid enchantment '%s' found at '%s'", enchantmentName, enchantments.getCurrentPath()));
+				      .log(Level.WARNING, "Invalid enchantment '{}' found at '{}'", new Object[] {
+						      enchantmentName,
+						      enchantments.getCurrentPath()
+				      });
 			} else {
 				diabloItem.addCustomEnchantment(customEnchantment, enchLevel);
 			}

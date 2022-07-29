@@ -1,0 +1,25 @@
+orb_prani:
+  type: STONE
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    display-name: §a§oOrb Prani
+    lore:
+    - §a§oOdstrani vsechny atributy predmetu.
+    - §a§oPredmet se premeni na §5§lneidentifikovany§a§o.
+orb_lovce_priser:
+  type: STONE
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    display-name: §cOrb Lovce Priser
+    lore:
+    - §a§oPrida trackovaci system idk
+orb_vylepseni:
+  type: STONE
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    display-name: §2Orb Vylepseni
+    lore:
+    - §aVylepsi dva nahodne staty o §61,0§a.

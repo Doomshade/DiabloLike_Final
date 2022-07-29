@@ -34,7 +34,7 @@ public interface DropManager {
 	 */
 	Collection<ItemStack> getRandomLoot(final Drop drop);
 
-	List<String> selectAttributes(DiabloItem diabloItem);
+	List<String> selectAttributes(Identifiable identifiable);
 
 	/**
 	 * @param level the level

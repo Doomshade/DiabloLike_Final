@@ -1,0 +1,140 @@
+AstarothHC:
+  TemnaKolekceHC:
+    amount: 0
+    chance: 0.0
+  SinisterKolekce:
+    amount: 0
+Astaroth_turned:
+  TemnaKolekceHC:
+    amount: 3-5
+    chance: 100.0
+    legendary: 50
+    rare: 100
+  SinisterKolekce:
+    amount: 0
+  FragmentKolekce:
+    amount: 1
+    chance: 6.0
+  Ulomek:
+    amount: 50-70
+    chance: 100.0
+Astaroth_turned_shadow:
+  TemnaKolekceHC:
+    amount: 1
+    chance: 30.0
+  SinisterKolekce:
+    amount: 0
+  Ulomek:
+    amount: 5-10
+    chance: 100.0
+Astaroth_wither:
+  TemnaKolekceHC:
+    amount: 0
+    chance: 0.0
+  SinisterKolekce:
+    amount: 0
+Astaroth_wither2:
+  TemnaKolekceHC:
+    amount: 1
+    chance: 30.0
+  SinisterKolekce:
+    amount: 0
+  Ulomek:
+    amount: 5-10
+    chance: 100.0
+Temny_obsidian:
+  TemnaKolekceHC:
+    amount: 1
+    chance: 25.0
+  SinisterKolekce:
+    amount: 0
+  Ulomek:
+    amount: 5-10
+    chance: 100.0
+Velka_zmutovana_krysaHC:
+  TemnaKolekceHC:
+    amount: 1-2
+    chance: 100.0
+    legendary: 10
+    rare: 50
+    uncommon: 100
+  SinisterKolekce:
+    amount: 0
+  Ulomek:
+    amount: 20-30
+    chance: 100.0
+Krvelacna_piranaHC:
+  TemnaKolekceHC:
+    amount: 1
+    chance: 8.0
+  SinisterKolekce:
+    amount: 0
+  Ulomek:
+    amount: 4-6
+    chance: 50.0
+TopivecHC:
+  TemnaKolekceHC:
+    amount: 1
+    chance: 15.0
+  SinisterKolekce:
+    amount: 0
+  Ulomek:
+    amount: 5-10
+    chance: 100.0
+TopivecHC1:
+  TemnaKolekceHC:
+    amount: 1
+    chance: 15.0
+  SinisterKolekce:
+    amount: 0
+  Ulomek:
+    amount: 5-10
+    chance: 100.0
+MlhavecHC:
+  TemnaKolekceHC:
+    amount: 1
+    chance: 20.0
+  SinisterKolekce:
+    amount: 0
+  Ulomek:
+    amount: 5-10
+    chance: 100.0
+Temna_krysaHC:
+  TemnaKolekceHC:
+    amount: 1
+    chance: 20.0
+  SinisterKolekce:
+    amount: 0
+  Ulomek:
+    amount: 5-10
+    chance: 100.0
+BerserkHC:
+  TemnaKolekceHC:
+    amount: 1
+    chance: 25.0
+    uncommon: 100
+  SinisterKolekce:
+    amount: 0
+  Ulomek:
+    amount: 5-10
+    chance: 100.0
+LeviatanHC:
+  TemnaKolekceHC:
+    amount: 1
+    chance: 20.0
+  SinisterKolekce:
+    amount: 0
+  Ulomek:
+    amount: 5-10
+    chance: 100.0
+SabathaHC:
+  TemnaKolekceHC:
+    amount: 2-3
+    chance: 100.0
+    legendary: 30
+    rare: 100
+  SinisterKolekce:
+    amount: 0
+  Ulomek:
+    amount: 15-25
+    chance: 100.0

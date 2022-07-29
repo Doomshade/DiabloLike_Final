@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="DiabloLike_Final:jar">
+    <output-path>K:/MC/MC192/plugins/_Doomlugins/plugins</output-path>
+    <root id="archive" name="DiabloLike_Final.jar">
+      <element id="module-output" name="DiabloLike_Final" />
+    </root>
+  </artifact>
+</component>

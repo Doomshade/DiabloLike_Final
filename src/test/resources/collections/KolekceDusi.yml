@@ -1,0 +1,138 @@
+huld:
+  materialName: IRON_AXE
+  displayName: '&bHůl duší'
+  lore:
+  - '&c+25-28 Poškození'
+  - '&9Inteligence: 32-40'
+  - '&3Víra: 18-24'
+  - '&bRegenerace many: 15-20'
+  - ''
+  - '&3Kouzlo: &7Mráz'
+  - '&cPoškození kouzlem: &650'
+  - '&2Cooldown: &62'
+  - ''
+  - '&7&oPravým klikem čaruješ'
+  - '&8----------------------'
+  - '&4Pouze pro: &bČaroděj'
+  - '&4Pouze pro: &5Nekromant'
+  - '&4Pouze pro: &6Druid'
+  - '&4Pouze pro: &7Kněz'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+  cast: freeze4
+bowd:
+  materialName: BOW
+  displayName: '&cLuk duší (Offhand)'
+  lore:
+  - '&4Síla: 17-22'
+  - '&9Inteligence: 15-20'
+  - '&cVitalita: 10-15'
+  - '&aPřesnost: 10-17'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &aLučištník'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  enchantments:
+    ARROW_DAMAGE: 10
+    ARROW_INFINITE: 1
+    RYCHLOSTRELBA: 3
+    LIFESTEAL: 10
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  braodcastOnFind: false
+mecd:
+  materialName: GOLDEN_CARROT
+  displayName: '&6Meč duší'
+  lore:
+  - '&c+25-28 Poškození'
+  - '&6+18-20% Šance na kritický zásah'
+  - '&e+28-35 Kritický útok'
+  - '&4Síla: 24-30'
+  - ''
+  - '&8----------------------'
+  - '&4Nemůže používat: &6Druid'
+  - '&4Nemůže používat: &5Nekromant'
+  - '&4Nemůže používat: &bČaroděj'
+  - '&4Nemůže používat: &7Kněz'
+  - '&4Nemůže používat: &aLučištník'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  braodcastOnFind: false
+axed:
+  materialName: INK_SACK
+  data: 10
+  displayName: '&6Sekera duší'
+  lore:
+  - '&c+23-26 Poškození'
+  - '&6+16-18% Šance na kritický zásah'
+  - '&e+26-32 Kritický útok'
+  - '&4Síla: 21-27'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &8Rytíř smrti'
+  - '&4Pouze pro: &cVálečník'
+  - '&4Pouze pro: &dPaladin'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  enchantments:
+    LIFESTEAL: 10
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  braodcastOnFind: false
+speard:
+  materialName: PRISMARINE_CRYSTALS
+  displayName: '&aKopí duší'
+  lore:
+  - '&c+15-19 Poškození'
+  - '&6+26-30% Šance na kritický zásah'
+  - '&e+40-50 Kritický útok'
+  - '&4Síla: 20-25'
+  - ''
+  - '&8----------------------'
+  - '&4Nemůže používat: &6Druid'
+  - '&4Nemůže používat: &5Nekromant'
+  - '&4Nemůže používat: &bČaroděj'
+  - '&4Nemůže používat: &7Kněz'
+  - '&4Nemůže používat: &aLučištník'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  braodcastOnFind: false
+daggerd:
+  materialName: CARROT_STICK
+  displayName: '&3Dýka duší'
+  lore:
+  - '&c+22-25 Poškození'
+  - '&6+23-25% Šance na kritický zásah'
+  - '&e+45-60 Kritický útok'
+  - '&4Síla: 20-25'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &eVrah'
+  - '&4Pouze pro: &9Šaman'
+  - '&4Pouze pro: &2Lovec démonů'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+hammerd:
+  materialName: INK_SACK
+  data: 1
+  displayName: '&aKladivo duší'
+  lore:
+  - '&c+25-28 Poškození'
+  - '&f+40-48 Obrana'
+  - '&cVitalita: 17-23'
+  - '&aPřesnost: 11-16'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &8Rytíř smrti'
+  - '&4Pouze pro: &dPaladin'
+  - '&4Pouze pro: &cVálečník'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'

@@ -7,7 +7,6 @@ import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.inventory.ItemStack;
 
 import java.io.File;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -24,11 +23,10 @@ public interface ItemInstantiationHelper {
 		return new DefaultBaseItem(item, id, dropChance, defaultProperties, dropsRepeatedly);
 	}
 
-	static DiabloItem diabloItem(final String id, final ItemStack itemStack, final int level, final List<String> originalLore,
-	                             final double dropChance, final Map<DiabloItem.Tier, Double> customRarities,
-	                             final boolean hasDefaultProperties, final boolean dropsRepeatedly) {
-		return new DefaultDiabloItem(id, itemStack, level, originalLore, dropChance, customRarities, hasDefaultProperties,
-		                             dropsRepeatedly);
+	static DiabloItem diabloItem(final String id, final ItemStack itemStack, final int level, final double dropChance,
+	                             final Map<DiabloItem.Tier, Double> customRarities, final boolean hasDefaultProperties,
+	                             final boolean dropsRepeatedly) {
+		return new DefaultDiabloItem(id, itemStack, level, dropChance, customRarities, hasDefaultProperties, dropsRepeatedly);
 	}
 
 	static Drop drop(final Iterable<BaseItem> drop, final Range amount, final double dropChance,

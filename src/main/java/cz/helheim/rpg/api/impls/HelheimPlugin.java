@@ -10,9 +10,13 @@ import cz.helheim.rpg.command.DiabloLikeCommandHandler;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.serialization.ConfigurationSerialization;
 import org.bukkit.event.Listener;
+import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.plugin.java.JavaPluginLoader;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -24,6 +28,14 @@ public abstract class HelheimPlugin extends JavaPlugin implements IHelheimPlugin
 
 	private Settings settings;
 
+	public HelheimPlugin() {
+
+	}
+
+	protected HelheimPlugin(JavaPluginLoader loader, PluginDescriptionFile descriptionFile, File dataFolder, File file) {
+		super(loader, descriptionFile, dataFolder, file);
+	}
+
 	@Override
 	public void onDisable() {
 		save();
@@ -32,10 +44,12 @@ public abstract class HelheimPlugin extends JavaPlugin implements IHelheimPlugin
 	@Override
 	public void onEnable() {
 		register();
+		save();
 		load();
 	}
 
 	private void register() {
+		ConfigurationSerialization.registerClass(AbstractSubCommand.class);
 		this.io = new IOManager();
 		this.commandHandler = new DiabloLikeCommandHandler(this);
 		this.commandHandler.register();
@@ -55,14 +69,14 @@ public abstract class HelheimPlugin extends JavaPlugin implements IHelheimPlugin
 	}
 
 	private void loadCommands() {
-		// TODO
+		this.commandHandler.loadCommands(io.getCommandsFileConfiguration());
 	}
 
 	private void loadIO() {
 		try {
 			io.load(this);
 		} catch (IOException | InvalidConfigurationException e) {
-			getLogger().log(Level.SEVERE, "An IO exception occurred, stopping plugin...", e);
+			getLogger().log(Level.SEVERE, "An IO exception occurred when loading the plugin, stopping...", e);
 			Bukkit.getPluginManager()
 			      .disablePlugin(this);
 		}
@@ -88,6 +102,7 @@ public abstract class HelheimPlugin extends JavaPlugin implements IHelheimPlugin
 		try {
 			final FileConfiguration commandsFileConfiguration = this.io.getCommandsFileConfiguration();
 			// TODO
+			this.commandHandler.saveCommands(commandsFileConfiguration);
 			// commandsFileConfiguration.addDefaults(this.serializeManager.serialize(this.commandHandler));
 			commandsFileConfiguration.save(this.io.getCommandsFile());
 		} catch (IOException e) {
@@ -119,7 +134,6 @@ public abstract class HelheimPlugin extends JavaPlugin implements IHelheimPlugin
 
 	@Override
 	public void reload() {
-		save();
 		load();
 		Bukkit.getPluginManager()
 		      .callEvent(new ReloadEvent(this));

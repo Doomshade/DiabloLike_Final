@@ -1,0 +1,78 @@
+SummonerHC:
+  SinisterKolekceHC:
+    amount: 2-3
+    chance: 100
+    legendary: 70
+    rare: 100
+  SinisterKolekce:
+    chance: 0.0
+    amount: 1-1
+  FragmentKolekce:
+    amount: 1
+    chance: 2.0
+  Mesmarka:
+    chance: 100
+    amount: 5-8
+BansheeHC:
+  SinisterKolekceHC:
+    amount: 1
+    chance: 2.0
+    uncommon: 100
+  SinisterKolekce:
+    chance: 0.0
+    amount: 1-1
+  Mesmarka:
+    chance: 10
+    amount: 1-2
+DoomguardHC:
+  SinisterKolekceHC:
+    amount: 1
+    chance: 100
+    legendary: 25
+    rare: 70
+    uncommon: 100
+  SinisterKolekce:
+    chance: 0.0
+    amount: 1-1
+  Mesmarka:
+    chance: 100
+    amount: 1-2
+DoomguardHC1:
+  SinisterKolekceHC:
+    amount: 1
+    chance: 100
+    legendary: 25
+    rare: 70
+    uncommon: 100
+  SinisterKolekce:
+    chance: 0.0
+    amount: 1-1
+  Mesmarka:
+    chance: 100
+    amount: 1-2
+AzazelHC:
+  SinisterKolekceHC:
+    amount: 1
+    chance: 100
+    legendary: 15
+    rare: 60
+    uncommon: 100
+  SinisterKolekce:
+    chance: 0.0
+    amount: 1-1
+  Mesmarka:
+    chance: 100
+    amount: 1-2
+AzazelHC1:
+  SinisterKolekceHC:
+    amount: 1
+    chance: 100
+    legendary: 15
+    rare: 60
+    uncommon: 100
+  SinisterKolekce:
+    chance: 0.0
+    amount: 1-1
+  Mesmarka:
+    chance: 100
+    amount: 1-2

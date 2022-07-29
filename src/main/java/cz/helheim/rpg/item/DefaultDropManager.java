@@ -79,20 +79,21 @@ class DefaultDropManager implements DropManager {
 	}
 
 	@Override
-	public List<String> selectAttributes(final DiabloItem diabloItem) {
-		if (!hasTier(diabloItem)) {
+	public List<String> selectAttributes(final Identifiable identifiable) {
+		if (!hasTier(identifiable)) {
 			return new ArrayList<>();
 		}
 		final DiabloLikeSettings settings = plugin.getSettings();
-		final DiabloItem.Tier tier = getTier(diabloItem);
+		final DiabloItem.Tier tier = getTier(identifiable);
 		final double dividedBy = settings.getPocetDiv(tier);
 		if (dividedBy <= 0.0) {
 			plugin.getLogger()
-			      .log(Level.INFO, String.format("Invalid division for %s tier!", tier));
+			      .log(Level.INFO, "Invalid division for {} tier!", tier);
 			return new ArrayList<>();
 		}
 		// use LinkedList to remove items in O(1) as opposed to ArrayList in O(n)
-		final List<String> attributes = new LinkedList<>(diabloItem.getAttributes());
+		final List<String> attributes = new LinkedList<>(identifiable.getLoreParser()
+		                                                             .getAttributes());
 		int count = (int) Math.ceil(attributes.size() / dividedBy);
 		final Random random = new Random();
 
@@ -111,7 +112,7 @@ class DefaultDropManager implements DropManager {
 			initializeDrops(plugin.getMainItemRepository());
 			if (dropCache.isEmpty()) {
 				plugin.getLogger()
-				      .log(Level.CONFIG, "No available drops for level " + level);
+				      .log(Level.CONFIG, "No available drops for level {}", level);
 				return emptyDrop();
 			}
 		}
@@ -132,12 +133,12 @@ class DefaultDropManager implements DropManager {
 		return drop(drops, 1, settings.getDropChance(), settings.getRarityChances());
 	}
 
-	private boolean hasTier(final DiabloItem diabloItem) {
+	private boolean hasTier(final BaseItem diabloItem) {
 		return NBTTagManager.getInstance()
 		                    .getInteger(diabloItem, NBTKey.TIER) != DiabloItem.Tier.UNKNOWN_TIER;
 	}
 
-	private DiabloItem.Tier getTier(final DiabloItem diabloItem) throws IllegalArgumentException {
+	private DiabloItem.Tier getTier(final BaseItem diabloItem) throws IllegalArgumentException {
 		final int ordinal = NBTTagManager.getInstance()
 		                                 .getInteger(diabloItem, NBTKey.TIER);
 		assert ordinal != DiabloItem.Tier.UNKNOWN_TIER : "Item does not have a tier, forgot to check with hasTier()";
@@ -198,7 +199,7 @@ class DefaultDropManager implements DropManager {
 		// validate the tier colour in settings
 		if (tierColour.isEmpty()) {
 			plugin.getLogger()
-			      .log(Level.INFO, "Missing tier colour for " + tier.name());
+			      .log(Level.INFO, "Missing tier colour for {}", tier.name());
 			tierColour = "&f";
 		}
 		tierColour = ChatColor.translateAlternateColorCodes('&', tierColour);

@@ -1,0 +1,1125 @@
+hhul3:
+  cast: heal4
+  materialName: STONE_PICKAXE
+  displayName: '&6Sinisterova léčebná hůl'
+  lore:
+  - '&cVitalita:&c 7-12'
+  - '&3Víra:&3 8-13'
+  - '&bRegenerace many:&b 7-11'
+  - '&9Síla léčebných kouzel:&6 12-15'
+  - '&9'
+  - '&3Kouzlo:&7 Uzdravení'
+  - '&cLéčba:&6 10'
+  - '&2Cooldown:&6 5'
+  - '&9'
+  - '&7&oPravým klikem čaruješ'
+  - '&8----------------------'
+  - '&4Pouze pro:&6 Druid'
+  - '&4Pouze pro:&7 Kněz'
+  - '&4Pouze pro:&9 Šaman'
+  - '&2Potřebný Lvl:&2 30'
+  - '&8----------------------'
+hul13:
+  materialName: IRON_AXE
+  displayName: '&bSinisterova hůl'
+  lore:
+  - '&c+13-18 Poškození'
+  - '&9Inteligence: 13-24'
+  - '&3Víra: 8-13'
+  - '&bRegenerace many: 7-11'
+  - ''
+  - '&3Kouzlo: &7Řetězová smrt'
+  - '&cPoškození kouzlem: &640'
+  - '&2Cooldown: &64'
+  - ''
+  - '&7&oPravým klikem čaruješ'
+  - '&8----------------------'
+  - '&4Pouze pro: &bČaroděj'
+  - '&4Pouze pro: &5Nekromant'
+  - '&4Pouze pro: &6Druid'
+  - '&4Pouze pro: &7Kněz'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+  cast: painchain6
+stitlego:
+  materialName: WOOD_SWORD
+  displayName: '&6Sinisterův štít (Offhand)'
+  lore:
+  - '&f+28-37 Obrana'
+  - '&cVitalita: 10-14'
+  - '&4Síla: 5-8'
+  - '&aPřesnost: 5-8'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &8Rytíř smrti'
+  - '&4Pouze pro: &dPaladin'
+  - '&4Pouze pro: &cVálečník'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  - '&eVytvoren demoni moci'
+  spawnOnMonsterWeight: 0
+  chanceToDropOnMonsterDeath: 0.0
+  broadcastOnFind: false
+off6:
+  materialName: BOOK
+  displayName: '&6Sinisterova kniha (Offhand)'
+  lore:
+  - '&cVitalita: 3-5'
+  - '&9Inteligence: 7-10'
+  - '&3Víra: 4-7'
+  - '&bRegenerace many: 3-6'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &bČaroděj'
+  - '&4Pouze pro: &5Nekromant'
+  - '&4Pouze pro: &6Druid'
+  - '&4Pouze pro: &7Kněz'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+bow12x:
+  materialName: BOW
+  displayName: '&cSinisterův luk (Offhand)'
+  lore:
+  - '&4Síla: 5-10'
+  - '&9Inteligence: 4-7'
+  - '&cVitalita: 4-6'
+  - '&aPřesnost: 4-7'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &aLučištník'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  enchantments:
+    ARROW_DAMAGE: 6
+    ARROW_INFINITE: 1
+    RYCHLOSTRELBA: 2
+    LIFESTEAL: 5
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  braodcastOnFind: false
+mec15x:
+  materialName: FERMENTED_SPIDER_EYE
+  displayName: '&6Sinisterův meč'
+  lore:
+  - '&c+11-17 Poškození'
+  - '&6+9-16% Šance na kritický zásah'
+  - '&e+8-22 Kritický útok'
+  - '&4Síla: 9-16'
+  - ''
+  - '&8----------------------'
+  - '&4Nemůže používat: &6Druid'
+  - '&4Nemůže používat: &5Nekromant'
+  - '&4Nemůže používat: &bČaroděj'
+  - '&4Nemůže používat: &7Kněz'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  braodcastOnFind: false
+axe7x:
+  materialName: INK_SACK
+  data: 12
+  displayName: '&6Sinisterova sekera'
+  lore:
+  - '&c+11-15 Poškození'
+  - '&6+9-14% Šance na kritický zásah'
+  - '&e+8-19 Kritický útok'
+  - '&4Síla: 9-15'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &8Rytíř smrti'
+  - '&4Pouze pro: &cVálečník'
+  - '&4Pouze pro: &dPaladin'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  enchantments:
+    LIFESTEAL: 5
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  braodcastOnFind: false
+spear3x:
+  materialName: PRISMARINE_CRYSTALS
+  displayName: '&aSinisterovo kopí'
+  lore:
+  - '&c+8-12 Poškození'
+  - '&6+15-20% Šance na kritický zásah'
+  - '&e+24-30 Kritický útok'
+  - '&4Síla: 9-12'
+  - ''
+  - '&8----------------------'
+  - '&4Nemůže používat: &6Druid'
+  - '&4Nemůže používat: &5Nekromant'
+  - '&4Nemůže používat: &bČaroděj'
+  - '&4Nemůže používat: &7Kněz'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  braodcastOnFind: false
+dagger3xxx:
+  materialName: INK_SACK
+  data: 15
+  displayName: '&3Sinisterova dýka'
+  lore:
+  - '&c+9-15 Poškození'
+  - '&6+13-20% Šance na kritický zásah'
+  - '&e+22-33 Kritický útok'
+  - '&4Síla: 8-15'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &eVrah'
+  - '&4Pouze pro: &9Šaman'
+  - '&4Pouze pro: &2Lovec démonů'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+hammer5x:
+  materialName: INK_SACK
+  data: 1
+  displayName: '&aSinisterovo kladivo'
+  lore:
+  - '&c+11-17 Poškození'
+  - '&f+14-24 Obrana'
+  - '&cVitalita: 8-13'
+  - '&aPřesnost: 3-7'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &8Rytíř smrti'
+  - '&4Pouze pro: &dPaladin'
+  - '&4Pouze pro: &cVálečník'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+offhand1x3w:
+  materialName: FERMENTED_SPIDER_EYE
+  displayName: '&dSinisterův meč (Offhand)'
+  lore:
+  - '&f+8-15 Obrana'
+  - '&4Síla: 13-22'
+  - '&cVitalita: 5-9'
+  - '&aPřesnost: 4-8'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &cVálečník'
+  - '&4Pouze pro: &8Rytíř smrti'
+  - '&4Pouze pro: &dPaladin'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  braodcastOnFind: false
+offhandq1x3w:
+  materialName: INK_SACK
+  data: 15
+  displayName: '&dSinisterova dýka (Offhand)'
+  lore:
+  - '&f+8-12 Obrana'
+  - '&4Síla: 14-28'
+  - '&cVitalita: 5-8'
+  - '&aPřesnost: 4-7'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &eVrah'
+  - '&4Pouze pro: &9Šaman'
+  - '&4Pouze pro: &2Lovec démonů'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  braodcastOnFind: false
+helma9cx0:
+  materialName: LEATHER_HELMET
+  displayName: '&6Sinisterova helma'
+  lore:
+  - '&f+16-21 Obrana'
+  - '&2+4-5% Vyhýbání'
+  - '&c+4-5 Poškození'
+  - '&6+3-4% Šance na kritický zásah'
+  - '&e+8-13 Kritický útok'
+  - '&cVitalita: 5-6'
+  - '&9Inteligence: 8-14'
+  - '&3Víra: 7-11'
+  - ''
+  - '&8----------------------'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+  color: 16743936
+chest9cx0:
+  materialName: LEATHER_CHESTPLATE
+  displayName: '&6Sinisterovo brnění'
+  lore:
+  - '&f+16-21 Obrana'
+  - '&2+4-5% Vyhýbání'
+  - '&c+4-5 Poškození'
+  - '&6+3-4% Šance na kritický zásah'
+  - '&e+8-13 Kritický útok'
+  - '&cVitalita: 5-6'
+  - '&9Inteligence: 8-14'
+  - '&3Víra: 7-11'
+  - ''
+  - '&8----------------------'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+  color: 16743936
+gate9cx0:
+  materialName: LEATHER_LEGGINGS
+  displayName: '&6Sinisterovo kalhoty'
+  lore:
+  - '&f+16-21 Obrana'
+  - '&2+4-5% Vyhýbání'
+  - '&c+4-5 Poškození'
+  - '&6+3-4% Šance na kritický zásah'
+  - '&e+8-13 Kritický útok'
+  - '&cVitalita: 5-6'
+  - '&9Inteligence: 8-14'
+  - '&3Víra: 7-11'
+  - ''
+  - '&8----------------------'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+  color: 16743936
+boty9cx0:
+  materialName: LEATHER_BOOTS
+  displayName: '&6Sinisterovo boty'
+  lore:
+  - '&f+16-21 Obrana'
+  - '&2+4-5% Vyhýbání'
+  - '&c+4-5 Poškození'
+  - '&6+3-4% Šance na kritický zásah'
+  - '&e+8-13 Kritický útok'
+  - '&cVitalita: 5-6'
+  - '&9Inteligence: 8-14'
+  - '&3Víra: 7-11'
+  - ''
+  - '&8----------------------'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+  color: 16743936
+helma9cx0h:
+  materialName: LEATHER_HELMET
+  displayName: '&6Sinisterova helma &a(Heal)'
+  lore:
+  - '&f+16-21 Obrana'
+  - '&2+4-5% Vyhýbání'
+  - '&cVitalita: 6-8'
+  - '&bRegenerace many: 7-10'
+  - '&3Víra: 11-16'
+  - '&aPřesnost: 7-10'
+  - ''
+  - '&8----------------------'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+  color: 16743936
+chest9cx0h:
+  materialName: LEATHER_CHESTPLATE
+  displayName: '&6Sinisterovo brnění &a(Heal)'
+  lore:
+  - '&f+16-21 Obrana'
+  - '&2+4-5% Vyhýbání'
+  - '&cVitalita: 6-8'
+  - '&bRegenerace many: 7-10'
+  - '&3Víra: 11-16'
+  - '&aPřesnost: 7-10'
+  - ''
+  - '&8----------------------'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+  color: 16743936
+gate9cx0h:
+  materialName: LEATHER_LEGGINGS
+  displayName: '&6Sinisterovo kalhoty &a(Heal)'
+  lore:
+  - '&f+16-21 Obrana'
+  - '&2+4-5% Vyhýbání'
+  - '&cVitalita: 6-8'
+  - '&bRegenerace many: 7-10'
+  - '&3Víra: 11-16'
+  - '&aPřesnost: 7-10'
+  - ''
+  - '&8----------------------'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+  color: 16743936
+boty9cx0h:
+  materialName: LEATHER_BOOTS
+  displayName: '&6Sinisterovo boty &a(Heal)'
+  lore:
+  - '&f+16-21 Obrana'
+  - '&2+4-5% Vyhýbání'
+  - '&cVitalita: 6-8'
+  - '&bRegenerace many: 7-10'
+  - '&3Víra: 11-16'
+  - '&aPřesnost: 7-10'
+  - ''
+  - '&8----------------------'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+  color: 16743936
+helma9cx1:
+  materialName: GOLD_HELMET
+  displayName: '&6Sinisterova helma'
+  lore:
+  - '&f+16-21 Obrana'
+  - '&2+3-4% Vyhýbání'
+  - '&c+4-5 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+11-15 Kritický útok'
+  - '&cVitalita: 5-6'
+  - '&4Síla: 10-13'
+  - '&aPřesnost: 7-9'
+  - ''
+  - '&8----------------------'
+  - '&4Nemůže používat: &bČaroděj'
+  - '&4Nemůže používat: &5Nekromant'
+  - '&4Nemůže používat: &7Kněz'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+chest9cx1:
+  materialName: GOLD_CHESTPLATE
+  displayName: '&6Sinisterovo brnění'
+  lore:
+  - '&f+16-21 Obrana'
+  - '&2+3-4% Vyhýbání'
+  - '&c+4-5 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+11-15 Kritický útok'
+  - '&cVitalita: 5-6'
+  - '&4Síla: 10-13'
+  - '&aPřesnost: 7-9'
+  - ''
+  - '&8----------------------'
+  - '&4Nemůže používat: &bČaroděj'
+  - '&4Nemůže používat: &5Nekromant'
+  - '&4Nemůže používat: &7Kněz'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+gate9cx1:
+  materialName: GOLD_LEGGINGS
+  displayName: '&6Sinisterovo kalhoty'
+  lore:
+  - '&f+16-21 Obrana'
+  - '&2+3-4% Vyhýbání'
+  - '&c+4-5 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+11-15 Kritický útok'
+  - '&cVitalita: 5-6'
+  - '&4Síla: 10-13'
+  - '&aPřesnost: 7-9'
+  - ''
+  - '&8----------------------'
+  - '&4Nemůže používat: &bČaroděj'
+  - '&4Nemůže používat: &5Nekromant'
+  - '&4Nemůže používat: &7Kněz'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+boty9cx1:
+  materialName: GOLD_BOOTS
+  displayName: '&6Sinisterovo boty'
+  lore:
+  - '&f+16-21 Obrana'
+  - '&2+3-4% Vyhýbání'
+  - '&c+4-5 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+11-15 Kritický útok'
+  - '&cVitalita: 5-6'
+  - '&4Síla: 10-13'
+  - '&aPřesnost: 7-9'
+  - ''
+  - '&8----------------------'
+  - '&4Nemůže používat: &bČaroděj'
+  - '&4Nemůže používat: &5Nekromant'
+  - '&4Nemůže používat: &7Kněz'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+helma9cx2:
+  materialName: CHAINMAIL_HELMET
+  displayName: '&6Sinisterova helma'
+  lore:
+  - '&f+16-21 Obrana'
+  - '&2+3-4% Vyhýbání'
+  - '&c+4-5 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+10-13 Kritický útok'
+  - '&cVitalita: 4-5'
+  - '&4Síla: 10-12'
+  - '&aPřesnost: 7-9'
+  - ''
+  - '&8----------------------'
+  - '&4Nemůže používat: &5Nekromant'
+  - '&4Nemůže používat: &bČaroděj'
+  - '&4Nemůže používat: &eVrah'
+  - '&4Nemůže používat: &2Lovec démonů'
+  - '&4Nemůže používat: &7Kněz'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+chest9cx2:
+  materialName: CHAINMAIL_CHESTPLATE
+  displayName: '&6Sinisterovo brnění'
+  lore:
+  - '&f+16-21 Obrana'
+  - '&2+3-4% Vyhýbání'
+  - '&c+4-5 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+10-13 Kritický útok'
+  - '&cVitalita: 4-5'
+  - '&4Síla: 10-12'
+  - '&aPřesnost: 7-9'
+  - ''
+  - '&8----------------------'
+  - '&4Nemůže používat: &5Nekromant'
+  - '&4Nemůže používat: &bČaroděj'
+  - '&4Nemůže používat: &eVrah'
+  - '&4Nemůže používat: &2Lovec démonů'
+  - '&4Nemůže používat: &7Kněz'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+gate9cx2:
+  materialName: CHAINMAIL_LEGGINGS
+  displayName: '&6Sinisterovo kalhoty'
+  lore:
+  - '&f+16-21 Obrana'
+  - '&2+3-4% Vyhýbání'
+  - '&c+4-5 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+10-13 Kritický útok'
+  - '&cVitalita: 4-5'
+  - '&4Síla: 10-12'
+  - '&aPřesnost: 7-9'
+  - ''
+  - '&8----------------------'
+  - '&4Nemůže používat: &5Nekromant'
+  - '&4Nemůže používat: &bČaroděj'
+  - '&4Nemůže používat: &eVrah'
+  - '&4Nemůže používat: &2Lovec démonů'
+  - '&4Nemůže používat: &7Kněz'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+boty9cx2:
+  materialName: CHAINMAIL_BOOTS
+  displayName: '&6Sinisterovo boty'
+  lore:
+  - '&f+16-21 Obrana'
+  - '&2+3-4% Vyhýbání'
+  - '&c+4-5 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+10-13 Kritický útok'
+  - '&cVitalita: 4-5'
+  - '&4Síla: 10-12'
+  - '&aPřesnost: 7-9'
+  - ''
+  - '&8----------------------'
+  - '&4Nemůže používat: &5Nekromant'
+  - '&4Nemůže používat: &bČaroděj'
+  - '&4Nemůže používat: &eVrah'
+  - '&4Nemůže používat: &2Lovec démonů'
+  - '&4Nemůže používat: &7Kněz'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+helma9cx2x:
+  materialName: CHAINMAIL_HELMET
+  displayName: '&6Sinisterova helma &a(Heal)'
+  lore:
+  - '&f+16-21 Obrana'
+  - '&2+3-4% Vyhýbání'
+  - '&cVitalita: 6-8'
+  - '&bRegenerace many: 7-10'
+  - '&3Víra: 11-16'
+  - '&aPřesnost: 7-10'
+  - ''
+  - '&8----------------------'
+  - '&4Nemůže používat: &5Nekromant'
+  - '&4Nemůže používat: &bČaroděj'
+  - '&4Nemůže používat: &eVrah'
+  - '&4Nemůže používat: &2Lovec démonů'
+  - '&4Nemůže používat: &7Kněz'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+chest9cx2x:
+  materialName: CHAINMAIL_CHESTPLATE
+  displayName: '&6Sinisterovo brnění &a(Heal)'
+  lore:
+  - '&f+16-21 Obrana'
+  - '&2+3-4% Vyhýbání'
+  - '&cVitalita: 6-8'
+  - '&bRegenerace many: 7-10'
+  - '&3Víra: 11-16'
+  - '&aPřesnost: 7-10'
+  - ''
+  - '&8----------------------'
+  - '&4Nemůže používat: &5Nekromant'
+  - '&4Nemůže používat: &bČaroděj'
+  - '&4Nemůže používat: &eVrah'
+  - '&4Nemůže používat: &2Lovec démonů'
+  - '&4Nemůže používat: &7Kněz'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+gate9cx2x:
+  materialName: CHAINMAIL_LEGGINGS
+  displayName: '&6Sinisterovo kalhoty &a(Heal)'
+  lore:
+  - '&f+16-21 Obrana'
+  - '&2+3-4% Vyhýbání'
+  - '&cVitalita: 6-8'
+  - '&bRegenerace many: 7-10'
+  - '&3Víra: 11-16'
+  - '&aPřesnost: 7-10'
+  - ''
+  - '&8----------------------'
+  - '&4Nemůže používat: &5Nekromant'
+  - '&4Nemůže používat: &bČaroděj'
+  - '&4Nemůže používat: &eVrah'
+  - '&4Nemůže používat: &2Lovec démonů'
+  - '&4Nemůže používat: &7Kněz'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+boty9cx2x:
+  materialName: CHAINMAIL_BOOTS
+  displayName: '&6Sinisterovo boty &a(Heal)'
+  lore:
+  - '&f+16-21 Obrana'
+  - '&2+3-4% Vyhýbání'
+  - '&cVitalita: 6-8'
+  - '&bRegenerace many: 7-10'
+  - '&3Víra: 11-16'
+  - '&aPřesnost: 7-10'
+  - ''
+  - '&8----------------------'
+  - '&4Nemůže používat: &5Nekromant'
+  - '&4Nemůže používat: &bČaroděj'
+  - '&4Nemůže používat: &eVrah'
+  - '&4Nemůže používat: &2Lovec démonů'
+  - '&4Nemůže používat: &7Kněz'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+helma9cx2xx:
+  materialName: CHAINMAIL_HELMET
+  displayName: '&6Sinisterova helma'
+  lore:
+  - '&f+16-21 Obrana'
+  - '&2+2-3% Vyhýbání'
+  - '&c+4-5 Poškození'
+  - '&6+4% Šance na kritický zásah'
+  - '&e+8-14 Kritický útok'
+  - '&cVitalita: 5-6'
+  - '&9Inteligence: 7-13'
+  - '&3Víra: 7-11'
+  - ''
+  - '&8----------------------'
+  - '&4Nemůže používat: &5Nekromant'
+  - '&4Nemůže používat: &bČaroděj'
+  - '&4Nemůže používat: &eVrah'
+  - '&4Nemůže používat: &2Lovec démonů'
+  - '&4Nemůže používat: &7Kněz'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+chest9cx2xx:
+  materialName: CHAINMAIL_CHESTPLATE
+  displayName: '&6Sinisterovo brnění'
+  lore:
+  - '&f+16-21 Obrana'
+  - '&2+2-3% Vyhýbání'
+  - '&c+4-5 Poškození'
+  - '&6+4% Šance na kritický zásah'
+  - '&e+8-14 Kritický útok'
+  - '&cVitalita: 5-6'
+  - '&9Inteligence: 7-13'
+  - '&3Víra: 7-11'
+  - ''
+  - '&8----------------------'
+  - '&4Nemůže používat: &5Nekromant'
+  - '&4Nemůže používat: &bČaroděj'
+  - '&4Nemůže používat: &eVrah'
+  - '&4Nemůže používat: &2Lovec démonů'
+  - '&4Nemůže používat: &7Kněz'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+gate9cx2xx:
+  materialName: CHAINMAIL_LEGGINGS
+  displayName: '&6Sinisterovo kalhoty'
+  lore:
+  - '&f+16-21 Obrana'
+  - '&2+2-3% Vyhýbání'
+  - '&c+4-5 Poškození'
+  - '&6+4% Šance na kritický zásah'
+  - '&e+8-14 Kritický útok'
+  - '&cVitalita: 5-6'
+  - '&9Inteligence: 7-13'
+  - '&3Víra: 7-11'
+  - ''
+  - '&8----------------------'
+  - '&4Nemůže používat: &5Nekromant'
+  - '&4Nemůže používat: &bČaroděj'
+  - '&4Nemůže používat: &eVrah'
+  - '&4Nemůže používat: &2Lovec démonů'
+  - '&4Nemůže používat: &7Kněz'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+boty9cx2xx:
+  materialName: CHAINMAIL_BOOTS
+  displayName: '&6Sinisterovo boty'
+  lore:
+  - '&f+16-21 Obrana'
+  - '&2+2-3% Vyhýbání'
+  - '&c+4-5 Poškození'
+  - '&6+4% Šance na kritický zásah'
+  - '&e+8-14 Kritický útok'
+  - '&cVitalita: 5-6'
+  - '&9Inteligence: 7-13'
+  - '&3Víra: 7-11'
+  - ''
+  - '&8----------------------'
+  - '&4Nemůže používat: &5Nekromant'
+  - '&4Nemůže používat: &bČaroděj'
+  - '&4Nemůže používat: &eVrah'
+  - '&4Nemůže používat: &2Lovec démonů'
+  - '&4Nemůže používat: &7Kněz'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+helma9cx3:
+  materialName: IRON_HELMET
+  displayName: '&6Sinisterova helma'
+  lore:
+  - '&f+16-21 Obrana'
+  - '&2+1-2% Vyhýbání'
+  - '&c+3-5 Poškození'
+  - '&6+4% Šance na kritický zásah'
+  - '&e+7-12 Kritický útok'
+  - '&cVitalita: 4-6'
+  - '&4Síla: 9-13'
+  - '&aPřesnost: 7-9'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &cVálečník'
+  - '&4Pouze pro: &8Rytíř smrti'
+  - '&4Pouze pro: &dPaladin'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+chest9cx3:
+  materialName: IRON_CHESTPLATE
+  displayName: '&6Sinisterovo brnění'
+  lore:
+  - '&f+16-21 Obrana'
+  - '&2+1-2% Vyhýbání'
+  - '&c+3-5 Poškození'
+  - '&6+4% Šance na kritický zásah'
+  - '&e+7-12 Kritický útok'
+  - '&cVitalita: 4-6'
+  - '&4Síla: 9-13'
+  - '&aPřesnost: 7-9'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &cVálečník'
+  - '&4Pouze pro: &8Rytíř smrti'
+  - '&4Pouze pro: &dPaladin'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+gate9cx3:
+  materialName: IRON_LEGGINGS
+  displayName: '&6Sinisterovo kalhoty'
+  lore:
+  - '&f+16-21 Obrana'
+  - '&2+1-2% Vyhýbání'
+  - '&c+3-5 Poškození'
+  - '&6+4% Šance na kritický zásah'
+  - '&e+7-12 Kritický útok'
+  - '&cVitalita: 4-6'
+  - '&4Síla: 9-13'
+  - '&aPřesnost: 7-9'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &cVálečník'
+  - '&4Pouze pro: &8Rytíř smrti'
+  - '&4Pouze pro: &dPaladin'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+boty9cx3:
+  materialName: IRON_BOOTS
+  displayName: '&6Sinisterovo boty'
+  lore:
+  - '&f+16-21 Obrana'
+  - '&2+1-2% Vyhýbání'
+  - '&c+3-5 Poškození'
+  - '&6+4% Šance na kritický zásah'
+  - '&e+7-12 Kritický útok'
+  - '&cVitalita: 4-6'
+  - '&4Síla: 9-13'
+  - '&aPřesnost: 7-9'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &cVálečník'
+  - '&4Pouze pro: &8Rytíř smrti'
+  - '&4Pouze pro: &dPaladin'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+helma9cx3x:
+  materialName: IRON_HELMET
+  displayName: '&6Sinisterova helma (Tank)'
+  lore:
+  - '&f+25-34 Obrana'
+  - '&2+1-2% Vyhýbání'
+  - '&c+3-5 Poškození'
+  - '&cVitalita: 6-11'
+  - '&aPřesnost: 7-9'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &cVálečník'
+  - '&4Pouze pro: &8Rytíř smrti'
+  - '&4Pouze pro: &dPaladin'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+chest9cx3x:
+  materialName: IRON_CHESTPLATE
+  displayName: '&6Sinisterovo brnění (Tank)'
+  lore:
+  - '&f+25-34 Obrana'
+  - '&2+1-2% Vyhýbání'
+  - '&c+3-5 Poškození'
+  - '&cVitalita: 6-11'
+  - '&aPřesnost: 7-9'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &cVálečník'
+  - '&4Pouze pro: &8Rytíř smrti'
+  - '&4Pouze pro: &dPaladin'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+gate9cx3x:
+  materialName: IRON_LEGGINGS
+  displayName: '&6Sinisterovo kalhoty (Tank)'
+  lore:
+  - '&f+25-34 Obrana'
+  - '&2+1-2% Vyhýbání'
+  - '&c+3-5 Poškození'
+  - '&cVitalita: 6-11'
+  - '&aPřesnost: 7-9'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &cVálečník'
+  - '&4Pouze pro: &8Rytíř smrti'
+  - '&4Pouze pro: &dPaladin'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+boty9cx3x:
+  materialName: IRON_BOOTS
+  displayName: '&6Sinisterovo boty (Tank)'
+  lore:
+  - '&f+25-34 Obrana'
+  - '&2+1-2% Vyhýbání'
+  - '&c+3-5 Poškození'
+  - '&cVitalita: 6-11'
+  - '&aPřesnost: 7-9'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &cVálečník'
+  - '&4Pouze pro: &8Rytíř smrti'
+  - '&4Pouze pro: &dPaladin'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+helma9cx4:
+  materialName: DIAMOND_HELMET
+  displayName: '&6Sinisterova helma'
+  lore:
+  - '&f+16-21 Obrana'
+  - '&2+1-2% Vyhýbání'
+  - '&c+3-4 Poškození'
+  - '&6+3-4% Šance na kritický zásah'
+  - '&e+7-12 Kritický útok'
+  - '&cVitalita: 3-5'
+  - '&4Síla: 8-13'
+  - '&aPřesnost: 6-9'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &cVálečník'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+chest9cx4:
+  materialName: DIAMOND_CHESTPLATE
+  displayName: '&6Sinisterovo brnění'
+  lore:
+  - '&f+16-21 Obrana'
+  - '&2+1-2% Vyhýbání'
+  - '&c+3-4 Poškození'
+  - '&6+3-4% Šance na kritický zásah'
+  - '&e+7-12 Kritický útok'
+  - '&cVitalita: 3-5'
+  - '&4Síla: 8-13'
+  - '&aPřesnost: 6-9'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &cVálečník'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+gate9cx4:
+  materialName: DIAMOND_LEGGINGS
+  displayName: '&6Sinisterovo kalhoty'
+  lore:
+  - '&f+16-21 Obrana'
+  - '&2+1-2% Vyhýbání'
+  - '&c+3-4 Poškození'
+  - '&6+3-4% Šance na kritický zásah'
+  - '&e+7-12 Kritický útok'
+  - '&cVitalita: 3-5'
+  - '&4Síla: 8-13'
+  - '&aPřesnost: 6-9'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &cVálečník'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+boty9cx4:
+  materialName: DIAMOND_BOOTS
+  displayName: '&6Sinisterovo boty'
+  lore:
+  - '&f+16-21 Obrana'
+  - '&2+1-2% Vyhýbání'
+  - '&c+3-4 Poškození'
+  - '&6+3-4% Šance na kritický zásah'
+  - '&e+7-12 Kritický útok'
+  - '&cVitalita: 3-5'
+  - '&4Síla: 8-13'
+  - '&aPřesnost: 6-9'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &cVálečník'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+helma9cx4x:
+  materialName: DIAMOND_HELMET
+  displayName: '&6Sinisterova helma (Tank)'
+  lore:
+  - '&f+25-34 Obrana'
+  - '&2+1-2% Vyhýbání'
+  - '&c+3-4 Poškození'
+  - '&cVitalita: 6-10'
+  - '&aPřesnost: 6-10'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &cVálečník'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+chest9cx4x:
+  materialName: DIAMOND_CHESTPLATE
+  displayName: '&6Sinisterovo brnění (Tank)'
+  lore:
+  - '&f+25-34 Obrana'
+  - '&2+1-2% Vyhýbání'
+  - '&c+3-4 Poškození'
+  - '&cVitalita: 6-10'
+  - '&aPřesnost: 6-10'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &cVálečník'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+gate9cx4x:
+  materialName: DIAMOND_LEGGINGS
+  displayName: '&6Sinisterovo kalhoty (Tank)'
+  lore:
+  - '&f+25-34 Obrana'
+  - '&2+1-2% Vyhýbání'
+  - '&c+3-4 Poškození'
+  - '&cVitalita: 6-10'
+  - '&aPřesnost: 6-10'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &cVálečník'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+boty9cx4x:
+  materialName: DIAMOND_BOOTS
+  displayName: '&6Sinisterovo boty (Tank)'
+  lore:
+  - '&f+25-34 Obrana'
+  - '&2+1-2% Vyhýbání'
+  - '&c+3-4 Poškození'
+  - '&cVitalita: 6-10'
+  - '&aPřesnost: 6-10'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &cVálečník'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+ring15:
+  materialName: RAW_CHICKEN
+  displayName: '&dSinisterův prsten'
+  lore:
+  - '&f+8-11 Obrana'
+  - '&4Síla: 5-11'
+  - '&aPřesnost: 4-7'
+  - ''
+  - '&8----------------------'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMonsterDeath: 0.0
+  broadcastOnFind: false
+ring16:
+  materialName: RAW_CHICKEN
+  displayName: '&dSinisterův prsten'
+  lore:
+  - '&f+8-11 Obrana'
+  - '&9Inteligence: 5-11'
+  - '&3Víra: 4-7'
+  - ''
+  - '&8----------------------'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMonsterDeath: 0.0
+  broadcastOnFind: false
+ring15d:
+  materialName: COOKED_FISH
+  data: 1
+  displayName: '&dSinisterův náhrdelník'
+  lore:
+  - '&f+11-20 Obrana'
+  - '&9Inteligence: 5-9'
+  - '&4Síla: 5-9'
+  - '&aPřesnost: 5-9'
+  - ''
+  - '&8----------------------'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMonsterDeath: 0.0
+  broadcastOnFind: false
+ring16d:
+  materialName: COOKED_FISH
+  data: 1
+  displayName: '&dSinisterův náhrdelník'
+  lore:
+  - '&f+11-20 Obrana'
+  - '&9Inteligence: 5-9'
+  - '&bRegenerace many: 5-8'
+  - '&3Víra: 5-9'
+  - ''
+  - '&8----------------------'
+  - '&2Potřebný Lvl: 30'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMonsterDeath: 0.0
+  broadcastOnFind: false

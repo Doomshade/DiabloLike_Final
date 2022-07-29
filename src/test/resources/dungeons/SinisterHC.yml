@@ -1,0 +1,132 @@
+SoulreaperHCa:
+  SinisterKolekceHC:
+    amount: 1
+    chance: 15.0
+  SinisterKolekce:
+    chance: 0.0
+    amount: 1-1
+  Mesmarka:
+    chance: 25
+    amount: 1-2
+SoulreaperHCb:
+  SinisterKolekceHC:
+    amount: 1
+    chance: 15.0
+  SinisterKolekce:
+    chance: 0.0
+    amount: 1-1
+  Mesmarka:
+    chance: 25
+    amount: 1-2
+SoulreaperHCc:
+  SinisterKolekceHC:
+    amount: 1
+    chance: 15.0
+  SinisterKolekce:
+    chance: 0.0
+    amount: 1-1
+  Mesmarka:
+    chance: 25
+    amount: 1-2
+PlaguemasterHC:
+  SinisterKolekceHC:
+    amount: 1
+    chance: 70.0
+    uncommon: 100
+  SinisterKolekce:
+    chance: 0.0
+    amount: 1-1
+  Mesmarka:
+    chance: 100
+    amount: 1-2
+EternalHC:
+  SinisterKolekceHC:
+    amount: 1
+    chance: 30.0
+  SinisterKolekce:
+    chance: 0.0
+    amount: 1-1
+  Mesmarka:
+    chance: 50
+    amount: 1-2
+CorpsemakerHC:
+  SinisterKolekceHC:
+    amount: 1
+    chance: 70.0
+    uncommon: 100
+  SinisterKolekce:
+    chance: 0.0
+    amount: 1-1
+  Mesmarka:
+    chance: 100
+    amount: 1-2
+DeathhandHC:
+  SinisterKolekceHC:
+    amount: 1-2
+    chance: 100.0
+    legendary: 15
+    rare: 100
+  SinisterKolekce:
+    chance: 0.0
+    amount: 1-1
+  Mesmarka:
+    chance: 100
+    amount: 4-7
+HollowHC:
+  SinisterKolekceHC:
+    amount: 1
+    chance: 20.0
+  SinisterKolekce:
+    chance: 0.0
+    amount: 1-1
+  Mesmarka:
+    chance: 25
+    amount: 1-2
+BlackhandHC:
+  SinisterKolekceHC:
+    amount: 1-2
+    chance: 100.0
+    legendary: 15
+    rare: 100
+  SinisterKolekce:
+    chance: 0.0
+    amount: 1-1
+  Mesmarka:
+    chance: 100
+    amount: 5-8
+SinisterHC:
+  SinisterKolekceHC:
+    amount: 2-4
+    chance: 100.0
+    legendary: 50
+    rare: 100
+  SinisterKolekce:
+    chance: 0.0
+    amount: 1-1
+  FragmentKolekce:
+    amount: 1
+    chance: 4.0
+  Mesmarka:
+    chance: 100
+    amount: 8-12
+DuchBlackhandaHC:
+  SinisterKolekceHC:
+    amount: 1
+    chance: 10.0
+  SinisterKolekce:
+    chance: 0.0
+    amount: 1-1
+DuchDeathhandaHC:
+  SinisterKolekceHC:
+    amount: 1
+    chance: 10.0
+  SinisterKolekce:
+    chance: 0.0
+    amount: 1-1
+TerrorHC:
+  SinisterKolekceHC:
+    amount: 0
+    chance: 0.0
+  SinisterKolekce:
+    chance: 0.0
+    amount: 1-1

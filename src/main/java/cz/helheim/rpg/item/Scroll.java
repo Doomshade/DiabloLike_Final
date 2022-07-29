@@ -12,13 +12,13 @@ public interface Scroll extends BaseItem {
 	/**
 	 * Identifies a diablo item
 	 *
-	 * @param diabloItem      the diablo item to identify
+	 * @param identifiable    the item to identify
 	 * @param inventoryHolder the holder of the scroll
 	 * @param consumeScroll   whether to consume the item
 	 *
 	 * @return the result of the identification
 	 */
-	Scroll.Result identify(DiabloItem diabloItem, final InventoryHolder inventoryHolder, final boolean consumeScroll);
+	Scroll.Result identify(Identifiable identifiable, final InventoryHolder inventoryHolder, final boolean consumeScroll);
 
 	/**
 	 * @return the level range this scroll is able to identify

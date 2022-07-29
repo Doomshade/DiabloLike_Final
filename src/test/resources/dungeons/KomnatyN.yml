@@ -1,0 +1,42 @@
+YavimayaN:
+  SinisterKolekce:
+    amount: 1
+    chance: 35.0
+    legendary: 10
+    rare: 35
+    uncommon: 100
+NefilaN:
+  SinisterKolekce:
+    amount: 1
+    chance: 17.0
+    legendary: 5
+    rare: 20
+    uncommon: 100
+SilvosN:
+  SinisterKolekce:
+    amount: 1
+    chance: 40.0
+    legendary: 10
+    rare: 35
+    uncommon: 100
+ViperN:
+  SinisterKolekce:
+    amount: 1-2
+    chance: 100
+    legendary: 10
+    rare: 35
+    uncommon: 100
+OrochiN:
+  SinisterKolekce:
+    amount: 2
+    chance: 100
+    legendary: 10
+    rare: 35
+    uncommon: 100
+SethN:
+  SinisterKolekce:
+    amount: 2-3
+    chance: 100
+    legendary: 10
+    rare: 35
+    uncommon: 100

@@ -1,0 +1,52 @@
+SinisterHC:
+  mob-options:
+    Banshee: 10.0
+  loot-options:
+    chance: 30.0
+    elites: 50.0
+    bosses: 70.0
+SinisterNormal:
+  loot-options:
+    chance: 30.0
+    elites: 50.0
+    bosses: 100.0
+  extra-loot:
+    klenoty:
+      chance: 30.0
+      amount: 2-4
+      elites:
+        chance: 40.0
+        amount: 3-5
+      bosses:
+        chance: 100.0
+        amount: 5-8
+ExatramHC:
+  loot-options:
+    chance: 30.0
+    elites: 50.0
+    bosses: 100.0
+  extra-loot:
+    klenoty:
+      chance: 30.0
+      amount: 2-4
+      elites:
+        chance: 40.0
+        amount: 3-5
+      bosses:
+        chance: 100.0
+        amount: 5-8
+ZombieKingHC:
+  loot-options:
+    chance: 30.0
+    elites: 50.0
+    bosses: 100.0
+  extra-loot:
+    klenoty:
+      chance: 30.0
+      amount: 2-4
+      elites:
+        chance: 40.0
+        amount: 3-5
+      bosses:
+        chance: 100.0
+        amount: 5-8

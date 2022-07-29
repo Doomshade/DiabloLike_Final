@@ -1,0 +1,19 @@
+Shadowsoul:
+  SinisterKolekce:
+    amount: 0
+    chance: 0.0
+  FragmentKolekce:
+    amount: 1
+    chance: 2.0
+  TemnaKolekce:
+    amount: 1-2
+    chance: 70.0
+    legendary: 10
+    rare: 60
+    uncommon: 100
+  TemnaKolekceHC:
+    amount: 1
+    chance: 30.0
+    legendary: 7
+    rare: 50
+    uncommon: 100

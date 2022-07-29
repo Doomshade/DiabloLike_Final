@@ -1,0 +1,298 @@
+chance: 100
+amount: 1
+legendary: 10
+rare: 60
+uncommon: 100
+hul4zk:
+  uncommon: 100
+  materialName: GHAST_TEAR
+  displayName: '&bZombie Kingova hůl'
+  lore:
+  - '&c+6-9 Poškození'
+  - '&9Inteligence: 8-11'
+  - '&3Víra: 3-5'
+  - '&bRegenerace many: 3-5'
+  - ''
+  - '&3Kouzlo: &7Vysáni života'
+  - '&cPoškození kouzlem: &69'
+  - '&aLéčba: &63'
+  - '&2Cooldown: &64'
+  - ''
+  - '&7&oPravým klikem čaruješ'
+  - '&8----------------------'
+  - '&4Pouze pro: &bČaroděj'
+  - '&4Pouze pro: &5Nekromant'
+  - '&4Pouze pro: &6Druid'
+  - '&4Pouze pro: &7Kněz'
+  - '&2Potřebný Lvl: 8'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+  cast: drainlife2
+off1zk:
+  materialName: BOOK
+  displayName: '&eZombie Kingova kniha (Offhand)'
+  uncommon: 100
+  lore:
+  - '&cVitalita: 1-2'
+  - '&9Inteligence: 2-4'
+  - '&3Víra: 2-3'
+  - '&bRegenerace many: 1-2'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &bČaroděj'
+  - '&4Pouze pro: &5Nekromant'
+  - '&4Pouze pro: &6Druid'
+  - '&4Pouze pro: &7Kněz'
+  - '&2Potřebný Lvl: 8'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+stitrfefefee:
+  uncommon: 100
+  materialName: WOOD_SWORD
+  displayName: '&9Zombie Kingův štít (Offhand)'
+  lore:
+  - '&f+4-7 Obrana'
+  - '&cVitalita: 3-5'
+  - '&4Síla: 1-2'
+  - '&aPřesnost: 1-2'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &8Rytíř smrti'
+  - '&4Pouze pro: &dPaladin'
+  - '&4Pouze pro: &cVálečník'
+  - '&2Potřebný Lvl: 8'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0
+  chanceToDropOnMonsterDeath: 0.0
+  broadcastOnFind: false
+bow5:
+  uncommon: 100
+  materialName: BOW
+  displayName: '&eZombie Kingův luk (Offhand)'
+  lore:
+  - '&4Síla: 2-4'
+  - '&9Inteligence: 2-4'
+  - '&cVitalita: 1-3'
+  - '&aPřesnost: 1-3'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &aLučištník'
+  - '&2Potřebný Lvl: 8'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  braodcastOnFind: false
+  enchantments:
+    ARROW_DAMAGE: 3
+    ARROW_INFINITE: 1
+    RAPID: 1
+offhand2r:
+  uncommon: 100
+  materialName: BOWL
+  displayName: '&eZombie Kingův meč (Offhand)'
+  lore:
+  - '&f+3-5 Obrana'
+  - '&4Síla: 8-11'
+  - '&cVitalita: 3-5'
+  - '&aPřesnost: 2-4'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &cVálečník'
+  - '&4Pouze pro: &8Rytíř smrti'
+  - '&4Pouze pro: &dPaladin'
+  - '&2Potřebný Lvl: 8'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  braodcastOnFind: false
+offhand2z:
+  uncommon: 100
+  materialName: CLAY_BRICK
+  displayName: '&eZombie Kingova dýka (Offhand)'
+  lore:
+  - '&f+1-3 Obrana'
+  - '&4Síla: 8-13'
+  - '&cVitalita: 3-4'
+  - '&aPřesnost: 2-4'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &eVrah'
+  - '&4Pouze pro: &9Šaman'
+  - '&4Pouze pro: &2Lovec démonů'
+  - '&2Potřebný Lvl: 8'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  braodcastOnFind: false
+mec4:
+  uncommon: 100
+  materialName: BOWL
+  displayName: '&eZombie Kingův meč'
+  lore:
+  - '&c+5-8 Poškození'
+  - '&6+8-11% Šance na kritický zásah'
+  - '&e+3-6 Kritický útok'
+  - '&4Síla: 3-5'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &cVálečník'
+  - '&4Pouze pro: &8Rytíř smrti'
+  - '&4Pouze pro: &dPaladin'
+  - '&2Potřebný Lvl: 8'
+  - '&8----------------------'
+  - '&4Prolil krev stovek smrtelniku,'
+  - '&4kteri se ho pokusili'
+  - '&4&lZABIT!'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  braodcastOnFind: false
+helma4xg:
+  uncommon: 100
+  materialName: LEATHER_HELMET
+  displayName: '&eZombie Kingova helma'
+  lore:
+  - '&f+5-8 Obrana'
+  - '&2+1-2% Vyhýbání'
+  - '&c+1-3 Poškození'
+  - '&6+2% Šance na kritický zásah'
+  - '&e+2-5 Kritický útok'
+  - '&cVitalita: 2-3'
+  - '&9Inteligence: 3-5'
+  - '&4Síla: 3-5'
+  - ''
+  - '&8----------------------'
+  - '&2Potřebný Lvl: 8'
+  - '&8----------------------'
+  color: 16777062
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+chest4xg:
+  uncommon: 100
+  materialName: LEATHER_CHESTPLATE
+  displayName: '&eZombie Kingovo brnění'
+  lore:
+  - '&f+5-8 Obrana'
+  - '&2+1-2% Vyhýbání'
+  - '&c+1-3 Poškození'
+  - '&6+2% Šance na kritický zásah'
+  - '&e+2-5 Kritický útok'
+  - '&cVitalita: 2-3'
+  - '&9Inteligence: 3-5'
+  - '&4Síla: 3-5'
+  - ''
+  - '&8----------------------'
+  - '&2Potřebný Lvl: 8'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+  color: 16777062
+gate4xg:
+  uncommon: 100
+  materialName: LEATHER_LEGGINGS
+  displayName: '&eZombie Kingovy kalhoty'
+  lore:
+  - '&f+5-8 Obrana'
+  - '&2+1-2% Vyhýbání'
+  - '&c+1-3 Poškození'
+  - '&6+2% Šance na kritický zásah'
+  - '&e+2-5 Kritický útok'
+  - '&cVitalita: 2-3'
+  - '&9Inteligence: 3-5'
+  - '&4Síla: 3-5'
+  - ''
+  - '&8----------------------'
+  - '&2Potřebný Lvl: 8'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+  color: 16777062
+boty4xg:
+  uncommon: 100
+  materialName: LEATHER_BOOTS
+  displayName: '&eZombie Kingovy boty'
+  lore:
+  - '&f+5-8 Obrana'
+  - '&2+1-2% Vyhýbání'
+  - '&c+1-3 Poškození'
+  - '&6+2% Šance na kritický zásah'
+  - '&e+2-5 Kritický útok'
+  - '&cVitalita: 2-3'
+  - '&9Inteligence: 3-5'
+  - '&4Síla: 3-5'
+  - ''
+  - '&8----------------------'
+  - '&2Potřebný Lvl: 8'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+  color: 16777062
+ring3:
+  uncommon: 100
+  materialName: RABBIT
+  displayName: '&dZombie Kingův prsten'
+  lore:
+  - '&f+2-5 Obrana'
+  - '&4Síla: 2-3'
+  - '&aPřesnost: 2-3'
+  - ''
+  - '&8----------------------'
+  - '&2Potřebný Lvl: 8'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMonsterDeath: 0.0
+  broadcastOnFind: false
+ring4:
+  uncommon: 100
+  materialName: RABBIT
+  displayName: '&dZombie Kingův prsten'
+  lore:
+  - '&f+2-5 Obrana'
+  - '&9Inteligence: 2-3'
+  - '&3Víra: 2-3'
+  - ''
+  - '&8----------------------'
+  - '&2Potřebný Lvl: 8'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMonsterDeath: 0.0
+  broadcastOnFind: false
+neck5x:
+  uncommon: 100
+  materialName: PUMPKIN_PIE
+  displayName: '&dZombie Kingův náhrdelník'
+  lore:
+  - '&f+2-6 Obrana'
+  - '&9Inteligence: 2-4'
+  - '&bRegenerace many: 2-3'
+  - '&3Víra: 2-4'
+  - ''
+  - '&8----------------------'
+  - '&2Potřebný Lvl: 8'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMonsterDeath: 0.0
+  broadcastOnFind: false
+neck5xd:
+  uncommon: 100
+  materialName: PUMPKIN_PIE
+  displayName: '&dZombie Kingův náhrdelník'
+  lore:
+  - '&f+2-6 Obrana'
+  - '&9Inteligence: 2-4'
+  - '&4Síla: 2-4'
+  - '&aPřesnost: 2-4'
+  - ''
+  - '&8----------------------'
+  - '&2Potřebný Lvl: 8'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMonsterDeath: 0.0
+  broadcastOnFind: false

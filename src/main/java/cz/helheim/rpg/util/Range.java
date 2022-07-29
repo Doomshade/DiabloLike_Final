@@ -84,6 +84,8 @@ public class Range implements Iterable<Integer> {
 				while (num <= upper) {
 					nums[i++] = num++;
 				}
+				assert nums[0] == lower;
+				assert nums[nums.length - 1] == upper;
 			}
 		}
 

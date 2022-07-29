@@ -82,7 +82,7 @@ public class DiabloLikeSettings extends Settings {
 	private String _string(String section) {
 		String s = currentSection.getString(section, "");
 		if (s.isEmpty()) {
-			logger.log(Level.INFO, "Empty string section: " + section);
+			logger.log(Level.INFO, "Empty string section: {}", section);
 			return s;
 		}
 		return ChatColor.translateAlternateColorCodes('&', s);
@@ -99,7 +99,7 @@ public class DiabloLikeSettings extends Settings {
 	private List<String> _list(String section) {
 		List<String> list = currentSection.getStringList(section);
 		if (list == null || list.isEmpty()) {
-			logger.log(Level.INFO, "Empty string list section: " + section);
+			logger.log(Level.INFO, "Empty string list section: {}", section);
 			return new ArrayList<>(0);
 		}
 		return list.stream()
@@ -126,8 +126,8 @@ public class DiabloLikeSettings extends Settings {
 		return requirementSeparator;
 	}
 
-	public <T> String getRequiredLevelFormat(T level) {
-		return requiredLevelFormat.replace("<lvl>", level.toString());
+	public String getRequiredLevelFormat() {
+		return requiredLevelFormat.replace("<lvl>", "(?<lvl>\\d+)");
 	}
 
 	public String getUnidentifiedItemLore() {

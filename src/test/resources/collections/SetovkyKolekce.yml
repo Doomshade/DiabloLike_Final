@@ -1,0 +1,1236 @@
+helma999cx0cchc:
+  materialName: LEATHER_HELMET
+  displayName: '&5Baalova helma &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+4-5% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+18-24 Kritický útok'
+  - '&cVitalita: 9-12'
+  - '&9Inteligence: 19-23'
+  - '&3Víra: 14-17'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &5Nekromant'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+  color: 7241600
+chest999cx0cchc:
+  materialName: LEATHER_CHESTPLATE
+  displayName: '&5Baalova tunika &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+4-5% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+18-24 Kritický útok'
+  - '&cVitalita: 9-12'
+  - '&9Inteligence: 19-23'
+  - '&3Víra: 14-17'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &5Nekromant'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+  color: 7241600
+gate999cx0cchc:
+  materialName: LEATHER_LEGGINGS
+  displayName: '&5Baalovy kalhoty &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+4-5% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+18-24 Kritický útok'
+  - '&cVitalita: 9-12'
+  - '&9Inteligence: 19-23'
+  - '&3Víra: 14-17'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &5Nekromant'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+  color: 7241600
+boty999cx0cchc:
+  materialName: LEATHER_BOOTS
+  displayName: '&5Baalovy boty &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+4-5% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+18-24 Kritický útok'
+  - '&cVitalita: 9-12'
+  - '&9Inteligence: 19-23'
+  - '&3Víra: 14-17'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &5Nekromant'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+  color: 7241600
+helma999cx0cchcc:
+  materialName: LEATHER_HELMET
+  displayName: '&bTarkanova helma &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+4-5% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+18-24 Kritický útok'
+  - '&cVitalita: 9-12'
+  - '&9Inteligence: 19-23'
+  - '&3Víra: 14-17'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &bČaroděj'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+  color: 7241600
+chest999cx0cchcc:
+  materialName: LEATHER_CHESTPLATE
+  displayName: '&bTarkanova tunika &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+4-5% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+18-24 Kritický útok'
+  - '&cVitalita: 9-12'
+  - '&9Inteligence: 19-23'
+  - '&3Víra: 14-17'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &bČaroděj'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+  color: 7241600
+gate999cx0cchcc:
+  materialName: LEATHER_LEGGINGS
+  displayName: '&bTarkanovy kalhoty &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+4-5% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+18-24 Kritický útok'
+  - '&cVitalita: 9-12'
+  - '&9Inteligence: 19-23'
+  - '&3Víra: 14-17'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &bČaroděj'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+  color: 7241600
+boty999cx0cchcc:
+  materialName: LEATHER_BOOTS
+  displayName: '&bTarkanovy boty &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+4-5% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+18-24 Kritický útok'
+  - '&cVitalita: 9-12'
+  - '&9Inteligence: 19-23'
+  - '&3Víra: 14-17'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &bČaroděj'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+  color: 7241600
+helma999cx0cchccc:
+  materialName: LEATHER_HELMET
+  displayName: '&7Razielova helma &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+4-5% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+18-24 Kritický útok'
+  - '&cVitalita: 9-12'
+  - '&9Inteligence: 19-23'
+  - '&3Víra: 14-17'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &7Kněz'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+  color: 7241600
+chest999cx0cchccc:
+  materialName: LEATHER_CHESTPLATE
+  displayName: '&7Razielova tunika &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+4-5% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+18-24 Kritický útok'
+  - '&cVitalita: 9-12'
+  - '&9Inteligence: 19-23'
+  - '&3Víra: 14-17'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &7Kněz'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+  color: 7241600
+gate999cx0cchccc:
+  materialName: LEATHER_LEGGINGS
+  displayName: '&7Razielovy kalhoty &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+4-5% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+18-24 Kritický útok'
+  - '&cVitalita: 9-12'
+  - '&9Inteligence: 19-23'
+  - '&3Víra: 14-17'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &7Kněz'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+  color: 7241600
+boty999cx0cchccc:
+  materialName: LEATHER_BOOTS
+  displayName: '&7Razielovy boty &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+4-5% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+18-24 Kritický útok'
+  - '&cVitalita: 9-12'
+  - '&9Inteligence: 19-23'
+  - '&3Víra: 14-17'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &7Kněz'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+  color: 7241600
+helma999cx0cchcccx:
+  materialName: LEATHER_HELMET
+  displayName: '&7Razielova helma &a(Heal) &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+4-5% Vyhýbání'
+  - '&cVitalita: 11-15'
+  - '&bRegenerace many: 14-17'
+  - '&3Víra: 20-24'
+  - '&aPřesnost: 13-16'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &7Kněz'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+  color: 7241600
+chest999cx0cchcccx:
+  materialName: LEATHER_CHESTPLATE
+  displayName: '&7Razielova tunika &a(Heal) &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+4-5% Vyhýbání'
+  - '&cVitalita: 11-15'
+  - '&bRegenerace many: 14-17'
+  - '&3Víra: 20-24'
+  - '&aPřesnost: 13-16'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &7Kněz'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+  color: 7241600
+gate999cx0cchcccx:
+  materialName: LEATHER_LEGGINGS
+  displayName: '&7Razielovy kalhoty &a(Heal) &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+4-5% Vyhýbání'
+  - '&cVitalita: 11-15'
+  - '&bRegenerace many: 14-17'
+  - '&3Víra: 20-24'
+  - '&aPřesnost: 13-16'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &7Kněz'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+  color: 7241600
+boty999cx0cchcccx:
+  materialName: LEATHER_BOOTS
+  displayName: '&7Razielovy boty &a(Heal) &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+4-5% Vyhýbání'
+  - '&cVitalita: 11-15'
+  - '&bRegenerace many: 14-17'
+  - '&3Víra: 20-24'
+  - '&aPřesnost: 13-16'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &7Kněz'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+  color: 7241600
+helma999cx1cchc:
+  materialName: GOLD_HELMET
+  displayName: '&eElwynnova helma &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+3-4% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+18-24 Kritický útok'
+  - '&cVitalita: 10-14'
+  - '&4Síla: 18-23'
+  - '&aPřesnost: 10-14'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &eVrah'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+chest999cx1cchc:
+  materialName: GOLD_CHESTPLATE
+  displayName: '&eElwynnovo brnění &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+3-4% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+18-24 Kritický útok'
+  - '&cVitalita: 10-14'
+  - '&4Síla: 18-23'
+  - '&aPřesnost: 10-14'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &eVrah'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+gate999cx1cchc:
+  materialName: GOLD_LEGGINGS
+  displayName: '&eElwynnovy kalhoty &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+3-4% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+18-24 Kritický útok'
+  - '&cVitalita: 10-14'
+  - '&4Síla: 18-23'
+  - '&aPřesnost: 10-14'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &eVrah'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+boty999cx1cchc:
+  materialName: GOLD_BOOTS
+  displayName: '&eElwynnovy boty &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+3-4% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+18-24 Kritický útok'
+  - '&cVitalita: 10-14'
+  - '&4Síla: 18-23'
+  - '&aPřesnost: 10-14'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &eVrah'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+helma999cx2cchc:
+  materialName: CHAINMAIL_HELMET
+  displayName: '&aBaneova helma &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+3-4% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+18-22 Kritický útok'
+  - '&cVitalita: 9-13'
+  - '&4Síla: 16-20'
+  - '&aPřesnost: 10-14'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &aLučištník'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+chest999cx2cchc:
+  materialName: CHAINMAIL_CHESTPLATE
+  displayName: '&aBaneovo brnění &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+3-4% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+18-22 Kritický útok'
+  - '&cVitalita: 9-13'
+  - '&4Síla: 16-20'
+  - '&aPřesnost: 10-14'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &aLučištník'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+gate999cx2cchc:
+  materialName: CHAINMAIL_LEGGINGS
+  displayName: '&aBaneovy kalhoty &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+3-4% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+18-22 Kritický útok'
+  - '&cVitalita: 9-13'
+  - '&4Síla: 16-20'
+  - '&aPřesnost: 10-14'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &aLučištník'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+boty999cx2cchc:
+  materialName: CHAINMAIL_BOOTS
+  displayName: '&aBaneovy boty &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+3-4% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+18-22 Kritický útok'
+  - '&cVitalita: 9-13'
+  - '&4Síla: 16-20'
+  - '&aPřesnost: 10-14'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &aLučištník'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+helma999cx2cchcx:
+  materialName: CHAINMAIL_HELMET
+  displayName: '&9Al''Keshova helma &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+3-4% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+18-22 Kritický útok'
+  - '&cVitalita: 9-13'
+  - '&4Síla: 16-20'
+  - '&aPřesnost: 10-14'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &9Šaman'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+chest999cx2cchcx:
+  materialName: CHAINMAIL_CHESTPLATE
+  displayName: '&9Al''Keshovovo brnění &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+3-4% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+18-22 Kritický útok'
+  - '&cVitalita: 9-13'
+  - '&4Síla: 16-20'
+  - '&aPřesnost: 10-14'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &9Šaman'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+gate999cx2cchc:
+  materialName: CHAINMAIL_LEGGINGS
+  displayName: '&9Al''Keshovovy kalhoty &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+3-4% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+18-22 Kritický útok'
+  - '&cVitalita: 9-13'
+  - '&4Síla: 16-20'
+  - '&aPřesnost: 10-14'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &9Šaman'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+boty999cx2cchc:
+  materialName: CHAINMAIL_BOOTS
+  displayName: '&9Al''Keshovovy boty &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+3-4% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+18-22 Kritický útok'
+  - '&cVitalita: 9-13'
+  - '&4Síla: 16-20'
+  - '&aPřesnost: 10-14'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &9Šaman'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+helma999cx2xcchc:
+  materialName: CHAINMAIL_HELMET
+  displayName: '&9Al''Keshova helma &a(Heal) &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+3-4% Vyhýbání'
+  - '&cVitalita: 10-15'
+  - '&bRegenerace many: 14-17'
+  - '&3Víra: 18-24'
+  - '&aPřesnost: 11-16'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &9Šaman'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+chest999cx2xcchc:
+  materialName: CHAINMAIL_CHESTPLATE
+  displayName: '&9Al''Keshovo brnění &a(Heal) &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+3-4% Vyhýbání'
+  - '&cVitalita: 10-15'
+  - '&bRegenerace many: 14-17'
+  - '&3Víra: 18-24'
+  - '&aPřesnost: 11-16'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &9Šaman'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+gate999cx2xcchc:
+  materialName: CHAINMAIL_LEGGINGS
+  displayName: '&9Al''Keshovy kalhoty &a(Heal) &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+3-4% Vyhýbání'
+  - '&cVitalita: 10-15'
+  - '&bRegenerace many: 14-17'
+  - '&3Víra: 18-24'
+  - '&aPřesnost: 11-16'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &9Šaman'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+boty999cx2xcchc:
+  materialName: CHAINMAIL_BOOTS
+  displayName: '&9Al''Keshovy boty &a(Heal) &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+3-4% Vyhýbání'
+  - '&cVitalita: 10-15'
+  - '&bRegenerace many: 14-17'
+  - '&3Víra: 18-24'
+  - '&aPřesnost: 11-16'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &9Šaman'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+helma999cx2xcchcx:
+  materialName: CHAINMAIL_HELMET
+  displayName: '&6Groodova helma &a(Heal) &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+3-4% Vyhýbání'
+  - '&cVitalita: 10-15'
+  - '&bRegenerace many: 14-17'
+  - '&3Víra: 18-24'
+  - '&aPřesnost: 11-16'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &6Druid'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+chest999cx2xcchcx:
+  materialName: CHAINMAIL_CHESTPLATE
+  displayName: '&6Groodovo brnění &a(Heal) &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+3-4% Vyhýbání'
+  - '&cVitalita: 10-15'
+  - '&bRegenerace many: 14-17'
+  - '&3Víra: 18-24'
+  - '&aPřesnost: 11-16'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &6Druid'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+gate999cx2xcchcx:
+  materialName: CHAINMAIL_LEGGINGS
+  displayName: '&6Groodovy kalhoty &a(Heal) &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+3-4% Vyhýbání'
+  - '&cVitalita: 10-15'
+  - '&bRegenerace many: 14-17'
+  - '&3Víra: 18-24'
+  - '&aPřesnost: 11-16'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &6Druid'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+boty999cx2xcchcx:
+  materialName: CHAINMAIL_BOOTS
+  displayName: '&6Groodovy boty &a(Heal) &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+3-4% Vyhýbání'
+  - '&cVitalita: 10-15'
+  - '&bRegenerace many: 14-17'
+  - '&3Víra: 18-24'
+  - '&aPřesnost: 11-16'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &6Druid'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+helma999cx2xxcchc:
+  materialName: CHAINMAIL_HELMET
+  displayName: '&6Groodova helma &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+3-4% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+18-24 Kritický útok'
+  - '&cVitalita: 9-13'
+  - '&9Inteligence: 18-23'
+  - '&3Víra: 14-18'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &6Druid'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+chest999cx2xxcchc:
+  materialName: CHAINMAIL_CHESTPLATE
+  displayName: '&6Groodovo brnění &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+3-4% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+18-24 Kritický útok'
+  - '&cVitalita: 9-13'
+  - '&9Inteligence: 18-23'
+  - '&3Víra: 14-18'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &6Druid'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+gate999cx2xxcchc:
+  materialName: CHAINMAIL_LEGGINGS
+  displayName: '&6Groodovy kalhoty &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+3-4% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+18-24 Kritický útok'
+  - '&cVitalita: 9-13'
+  - '&9Inteligence: 18-23'
+  - '&3Víra: 14-18'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &6Druid'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+boty999cx2xxcchct:
+  materialName: CHAINMAIL_BOOTS
+  displayName: '&6Groodovy boty &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+3-4% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+18-24 Kritický útok'
+  - '&cVitalita: 9-13'
+  - '&9Inteligence: 18-23'
+  - '&3Víra: 14-18'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &6Druid'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+helma999cx3cchct:
+  materialName: IRON_HELMET
+  displayName: '&dGabrielova helma &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+2-3% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+15-20 Kritický útok'
+  - '&cVitalita: 9-13'
+  - '&4Síla: 18-23'
+  - '&aPřesnost: 11-15'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &dPaladin'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+chest999cx3cchct:
+  materialName: IRON_CHESTPLATE
+  displayName: '&dGabrielovo brnění &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+2-3% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+15-20 Kritický útok'
+  - '&cVitalita: 9-13'
+  - '&4Síla: 18-23'
+  - '&aPřesnost: 11-15'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &dPaladin'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+gate999cx3cchct:
+  materialName: IRON_LEGGINGS
+  displayName: '&dGabrielovy kalhoty &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+2-3% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+15-20 Kritický útok'
+  - '&cVitalita: 9-13'
+  - '&4Síla: 18-23'
+  - '&aPřesnost: 11-15'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &dPaladin'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+boty999cx3cchct:
+  materialName: IRON_BOOTS
+  displayName: '&dGabrielovy boty &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+2-3% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+15-20 Kritický útok'
+  - '&cVitalita: 9-13'
+  - '&4Síla: 18-23'
+  - '&aPřesnost: 11-15'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &dPaladin'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+helma999cx3xcchc:
+  materialName: IRON_HELMET
+  displayName: '&dGabrielova helma &9(Tank) &f(Set)'
+  lore:
+  - '&f+49-58 Obrana'
+  - '&2+2-3% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&cVitalita: 16-20'
+  - '&aPřesnost: 11-15'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &dPaladin'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+chest999cx3xcchc:
+  materialName: IRON_CHESTPLATE
+  displayName: '&dGabrielovo brnění &9(Tank) &f(Set)'
+  lore:
+  - '&f+49-58 Obrana'
+  - '&2+2-3% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&cVitalita: 16-20'
+  - '&aPřesnost: 11-15'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &dPaladin'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+gate999cx3xcchc:
+  materialName: IRON_LEGGINGS
+  displayName: '&dGabrielovy kalhoty &9(Tank) &f(Set)'
+  lore:
+  - '&f+49-58 Obrana'
+  - '&2+2-3% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&cVitalita: 16-20'
+  - '&aPřesnost: 11-15'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &dPaladin'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+boty999cx3xcchc:
+  materialName: IRON_BOOTS
+  displayName: '&dGabrielovy boty &9(Tank) &f(Set)'
+  lore:
+  - '&f+49-58 Obrana'
+  - '&2+2-3% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&cVitalita: 16-20'
+  - '&aPřesnost: 11-15'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &dPaladin'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+helma999cx3cchctt:
+  materialName: IRON_HELMET
+  displayName: '&8Soulreaperova helma &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+2-3% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+15-20 Kritický útok'
+  - '&cVitalita: 9-13'
+  - '&4Síla: 18-23'
+  - '&aPřesnost: 11-15'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &8Rytíř smrti'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+chest999cx3cchctt:
+  materialName: IRON_CHESTPLATE
+  displayName: '&8Soulreaperovo brnění &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+2-3% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+15-20 Kritický útok'
+  - '&cVitalita: 9-13'
+  - '&4Síla: 18-23'
+  - '&aPřesnost: 11-15'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &8Rytíř smrti'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+gate999cx3cchctt:
+  materialName: IRON_LEGGINGS
+  displayName: '&8Soulreaperovy kalhoty &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+2-3% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+15-20 Kritický útok'
+  - '&cVitalita: 9-13'
+  - '&4Síla: 18-23'
+  - '&aPřesnost: 11-15'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &8Rytíř smrti'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+boty999cx3cchctt:
+  materialName: IRON_BOOTS
+  displayName: '&8Soulreaperovy boty &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+2-3% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+15-20 Kritický útok'
+  - '&cVitalita: 9-13'
+  - '&4Síla: 18-23'
+  - '&aPřesnost: 11-15'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &8Rytíř smrti'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+helma999cx3xcchct:
+  materialName: IRON_HELMET
+  displayName: '&8Soulreaperova helma &9(Tank) &f(Set)'
+  lore:
+  - '&f+49-58 Obrana'
+  - '&2+2-3% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&cVitalita: 16-20'
+  - '&aPřesnost: 11-15'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &8Rytíř smrti'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+chest999cx3xcchct:
+  materialName: IRON_CHESTPLATE
+  displayName: '&8Soulreaperovo brnění &9(Tank) &f(Set)'
+  lore:
+  - '&f+49-58 Obrana'
+  - '&2+2-3% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&cVitalita: 16-20'
+  - '&aPřesnost: 11-15'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &8Rytíř smrti'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+gate999cx3xcchct:
+  materialName: IRON_LEGGINGS
+  displayName: '&8Soulreaperovy kalhoty &9(Tank) &f(Set)'
+  lore:
+  - '&f+49-58 Obrana'
+  - '&2+2-3% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&cVitalita: 16-20'
+  - '&aPřesnost: 11-15'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &8Rytíř smrti'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+boty999cx3xcchct:
+  materialName: IRON_BOOTS
+  displayName: '&8Soulreaperovy boty &9(Tank) &f(Set)'
+  lore:
+  - '&f+49-58 Obrana'
+  - '&2+2-3% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&cVitalita: 16-20'
+  - '&aPřesnost: 11-15'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &8Rytíř smrti'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+helma999cx4cchc:
+  materialName: DIAMOND_HELMET
+  displayName: '&cErwinova helma &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+2-3% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+15-20 Kritický útok'
+  - '&cVitalita: 8-12'
+  - '&4Síla: 17-21'
+  - '&aPřesnost: 11-14'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &cVálečník'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+chest999cx4cchc:
+  materialName: DIAMOND_CHESTPLATE
+  displayName: '&cErwinovo brnění &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+2-3% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+15-20 Kritický útok'
+  - '&cVitalita: 8-12'
+  - '&4Síla: 17-21'
+  - '&aPřesnost: 11-14'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &cVálečník'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+gate999cx4cchc:
+  materialName: DIAMOND_LEGGINGS
+  displayName: '&cErwinovy kalhoty &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+2-3% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+15-20 Kritický útok'
+  - '&cVitalita: 8-12'
+  - '&4Síla: 17-21'
+  - '&aPřesnost: 11-14'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &cVálečník'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+boty999cx4cchc:
+  materialName: DIAMOND_BOOTS
+  displayName: '&cErwinovy boty &f(Set)'
+  lore:
+  - '&f+30-35 Obrana'
+  - '&2+2-3% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&6+4-5% Šance na kritický zásah'
+  - '&e+15-20 Kritický útok'
+  - '&cVitalita: 8-12'
+  - '&4Síla: 17-21'
+  - '&aPřesnost: 11-14'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &cVálečník'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+helma999cx4xcchc:
+  materialName: DIAMOND_HELMET
+  displayName: '&cErwinova helma &9(Tank) &f(Set)'
+  lore:
+  - '&f+49-58 Obrana'
+  - '&2+2-3% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&cVitalita: 16-20'
+  - '&aPřesnost: 11-15'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &cVálečník'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+chest999cx4xcchc:
+  materialName: DIAMOND_CHESTPLATE
+  displayName: '&cErwinovo brnění &9(Tank) &f(Set)'
+  lore:
+  - '&f+49-58 Obrana'
+  - '&2+2-3% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&cVitalita: 16-20'
+  - '&aPřesnost: 11-15'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &cVálečník'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+gate999cx4xcchc:
+  materialName: DIAMOND_LEGGINGS
+  displayName: '&cErwinovy kalhoty &9(Tank) &f(Set)'
+  lore:
+  - '&f+49-58 Obrana'
+  - '&2+2-3% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&cVitalita: 16-20'
+  - '&aPřesnost: 11-15'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &cVálečník'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false
+boty999cx4xcchc:
+  materialName: DIAMOND_BOOTS
+  displayName: '&cErwinovy boty &9(Tank) &f(Set)'
+  lore:
+  - '&f+49-58 Obrana'
+  - '&2+2-3% Vyhýbání'
+  - '&c+8-10 Poškození'
+  - '&cVitalita: 16-20'
+  - '&aPřesnost: 11-15'
+  - ''
+  - '&8----------------------'
+  - '&4Pouze pro: &cVálečník'
+  - '&2Potřebný Lvl: 35'
+  - '&8----------------------'
+  spawnOnMonsterWeight: 0.0
+  chanceToDropOnMosterDeath: 0.0
+  broadcastOnFind: false

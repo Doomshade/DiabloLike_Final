@@ -1,0 +1,62 @@
+BlackhandN:
+  SinisterKolekce:
+    amount: 1-2
+    chance: 100.0
+    legendary: 15
+    rare: 100
+DuchBlackhandaN:
+  SinisterKolekce:
+    amount: 0
+DuchDeathhandaN:
+  SinisterKolekce:
+    amount: 0
+TerrorN:
+  SinisterKolekce:
+    amount: 0
+SinisterN:
+  SinisterKolekce:
+    amount: 2-4
+    chance: 100.0
+    legendary: 30
+    rare: 100
+PlaguemasterN:
+  SinisterKolekce:
+    amount: 1
+    chance: 100.0
+    legendary: 10
+    rare: 35
+    uncommon: 100
+CorpsemakerN:
+  SinisterKolekce:
+    amount: 1
+    chance: 100.0
+    legendary: 10
+    rare: 35
+    uncommon: 100
+DeathhandN:
+  SinisterKolekce:
+    amount: 1-2
+    chance: 100.0
+    legendary: 15
+    rare: 100
+HollowN:
+  SinisterKolekce:
+    amount: 1
+    chance: 40.0
+    legendary: 10
+    rare: 35
+    uncommon: 100
+EternalN:
+  SinisterKolekce:
+    amount: 1
+    chance: 45.0
+    legendary: 10
+    rare: 35
+    uncommon: 100
+SoulreaperN:
+  SinisterKolekce:
+    amount: 1
+    chance: 35.0
+    legendary: 10
+    rare: 35
+    uncommon: 100

@@ -1,0 +1,16 @@
+Shadowbeast_turned:
+  FragmentKolekce:
+    amount: 1
+    chance: 4.0
+  TemnaKolekce:
+    amount: 1-2
+    chance: 100.0
+    legendary: 15
+    rare: 60
+    uncommon: 100
+  TemnaKolekceHC:
+    amount: 1
+    chance: 100.0
+    legendary: 10
+    rare: 50
+    uncommon: 100
