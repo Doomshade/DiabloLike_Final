@@ -18,8 +18,8 @@ public abstract class Settings {
 	public Settings(HelheimPlugin plugin) {
 		Validate.notNull(plugin);
 		this.config = plugin.getConfig();
+		plugin.saveDefaultConfig();
 		this.logger = plugin.getLogger();
-		this.reload();
 	}
 
 	public abstract void reload();

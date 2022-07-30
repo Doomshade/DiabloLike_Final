@@ -104,4 +104,8 @@ public class IOManager {
 	public File getCommandsFile() {
 		return commandsFile;
 	}
+
+	public void closeFiles() {
+		
+	}
 }

@@ -4,11 +4,11 @@ import com.google.common.collect.ImmutableMap;
 import com.sun.istack.internal.NotNull;
 import cz.helheim.rpg.api.command.ICommandHandler;
 import cz.helheim.rpg.api.command.SubCommand;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.entity.Player;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -21,6 +21,9 @@ public abstract class AbstractCommandHandler implements ICommandHandler {
 	protected AbstractCommandHandler(HelheimPlugin plugin, String command) {
 		this.plugin = plugin;
 		this.command = plugin.getCommand(command);
+		if (this.command == null) {
+			throw new IllegalArgumentException(String.format("Command %s not registered in plugin.yml!", command));
+		}
 	}
 
 	protected HelheimPlugin getPlugin() {
@@ -33,25 +36,20 @@ public abstract class AbstractCommandHandler implements ICommandHandler {
 
 		// no args means we print all the commands
 		if (args.length == 0) {
-			printCommands(sender, commandName);
+			printCommands(sender);
 			return true;
 		}
 
-		final SubCommand subCommand = subCommands.get(commandName);
+		final SubCommand subCommand = subCommands.get(args[0]);
 		// unknown command, print the options
 		if (subCommand == null) {
-			printCommands(sender, commandName);
+			printCommands(sender);
 			return true;
 		}
 
 		// check for permissions and whether the sender can actually call the command
-		int usedBy = sender instanceof Player ? SubCommand.PLAYER : SubCommand.CONSOLE;
-		if ((usedBy & subCommand.usedBy()) == 0) {
-			printCommands(sender, commandName);
-			return true;
-		}
-		if (!sender.hasPermission(subCommand.getRequiredPermission())) {
-			printCommands(sender, commandName);
+		if (!subCommand.isValidSender(sender)) {
+			printCommands(sender);
 			return true;
 		}
 
@@ -61,15 +59,32 @@ public abstract class AbstractCommandHandler implements ICommandHandler {
 		return true;
 	}
 
-	private void printCommands(final CommandSender sender, final String commandName) {
-		// TODO make this prettier
+	private void printCommands(final CommandSender sender) {
+		final String head = new StringBuilder().append(ChatColor.DARK_AQUA)
+		                                       .append(">")
+		                                       .append(ChatColor.STRIKETHROUGH)
+		                                       .append("------")
+		                                       .append(ChatColor.RESET)
+		                                       .append(ChatColor.BOLD)
+		                                       .append(ChatColor.DARK_AQUA)
+		                                       .append("<DiabloLike_Final>")
+		                                       .append(ChatColor.RESET)
+		                                       .append(ChatColor.DARK_AQUA)
+		                                       .append(ChatColor.STRIKETHROUGH)
+		                                       .append("------")
+		                                       .append(ChatColor.RESET)
+		                                       .append(ChatColor.DARK_AQUA)
+		                                       .append("<")
+		                                       .toString();
+		final List<String> cmds = new LinkedList<>();
+		cmds.add(head);
 		for (Map.Entry<String, SubCommand> entry : subCommands.entrySet()) {
-			sender.sendMessage(String.format("/%s %s - %s",
-			                                 commandName,
-			                                 entry.getKey(),
-			                                 entry.getValue()
-			                                      .getDescription()));
+			final SubCommand subCommand = entry.getValue();
+			if (subCommand.isValidSender(sender)) {
+				cmds.add(subCommand.toString(command.getName(), entry.getKey()));
+			}
 		}
+		sender.sendMessage(cmds.toArray(new String[0]));
 	}
 
 	@Override
@@ -116,6 +131,7 @@ public abstract class AbstractCommandHandler implements ICommandHandler {
 	}
 
 	protected void registerSubCommand(@NotNull final String name, @NotNull final SubCommand subCommand) {
+		subCommand.setLogger(plugin.getLogger());
 		subCommands.put(name.toLowerCase(), subCommand);
 	}
 

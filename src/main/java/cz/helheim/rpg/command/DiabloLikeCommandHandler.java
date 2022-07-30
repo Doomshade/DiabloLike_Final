@@ -7,7 +7,7 @@ public class DiabloLikeCommandHandler extends AbstractCommandHandler {
 
 
 	public DiabloLikeCommandHandler(HelheimPlugin plugin) {
-		super(plugin, "dl");
+		super(plugin, "dll");
 	}
 
 	@Override

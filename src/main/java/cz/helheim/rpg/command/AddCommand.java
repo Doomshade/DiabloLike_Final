@@ -5,6 +5,9 @@ import org.bukkit.command.CommandSender;
 
 import java.util.Map;
 
+import static cz.helheim.rpg.api.command.SubCommand.ValidSender.CONSOLE;
+import static cz.helheim.rpg.api.command.SubCommand.ValidSender.PLAYER;
+
 /**
  * @author Doomshade
  * @version 1.0
@@ -13,7 +16,9 @@ import java.util.Map;
 public class AddCommand extends AbstractSubCommand {
 
 	public AddCommand() {
-		super();
+		setDescription("Přidá předmět do inventáře");
+		setValidSenders(PLAYER, CONSOLE);
+		setRequiredPermission("dl.helper");
 	}
 
 	public AddCommand(final Map<String, Object> map) {
@@ -25,4 +30,6 @@ public class AddCommand extends AbstractSubCommand {
 		// TODO
 		throw new UnsupportedOperationException();
 	}
+
+
 }

@@ -1,0 +1,159 @@
+## Pro co checkovat v lore u scrollů
+unidentified-item-lore: '&c&oNeidentifikovaný předmět'
+
+## Barvy tier itemù
+tier-colors:
+  common: '&8'
+  uncommon: '&a'
+  rare: '&3'
+  legendary: '&6'
+  mythic: '&5'
+
+## Obecná šance na drop z mobky s [Lv. XX] ve jméně
+drop-chance: 10
+
+obrana: 40
+obrana-multiplier:
+  leather: 1.0
+  gold: 1.0
+  chainmail: 1.0
+  iron: 1.0
+  diamond: 2.0
+
+## Názvy předmětů s guaranteed custom raritou
+custom-rarities:
+  uncommon: [ ]
+  rare: [ ]
+  legendary: [ ]
+  mythic:
+    - '(Set)'
+
+## Range = (Level moba - min-level) - (Level moba + max-level)
+## Např.
+## [Lv. 20] Kostlivec
+## min = 2
+## max = 1
+## Item check v range od 18 - 21
+range:
+  min-level: 2
+  max-level: 1
+
+## Šance na drop itemů
+chance:
+  common: 50
+  uncommon: 30
+  rare: 17
+  legendary: 3
+  mythic: 0
+
+## Identifikační předmět
+## Display jméno není case sensitive, lore je
+## <lvl_min> (default 0) - <lvl_max> (default +nekonečno)
+item:
+  displayName: 'identifikátor'
+  lore: 'Identifikuje předměty do levelu <lvl_max>.'
+
+## Počet atributů = Počet atributů v itemu / pocetDiv
+pocetDiv:
+  common: 4
+  uncommon: 3
+  rare: 1.999
+  legendary: 1
+  mythic: 1
+
+## Šance na gem
+gem-chance:
+  common: 0
+  uncommon: 0
+  rare: 25
+  legendary: 40
+  mythic: 0
+
+## Kde gem nemůže být
+gem-exclusions:
+  materials: [ ]
+  displayNames:
+    - (offhand)
+    - prsten
+    - prstýnek
+    - náhrdelník
+    - hůl
+
+## Nastavení ceny
+price-configuration:
+  cap: 500
+  attributes:
+    armor: 0.1
+    poskozeni: 0.5
+    vyhybani: 1
+    sance-crit: 0.5
+    crit: 0.5
+    zivoty: 0.2
+    vira: 0.1
+    mana-regen: 0.1
+    reduc-dmg: 0.1
+    reduc-spelldmg: 0.1
+    presnost: 0.1
+    sila: 0.1
+    obratnost: 0.1
+    inteligence: 0.1
+    klenot: 10
+    sila-lecebnych-kouzel: 0.4
+  rarity:
+    common: 1
+    uncommon: 1.13
+    rare: 1.25
+    legendary: 1.5
+    mythic: 4
+  per-level: 1
+  item-lore: '&9Cena: &6%price'
+  previous-lore: [ ]
+  listeners:
+    onInventoryClose: true
+    onInventoryClick: false
+
+excluded-dungeons:
+  - ExampleMobs
+  - RandomMobs
+  - SinisterBoss
+  - SinisterElite
+  - SinisterMobs
+  - SinisterMobarena
+  - SinisterNormal
+  - SinisterTD
+  - VanillaMobs
+  - VolbaBoss
+  - SinisterHCmobs
+vendor:
+  inventory-name: 'Výkup zajímavých věcí'
+  money-info:
+    material: INK_SACK
+    data: 0
+    name: '&aPeníze'
+    lore:
+      - '&3%money'
+    position: 16
+  accept-button:
+    material: WOOL
+    data: 5
+    name: '&aPřijmout'
+    lore: [ ]
+    position: 43
+  decline-button:
+    material: WOOL
+    data: 14
+    name: '&cZavřít'
+    lore: [ ]
+    position: 44
+  info:
+    material: SIGN
+    data: 0
+    name: '&2Informace'
+    lore: [ ]
+    position: 17
+orb-lore: [ ]
+orbs:
+  orb-vylepseni:
+    maximum-vylepseni: 4
+    pocet-vylepseni: 2
+    vylepseni-lore: '&aVylepšení: %curr / %max'

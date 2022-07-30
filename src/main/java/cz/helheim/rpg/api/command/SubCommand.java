@@ -3,9 +3,13 @@ package cz.helheim.rpg.api.command;
 import com.sun.istack.internal.NotNull;
 import com.sun.istack.internal.Nullable;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.configuration.serialization.ConfigurationSerializable;
+import org.bukkit.entity.Player;
 
 import java.util.List;
+import java.util.function.Predicate;
+import java.util.logging.Logger;
 
 /**
  * <p>A subcommand implementation.</p>
@@ -14,14 +18,20 @@ import java.util.List;
  * @see ICommandHandler
  */
 public interface SubCommand extends ConfigurationSerializable {
-	int PLAYER = 1;
-	int CONSOLE = 1 << 1;
 
 	/**
 	 * @param sender the sender of this subcommand
 	 * @param args   the arguments of this subcommand
 	 */
 	void onCommand(CommandSender sender, String... args);
+
+	String toString(String command, String subCommand);
+
+	void setLogger(Logger logger);
+
+	List<String> getRequiredArgs();
+
+	List<String> getOptionalArgs();
 
 	/**
 	 * @param sender the sender of the tab-complete
@@ -45,10 +55,27 @@ public interface SubCommand extends ConfigurationSerializable {
 	String getDescription();
 
 	/**
-	 * @return the bitset of senders who can use this subcommand
+	 * @return the flags of senders who can use this subcommand
 	 *
-	 * @see SubCommand#PLAYER
-	 * @see SubCommand#CONSOLE
+	 * @see ValidSender#PLAYER
+	 * @see ValidSender#CONSOLE
 	 */
-	int usedBy();
+	ValidSender[] validSenders();
+
+	boolean isValidSender(CommandSender sender);
+
+	enum ValidSender {
+		PLAYER(x -> x instanceof Player),
+		CONSOLE(x -> x instanceof ConsoleCommandSender);
+
+		private final Predicate<CommandSender> senderValidator;
+
+		ValidSender(final Predicate<CommandSender> senderValidator) {
+			this.senderValidator = senderValidator;
+		}
+
+		public boolean isValid(CommandSender sender) {
+			return senderValidator.test(sender);
+		}
+	}
 }

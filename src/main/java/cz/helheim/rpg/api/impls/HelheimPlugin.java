@@ -12,12 +12,10 @@ import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.serialization.ConfigurationSerialization;
 import org.bukkit.event.Listener;
-import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.plugin.java.JavaPluginLoader;
 
-import java.io.File;
 import java.io.IOException;
+import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -29,23 +27,26 @@ public abstract class HelheimPlugin extends JavaPlugin implements IHelheimPlugin
 	private Settings settings;
 
 	public HelheimPlugin() {
-
-	}
-
-	protected HelheimPlugin(JavaPluginLoader loader, PluginDescriptionFile descriptionFile, File dataFolder, File file) {
-		super(loader, descriptionFile, dataFolder, file);
 	}
 
 	@Override
 	public void onDisable() {
 		save();
+		closeFiles();
+		for (Handler h : getLogger().getHandlers()) {
+			h.close();
+		}
 	}
 
 	@Override
 	public void onEnable() {
 		register();
-		save();
 		load();
+		save();
+	}
+
+	private void closeFiles() {
+		io.closeFiles();
 	}
 
 	private void register() {
@@ -84,13 +85,12 @@ public abstract class HelheimPlugin extends JavaPlugin implements IHelheimPlugin
 
 	private void loadLogger() {
 		final Logger logger = getLogger();
+		final String logFilePath = io.getLogFile()
+		                             .getAbsolutePath();
 		try {
-			logger.addHandler(new PluginLogHandler(io));
+			logger.addHandler(new PluginLogHandler(logFilePath));
 		} catch (IOException e) {
-			logger.log(Level.SEVERE,
-			           "Failed to initialize the log handler for " + io.getLogFile()
-			                                                           .getAbsolutePath(),
-			           e);
+			logger.log(Level.SEVERE, "Failed to initialize the log handler for " + logFilePath, e);
 		}
 	}
 

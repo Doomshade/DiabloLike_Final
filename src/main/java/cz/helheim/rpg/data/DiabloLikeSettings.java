@@ -7,10 +7,7 @@ import cz.helheim.rpg.util.Range;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.ConfigurationSection;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.logging.Level;
 import java.util.stream.Collectors;
 
@@ -80,28 +77,54 @@ public class DiabloLikeSettings extends Settings {
 
 	//<editor-fold desc="Config section accessors">
 	private String _string(String section) {
+		if (currentSection == null) {
+			logger.log(Level.WARNING, "Nullptr section occurred, this should not happen.");
+			return "";
+		}
 		String s = currentSection.getString(section, "");
 		if (s.isEmpty()) {
-			logger.log(Level.INFO, "Empty string section: {}", section);
+			String currentPath = currentSection.getCurrentPath();
+			currentPath = currentPath.isEmpty() ? currentPath : currentPath.concat(".");
+			logger.log(Level.WARNING,
+			           "Empty string section: \"{0}\"",
+			           currentPath
+					           .concat(section));
 			return s;
 		}
 		return ChatColor.translateAlternateColorCodes('&', s);
 	}
 
 	private int _int(String section) {
+		if (currentSection == null) {
+			logger.log(Level.WARNING, "Nullptr section occurred, this should not happen.");
+			return 0;
+		}
 		return currentSection.getInt(section, 0);
 	}
 
 	private double _double(String section) {
+		if (currentSection == null) {
+			logger.log(Level.WARNING, "Nullptr section occurred, this should not happen.");
+			return 0d;
+		}
 		return currentSection.getDouble(section, 0d);
 	}
 
 	private List<String> _list(String section) {
-		List<String> list = currentSection.getStringList(section);
-		if (list == null || list.isEmpty()) {
-			logger.log(Level.INFO, "Empty string list section: {}", section);
+		if (currentSection == null) {
+			logger.log(Level.WARNING, "Nullptr section occurred, this should not happen.");
+			return Collections.emptyList();
+		}
+		if (!currentSection.isList(section)) {
+			String currentPath = currentSection.getCurrentPath();
+			currentPath = currentPath.isEmpty() ? currentPath : currentPath.concat(".");
+			logger.log(Level.WARNING,
+			           "Empty string list section: \"{0}\"",
+			           currentPath
+					           .concat(section));
 			return new ArrayList<>(0);
 		}
+		List<String> list = currentSection.getStringList(section);
 		return list.stream()
 		           .map(x -> x.isEmpty() ? x : ChatColor.translateAlternateColorCodes('&', x))
 		           .collect(Collectors.toList());
@@ -146,6 +169,7 @@ public class DiabloLikeSettings extends Settings {
 		for (DiabloItem.Tier tier : DiabloItem.Tier.values()) {
 			final String tierName = tier.name()
 			                            .toLowerCase();
+			assert tierColours != null;
 			tierColours.put(tier, _string(tierName));
 		}
 	}

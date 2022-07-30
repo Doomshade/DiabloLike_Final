@@ -8,7 +8,7 @@ website: www.helheim.cz
 api-version: 1.9.2-R0.1-SNAPSHOT
 database: true
 commands:
-  dl:
+  dll:
     description: The main DiabloLike command
     usage: /<command>
     permission: dl.player

@@ -18,8 +18,6 @@ import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Entity;
-import org.bukkit.plugin.PluginDescriptionFile;
-import org.bukkit.plugin.java.JavaPluginLoader;
 
 import java.io.File;
 import java.io.IOException;
@@ -60,14 +58,6 @@ public class DiabloLikeImpl extends HelheimPlugin implements DiabloLike {
 	private DropManager dropManager = null;
 	private boolean usesMythicMob = false;
 
-	public DiabloLikeImpl() {
-
-	}
-
-	protected DiabloLikeImpl(JavaPluginLoader loader, PluginDescriptionFile descriptionFile, File dataFolder, File file) {
-		super(loader, descriptionFile, dataFolder, file);
-	}
-
 	public static DiabloLike getInstance() {
 		return instance;
 	}
@@ -83,7 +73,9 @@ public class DiabloLikeImpl extends HelheimPlugin implements DiabloLike {
 		super.onEnable();
 		instance = this;
 		EnchantmentAPI.registerCustomEnchantment(new Rychlostrelba());
-		setSettings(new DiabloLikeSettings(this));
+		final DiabloLikeSettings settings = new DiabloLikeSettings(this);
+		setSettings(settings);
+		settings.reload();
 		if (Bukkit.getPluginManager()
 		          .isPluginEnabled("MythicMobs")) {
 			registerListener(new MythicMobListener(this));
