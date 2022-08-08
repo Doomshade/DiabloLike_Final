@@ -26,12 +26,12 @@ import static org.apache.commons.lang.Validate.notNull;
  * @version 1.0
  * @since 27.06.2022
  */
-class DefaultScroll extends AbstractBaseItem implements Scroll {
+class DLScroll extends AbstractBaseItem implements Scroll {
 	private final Range range;
 
 
-	DefaultScroll(final String id, final ItemStack item, final Range range, final double dropChance, final boolean hasDefaultProperties,
-	              final boolean dropsRepeatedly, boolean validateParams) {
+	DLScroll(final String id, final ItemStack item, final Range range, final double dropChance, final boolean hasDefaultProperties,
+			 final boolean dropsRepeatedly, boolean validateParams) {
 		super(item, id, dropChance, hasDefaultProperties, dropsRepeatedly, validateParams);
 		if (validateParams) {
 			notNull(range);
@@ -39,8 +39,8 @@ class DefaultScroll extends AbstractBaseItem implements Scroll {
 		this.range = range;
 	}
 
-	DefaultScroll(final String id, final ItemStack item, final Range range, final double dropChance, final boolean hasDefaultProperties,
-	              final boolean dropsRepeatedly) {
+	DLScroll(final String id, final ItemStack item, final Range range, final double dropChance, final boolean hasDefaultProperties,
+			 final boolean dropsRepeatedly) {
 		this(id, item, range, dropChance, hasDefaultProperties, dropsRepeatedly, true);
 	}
 

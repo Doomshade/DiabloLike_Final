@@ -14,7 +14,7 @@ import static org.apache.commons.lang3.Validate.notNull;
  * @version 1.0
  * @since 09.07.2022
  */
-class DefaultDrop implements Drop {
+class DLDrop implements Drop {
 
 	private final Collection<BaseItem> drop = new LinkedList<>();
 	private final Range amount;
@@ -22,18 +22,18 @@ class DefaultDrop implements Drop {
 	private final Map<DiabloItem.Tier, Double> rarityChances = new HashMap<>();
 	private boolean empty;
 
-	DefaultDrop(final Iterable<BaseItem> drop, final Range amount, final double dropChance,
-	            final Map<DiabloItem.Tier, Double> rarityChances) {
+	DLDrop(final Iterable<BaseItem> drop, final Range amount, final double dropChance,
+		   final Map<DiabloItem.Tier, Double> rarityChances) {
 		this(drop, amount, dropChance, rarityChances, false);
 	}
 
-	DefaultDrop(final Iterable<BaseItem> drop, final int amount, final double dropChance,
-	            final Map<DiabloItem.Tier, Double> rarityChances) {
+	DLDrop(final Iterable<BaseItem> drop, final int amount, final double dropChance,
+		   final Map<DiabloItem.Tier, Double> rarityChances) {
 		this(drop, new Range(amount), dropChance, rarityChances);
 	}
 
-	private DefaultDrop(final Iterable<BaseItem> drop, final Range amount, final double dropChance,
-	                    final Map<DiabloItem.Tier, Double> rarityChances, final boolean empty) {
+	private DLDrop(final Iterable<BaseItem> drop, final Range amount, final double dropChance,
+				   final Map<DiabloItem.Tier, Double> rarityChances, final boolean empty) {
 		notNull(drop);
 		notNull(amount);
 		notNull(rarityChances);
@@ -45,7 +45,7 @@ class DefaultDrop implements Drop {
 		this.empty = empty;
 	}
 
-	public DefaultDrop() {
+	public DLDrop() {
 		this(new ArrayList<>(), new Range(0), 0d, new HashMap<>(), true);
 	}
 

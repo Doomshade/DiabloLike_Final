@@ -27,11 +27,11 @@ import static java.util.Optional.empty;
  * @version 1.0
  * @since 27.06.2022
  */
-class DefaultItemRepositoryLoader implements ItemRepositoryLoader {
+class DLItemRepositoryLoader implements ItemRepositoryLoader {
 	private final HelheimPlugin plugin;
 	private final ConfigurationSection section;
 
-	DefaultItemRepositoryLoader(final HelheimPlugin plugin, final ConfigurationSection section) {
+	DLItemRepositoryLoader(final HelheimPlugin plugin, final ConfigurationSection section) {
 		this.plugin = plugin;
 		this.section = section;
 	}

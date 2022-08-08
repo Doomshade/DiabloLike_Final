@@ -23,7 +23,9 @@ public interface BaseItem extends Sellable, Comparable<BaseItem> {
 	/**
 	 * @return the type of this item
 	 */
-	String getType();
+	default String getType(){
+		return "baseitem";
+	}
 
 	/**
 	 * @return the drop chance (0.0-100.0) of this item

@@ -41,7 +41,7 @@ public interface DiabloItem extends Identifiable {
 		LEGENDARY,
 		MYTHIC;
 
-		static int UNKNOWN_TIER = Integer.MAX_VALUE;
+		public static int UNKNOWN_TIER = Integer.MAX_VALUE;
 
 		public String toString() {
 			return name().toLowerCase();

@@ -14,7 +14,7 @@ import java.util.*;
  * @version 1.0
  * @since 27.06.2022
  */
-class DefaultDiabloItem extends AbstractBaseItem implements DiabloItem {
+class DLDiabloItem extends AbstractBaseItem implements DiabloItem {
 
 	private final Collection<Pair<CustomEnchantment, Integer>> customEnchantments = new ArrayList<>();
 	private final Collection<Pair<Enchantment, Integer>> enchantments = new ArrayList<>();
@@ -25,8 +25,8 @@ class DefaultDiabloItem extends AbstractBaseItem implements DiabloItem {
 	private final Map<Tier, Double> customRarities = new LinkedHashMap<>();
 	private boolean identified = false;
 
-	DefaultDiabloItem(final String id, final ItemStack itemStack, final int level, final double dropChance,
-	                  final Map<Tier, Double> customRarities, final boolean hasDefaultProperties, final boolean dropsRepeatedly) {
+	DLDiabloItem(final String id, final ItemStack itemStack, final int level, final double dropChance,
+				 final Map<Tier, Double> customRarities, final boolean hasDefaultProperties, final boolean dropsRepeatedly) {
 		super(itemStack, id, dropChance, hasDefaultProperties, dropsRepeatedly);
 		assert level > 0 : String.format("Invalid level %d for %s",
 		                                 level,

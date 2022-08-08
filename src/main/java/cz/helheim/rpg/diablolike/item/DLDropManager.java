@@ -20,7 +20,7 @@ import static cz.helheim.rpg.diablolike.item.ItemInstantiationHelper.emptyDrop;
  * @version 1.0
  * @since 03.07.2022
  */
-class DefaultDropManager implements DropManager {
+class DLDropManager implements DropManager {
 
 	private static final double EPSILON = 0.001;
 	private final DiabloLike plugin;
@@ -28,7 +28,7 @@ class DefaultDropManager implements DropManager {
 	private final Map<Integer, Iterable<BaseItem>> dropCache = new HashMap<>();
 
 
-	DefaultDropManager(final DiabloLike plugin) {
+	DLDropManager(final DiabloLike plugin) {
 		this.plugin = plugin;
 	}
 

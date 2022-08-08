@@ -1,0 +1,130 @@
+Index: .idea/checkstyle-idea.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"CheckStyle-IDEA\">\r\n    <option name=\"configuration\">\r\n      <map>\r\n        <entry key=\"checkstyle-version\" value=\"10.1\" />\r\n        <entry key=\"copy-libs\" value=\"true\" />\r\n        <entry key=\"location-0\" value=\"BUNDLED:(bundled):Sun Checks\" />\r\n        <entry key=\"location-1\" value=\"BUNDLED:(bundled):Google Checks\" />\r\n        <entry key=\"scan-before-checkin\" value=\"false\" />\r\n        <entry key=\"scanscope\" value=\"JavaOnly\" />\r\n        <entry key=\"suppress-errors\" value=\"false\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/checkstyle-idea.xml b/.idea/checkstyle-idea.xml
+--- a/.idea/checkstyle-idea.xml	(revision 4f1974a2aca0e26c30376dce42c85339ffada78a)
++++ b/.idea/checkstyle-idea.xml	(date 1659982266219)
+@@ -1,16 +1,16 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="CheckStyle-IDEA">
+-    <option name="configuration">
+-      <map>
+-        <entry key="checkstyle-version" value="10.1" />
+-        <entry key="copy-libs" value="true" />
+-        <entry key="location-0" value="BUNDLED:(bundled):Sun Checks" />
+-        <entry key="location-1" value="BUNDLED:(bundled):Google Checks" />
+-        <entry key="scan-before-checkin" value="false" />
+-        <entry key="scanscope" value="JavaOnly" />
+-        <entry key="suppress-errors" value="false" />
+-      </map>
++  <component name="CheckStyle-IDEA" serialisationVersion="2">
++    <checkstyleVersion>10.1</checkstyleVersion>
++    <scanScope>JavaOnly</scanScope>
++    <copyLibs>true</copyLibs>
++    <option name="thirdPartyClasspath" />
++    <option name="activeLocationIds" />
++    <option name="locations">
++      <list>
++        <ConfigurationLocation id="bundled-sun-checks" type="BUNDLED" scope="All" description="Sun Checks">(bundled)</ConfigurationLocation>
++        <ConfigurationLocation id="bundled-google-checks" type="BUNDLED" scope="All" description="Google Checks">(bundled)</ConfigurationLocation>
++      </list>
+     </option>
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"b8b18b52-3b6a-4ba4-8f37-374ba3914df9\" name=\"Changes\" comment=\"\">\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/checkstyle-idea.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/intellij-javadocs-4.0.1.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/pom.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/pom.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cz/helheim/rpg/DiabloLike.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cz/helheim/rpg/DiabloLike.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/IHelheimPlugin.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/IHelheimPlugin.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/command/ICommandHandler.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/command/ICommandHandler.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/command/SubCommand.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/command/SubCommand.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/exception/SerializationException.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/exception/SerializationException.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/impls/AbstractCommandHandler.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/impls/AbstractCommandHandler.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/impls/AbstractSubCommand.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/impls/AbstractSubCommand.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/impls/HelheimPlugin.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/impls/HelheimPlugin.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/impls/ReloadCommand.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/io/IOManager.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/io/IOManager.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/io/PluginLogHandler.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/io/PluginLogHandler.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/serialize/HelheimSerializable.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/serialize/HelheimSerializable.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/serialize/Serialize.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/serialize/SerializeManager.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/serialize/SerializeManager.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/util/SerializationUtils.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/util/SerializationUtils.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cz/helheim/rpg/command/AddCommand.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cz/helheim/rpg/command/AddCommand.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cz/helheim/rpg/command/DiabloLikeCommandHandler.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cz/helheim/rpg/command/DiabloLikeCommandHandler.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/plugin.yml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/plugin.yml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"AnnotationType\" />\r\n        <option value=\"Interface\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"FormatOnSaveOptions\">\r\n    <option name=\"myRunOnSave\" value=\"true\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitSEFilterConfiguration\">\r\n    <file-type-list>\r\n      <filtered-out-file-type name=\"LOCAL_BRANCH\" />\r\n      <filtered-out-file-type name=\"REMOTE_BRANCH\" />\r\n      <filtered-out-file-type name=\"TAG\" />\r\n      <filtered-out-file-type name=\"COMMIT_BY_MESSAGE\" />\r\n    </file-type-list>\r\n  </component>\r\n  <component name=\"JpbToolWindowState\">\r\n    <option name=\"myId2FirstActivated\">\r\n      <map>\r\n        <entry key=\"com.haulmont.jpb.jpaPalette\" value=\"true\" />\r\n        <entry key=\"com.haulmont.jpb.jpaStructure\" value=\"true\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"myId2Visible\">\r\n      <map>\r\n        <entry key=\"com.haulmont.jpb.jpaPalette\" value=\"false\" />\r\n        <entry key=\"com.haulmont.jpb.jpaStructure\" value=\"false\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"OptimizeOnSaveOptions\">\r\n    <option name=\"myRunOnSave\" value=\"true\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2AyNwHGMDsm3BX4mhCU3I0nUytF\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\r\n    <property name=\"project.structure.last.edited\" value=\"Modules\" />\r\n    <property name=\"project.structure.proportion\" value=\"0.0\" />\r\n    <property name=\"project.structure.side.proportion\" value=\"0.27915195\" />\r\n    <property name=\"settings.editor.selected.configurable\" value=\"preferences.lookFeel\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveMembersDialog.RECENTS_KEY\">\r\n      <recent name=\"cz.helheim.rpg.api.io.PluginLogHandler\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"b8b18b52-3b6a-4ba4-8f37-374ba3914df9\" name=\"Changes\" comment=\"\" />\r\n      <created>1655978103750</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1655978103750</updated>\r\n      <workItem from=\"1655978107205\" duration=\"161000\" />\r\n      <workItem from=\"1655978284511\" duration=\"4818000\" />\r\n      <workItem from=\"1655988134008\" duration=\"1067000\" />\r\n      <workItem from=\"1656064217906\" duration=\"9046000\" />\r\n      <workItem from=\"1656185772835\" duration=\"141000\" />\r\n      <workItem from=\"1656186057411\" duration=\"1125000\" />\r\n      <workItem from=\"1656253319413\" duration=\"8365000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 4f1974a2aca0e26c30376dce42c85339ffada78a)
++++ b/.idea/workspace.xml	(date 1656684371332)
+@@ -4,29 +4,8 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="b8b18b52-3b6a-4ba4-8f37-374ba3914df9" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/intellij-javadocs-4.0.1.xml" afterDir="false" />
++    <list default="true" id="b8b18b52-3b6a-4ba4-8f37-374ba3914df9" name="Changes" comment="lotsa changes">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/DiabloLike.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/DiabloLike.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/IHelheimPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/IHelheimPlugin.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/command/ICommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/command/ICommandHandler.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/command/SubCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/command/SubCommand.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/exception/SerializationException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/exception/SerializationException.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/impls/AbstractCommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/impls/AbstractCommandHandler.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/impls/AbstractSubCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/impls/AbstractSubCommand.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/impls/HelheimPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/impls/HelheimPlugin.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/impls/ReloadCommand.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/io/IOManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/io/IOManager.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/io/PluginLogHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/io/PluginLogHandler.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/serialize/HelheimSerializable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/serialize/HelheimSerializable.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/serialize/Serialize.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/serialize/SerializeManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/serialize/SerializeManager.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/util/SerializationUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/util/SerializationUtils.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/command/AddCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/command/AddCommand.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/command/DiabloLikeCommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/command/DiabloLikeCommandHandler.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -47,6 +26,7 @@
+   </component>
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++    <option name="SIGN_OFF_COMMIT" value="true" />
+   </component>
+   <component name="GitSEFilterConfiguration">
+     <file-type-list>
+@@ -55,6 +35,9 @@
+       <filtered-out-file-type name="TAG" />
+       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+     </file-type-list>
++  </component>
++  <component name="GitToolBoxStore">
++    <option name="projectConfigVersion" value="5" />
+   </component>
+   <component name="JpbToolWindowState">
+     <option name="myId2FirstActivated">
+@@ -114,8 +97,18 @@
+       <workItem from="1656064217906" duration="9046000" />
+       <workItem from="1656185772835" duration="141000" />
+       <workItem from="1656186057411" duration="1125000" />
+-      <workItem from="1656253319413" duration="8365000" />
++      <workItem from="1656253319413" duration="8395000" />
++      <workItem from="1656357576965" duration="620000" />
++      <workItem from="1656683380732" duration="725000" />
+     </task>
++    <task id="LOCAL-00001" summary="lotsa changes">
++      <created>1656261776497</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1656261776497</updated>
++    </task>
++    <option name="localTasksCounter" value="2" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -133,4 +126,10 @@
+     </option>
+     <option name="oldMeFiltersMigrated" value="true" />
+   </component>
++  <component name="VcsManagerConfiguration">
++    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
++    <option name="CHECK_NEW_TODO" value="false" />
++    <MESSAGE value="lotsa changes" />
++    <option name="LAST_COMMIT_MESSAGE" value="lotsa changes" />
++  </component>
+ </project>
+\ No newline at end of file

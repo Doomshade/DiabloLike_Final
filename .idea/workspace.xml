@@ -4,51 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8b18b52-3b6a-4ba4-8f37-374ba3914df9" name="Changes" comment="">
+    <list default="true" id="b8b18b52-3b6a-4ba4-8f37-374ba3914df9" name="Changes" comment="moved to diablolike package and made an api package">
       <change beforePath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/DiabloLike.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/DiabloLike.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/DiabloLikeImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/DiabloLikeImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/impls/HelheimPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/api/impls/HelheimPlugin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/collection/DiabloCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/collection/DiabloCollection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/collection/impl/DefaultDiabloCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/collection/impl/DefaultDiabloCollection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/command/AddCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/command/AddCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/command/DiabloLikeCommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/command/DiabloLikeCommandHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/command/ReloadCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/command/ReloadCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/data/DiabloLikeSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/data/DiabloLikeSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/enchantment/Rychlostrelba.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/enchantment/Rychlostrelba.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/event/DropEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/event/DropEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/AbstractBaseItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/item/AbstractBaseItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/BaseItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/item/BaseItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/DefaultBaseItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/item/DefaultBaseItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/DefaultDiabloItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/item/DefaultDiabloItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/DefaultDrop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/item/DefaultDrop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/DefaultDropManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/item/DefaultDropManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/DefaultItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/item/DefaultItemRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/DefaultItemRepositoryLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/item/DefaultItemRepositoryLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/DefaultScroll.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/item/DefaultScroll.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/DiabloItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/item/DiabloItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/Drop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/item/Drop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/DropManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/item/DropManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/Identifiable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/item/Identifiable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/ItemInstantiationHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/item/ItemInstantiationHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/ItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/item/ItemRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/ItemRepositoryLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/item/ItemRepositoryLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/LoreParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/item/LoreParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/NBTKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/item/NBTKey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/NBTTagManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/item/NBTTagManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/Scroll.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/item/Scroll.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/item/Sellable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/item/Sellable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/listener/MobListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/listener/MobListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/listener/MythicMobListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/listener/MythicMobListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/util/ExceptionUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/util/ExceptionUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/util/ItemUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/util/ItemUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/util/Pair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/util/Pair.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/util/Range.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/util/Range.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/cz/helheim/rpg/DiabloLikeImplTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/cz/helheim/rpg/item/DiabloItemTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/api/item/BaseItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/api/item/BaseItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/api/item/DiabloItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/api/item/DiabloItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/item/DefaultBaseItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/item/DLBaseItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/item/DefaultDiabloItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/item/DLDiabloItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/item/DefaultDrop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/item/DLDrop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/item/DefaultDropManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/item/DLDropManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/item/DefaultItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/item/DLItemRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/item/DefaultItemRepositoryLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/item/DLItemRepositoryLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/item/DefaultScroll.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/helheim/rpg/diablolike/item/DLScroll.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,6 +108,14 @@
       <workItem from="1656186057411" duration="1125000" />
       <workItem from="1656253319413" duration="8365000" />
     </task>
+    <task id="LOCAL-00001" summary="moved to diablolike package and made an api package">
+      <created>1659982897067</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1659982897067</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,5 +132,11 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="moved to diablolike package and made an api package" />
+    <option name="LAST_COMMIT_MESSAGE" value="moved to diablolike package and made an api package" />
   </component>
 </project>

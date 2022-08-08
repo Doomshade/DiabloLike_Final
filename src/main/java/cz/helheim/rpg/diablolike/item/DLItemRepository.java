@@ -17,7 +17,7 @@ import static java.util.Objects.requireNonNull;
  * @version 1.0
  * @since 28.06.2022
  */
-class DefaultItemRepository implements ItemRepository {
+class DLItemRepository implements ItemRepository {
 	private final Map<String, BaseItem> items = new LinkedHashMap<>();
 	private final File repository;
 
@@ -25,7 +25,7 @@ class DefaultItemRepository implements ItemRepository {
 
 	private final String id;
 
-	DefaultItemRepository(final File repository, final ItemRepositoryLoader itemRepositoryLoader) {
+	DLItemRepository(final File repository, final ItemRepositoryLoader itemRepositoryLoader) {
 		requireNonNull(repository);
 		if (!repository.exists()) {
 			throw new IllegalArgumentException(String.format("Repository '%s' does not exist.", repository.getAbsolutePath()));
