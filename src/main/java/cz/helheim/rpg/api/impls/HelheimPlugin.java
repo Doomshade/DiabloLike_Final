@@ -6,7 +6,6 @@ import cz.helheim.rpg.api.event.ReloadEvent;
 import cz.helheim.rpg.api.io.IOManager;
 import cz.helheim.rpg.api.io.PluginLogHandler;
 import cz.helheim.rpg.api.io.Settings;
-import cz.helheim.rpg.command.DiabloLikeCommandHandler;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -49,10 +48,12 @@ public abstract class HelheimPlugin extends JavaPlugin implements IHelheimPlugin
 		io.closeFiles();
 	}
 
+	protected abstract ICommandHandler getCommandHandler();
+
 	private void register() {
 		ConfigurationSerialization.registerClass(AbstractSubCommand.class);
 		this.io = new IOManager();
-		this.commandHandler = new DiabloLikeCommandHandler(this);
+		this.commandHandler = getCommandHandler();
 		this.commandHandler.register();
 		this.commandHandler.registerSubCommands();
 		registerListener(this);
